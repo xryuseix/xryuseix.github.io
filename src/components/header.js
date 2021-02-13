@@ -24,9 +24,9 @@ export default () => (
               <Link class="nav-link" href="/news">News</Link>
             </li>
             <li class="nav-item dropdown">
-              <Link href="/app" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Applications</Link>
+              <Link href="/apps" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Applications</Link>
               <div class="dropdown-menu mt-0" aria-labelledby="navbarDropdown">
-                <Link href="/app/sa-plag" rel="noopener noreferrer" tabindex="0" role="menuitem" class="dropdown-item">SA-Plag</Link>
+                <Link href="/apps/sa-plag" rel="noopener noreferrer" tabindex="0" role="menuitem" class="dropdown-item">SA-Plag</Link>
               </div>
             </li>
             <li class="nav-item">
