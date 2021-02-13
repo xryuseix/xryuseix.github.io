@@ -21,20 +21,19 @@ export default () => (
         <div class="collapse navbar-collapse" id="base-navbars">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <Link class="nav-link" href="/">News</Link>
+              <Link class="nav-link" href="/news">News</Link>
             </li>
             <li class="nav-item dropdown">
-              <Link href="/" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Applications</Link>
+              <Link href="/app" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Applications</Link>
               <div class="dropdown-menu mt-0" aria-labelledby="navbarDropdown">
-                <Link href="https://github.com/xryuseix/SA-Plag" target="_blank" rel="noopener noreferrer" tabindex="0" role="menuitem" class="dropdown-item">GitHub</Link>
-                <Link href="https://twitter.com/ryusei_ishika" target="_blank" rel="noopener noreferrer" tabindex="0" role="menuitem" class="dropdown-item">Contact</Link>
+                <Link href="/app/sa-plag" rel="noopener noreferrer" tabindex="0" role="menuitem" class="dropdown-item">SA-Plag</Link>
               </div>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" href="/">Career</Link>
+              <Link class="nav-link" href="/career">Career</Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" href="/">Account</Link>
+              <Link class="nav-link" href="/account">Account</Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link" href="https://github.com/xryuseix" target="_blank">Repository</Link>
