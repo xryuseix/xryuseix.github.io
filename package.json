@@ -57,8 +57,6 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "push": "gh-pages -d public -b master",
-    "deploy": "yarn build && yarn push"
+    "clean": "gatsby clean"
   }
 }
