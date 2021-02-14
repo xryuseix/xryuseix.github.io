@@ -4,17 +4,22 @@ on:
   push:
     branches:
       - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
 
     - name: setup node
       uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
+        node-version: '15.x'
 
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
