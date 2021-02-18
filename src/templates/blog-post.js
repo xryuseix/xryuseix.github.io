@@ -1,9 +1,9 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Meta from "../components/meta"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Meta from '../components/meta'
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -14,15 +14,8 @@ const BlogPostTemplate = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title={post.frontmatter.title} />
       <Meta title="news" />
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
+      <article className="blog-post" itemScope itemType="http://schema.org/Article">
+        <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
       </article>
       <nav className="blog-post-nav">
         <ul
@@ -31,7 +24,7 @@ const BlogPostTemplate = ({ data, location }) => {
             flexWrap: `wrap`,
             justifyContent: `space-between`,
             listStyle: `none`,
-            padding: 0,
+            padding: 0
           }}
         >
           <li>
@@ -57,11 +50,7 @@ const BlogPostTemplate = ({ data, location }) => {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug(
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
+  query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
     site {
       siteMetadata {
         title

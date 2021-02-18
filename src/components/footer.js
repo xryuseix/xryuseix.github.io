@@ -1,7 +1,3 @@
-import React from "react"
+import React from 'react'
 
-export default () => (
-  <footer>
-    © {new Date().getFullYear()}, Ryusei Ishikawa All Right Reserved.
-  </footer>
-)
+export default () => <footer>© {new Date().getFullYear()}, Ryusei Ishikawa All Right Reserved.</footer>

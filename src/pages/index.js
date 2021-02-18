@@ -1,11 +1,11 @@
-import React from "react"
+import React from 'react'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Meta from "../components/meta"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Meta from '../components/meta'
 
 const SiteIndex = ({ location }) => {
-  const siteTitle = "トップページ"
+  const siteTitle = 'トップページ'
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="xryuseix" />
@@ -14,6 +14,5 @@ const SiteIndex = ({ location }) => {
     </Layout>
   )
 }
-
 
 export default SiteIndex
