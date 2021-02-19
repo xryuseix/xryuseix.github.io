@@ -9,10 +9,14 @@ const Layout = ({ location, title, children }) => {
   const isRootPath = location.pathname === rootPath
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
+    <div>
       <Header />
-      <main>{children}</main>
-      <Footer />
+      <div className="global-wrapper" data-is-root-path={isRootPath}>
+        <main>{children}</main>
+      </div>
+      <div style={{"text-align" : "center"}}>
+        <Footer />
+      </div>
     </div>
   )
 }
