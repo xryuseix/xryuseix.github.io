@@ -1,5 +1,6 @@
 {
     "dependencies": {
+        "@babel/template": "^7.12.13",
         "ansi-styles": "^5.1.0",
         "bootstrap": "^4.6.0",
         "filter-obj": "^2.0.1",
