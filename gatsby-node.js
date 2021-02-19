@@ -11,10 +11,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: ASC }
-          limit: 1000
-        ) {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }, limit: 1000) {
           nodes {
             id
             fields {
@@ -27,10 +24,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   )
 
   if (result.errors) {
-    reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
-      result.errors
-    )
+    reporter.panicOnBuild(`There was an error loading your blog posts`, result.errors)
     return
   }
 
@@ -51,8 +45,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         context: {
           id: post.id,
           previousPostId,
-          nextPostId,
-        },
+          nextPostId
+        }
       })
     })
   }
@@ -67,7 +61,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value
     })
   }
 }
