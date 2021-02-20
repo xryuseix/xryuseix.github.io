@@ -42,6 +42,7 @@
     padding: 0.5em 1em;
     border: solid 2px #000000;
     border-radius: 8px;
+    width: 14em;
 }
 .box .box-title {
     position: absolute;
@@ -55,7 +56,7 @@
     color: #000000;
     font-weight: bold;
 }
-.box p {
+.box span {
     margin: 0; 
     padding: 0;
 }
