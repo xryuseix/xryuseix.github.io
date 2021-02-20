@@ -12,19 +12,24 @@ const SiteIndex = ({ location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="xryuseix" />
       <Meta title="Home" />
-      <h1>xryuseix's HomePage</h1>
-
       <div class="flexbox">
         <div class="icon">
-          <StaticImage src="../../static/favicons/icon-256x256.png" alt="icon" />
+          <StaticImage src="../../static/favicons/icon-256x256.png" alt="icon" style={{ 'border-radius': '50%' }} />
         </div>
-        <section>
-          <h3>Programmer</h3>
-          <div class="rotate">
-            <h1 class="front">Ryusei&nbsp;Ishikawa</h1>
-            <h1 class="back">xryuseix</h1>
+        <section style={{ padding: '20px' }}>
+          <div class="rotate" style={{ 'font-size': '3em' }}>
+            <h3 style={{ margin: '0px' }}>Programmer</h3>
+            <span class="front">Ryusei&nbsp;Ishikawa</span>
+            <span class="back">xryuseix</span>
           </div>
-          <p>Algorithm&nbsp;&amp;&nbsp;Security</p>
+          <h5 class="box">
+            <span class="box-title">Study</span>
+            Algorithm &amp; Security
+          </h5>
+          <h5 class="box">
+            <span class="box-title">College</span>
+            Ritsumeikan University
+          </h5>
         </section>
       </div>
     </Layout>
