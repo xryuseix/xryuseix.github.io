@@ -1,0 +1,24 @@
+/* ホバーしたとき名前を変える処理 */
+.rotate .front {
+    animation: 3s fadeIn forwards;
+}
+.rotate .back {
+    display:none;
+}
+.rotate:hover .front{
+    animation: 3s fadeOut forwards;
+    display:none;
+}
+.rotate:hover .back{
+    animation: 3s fadeIn forwards;
+    display: inline-block;
+    vertical-align: top;
+}
+@keyframes fadeOut { 
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+@keyframes fadeIn { 
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
