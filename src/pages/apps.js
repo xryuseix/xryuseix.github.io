@@ -6,7 +6,6 @@ import SEO from '../components/seo'
 import Meta from '../components/meta'
 import { StaticImage } from 'gatsby-plugin-image'
 import saplagDemo from '../images/saplag/sa-plag_demo.gif'
-import './apps.css'
 
 const SiteIndex = ({ location }) => {
   const siteTitle = '作品一覧'
