@@ -22,8 +22,8 @@ const SiteIndex = ({ location }) => {
         <section style={{ padding: '20px' }}>
           <div class="rotate" style={{ 'font-size': '3em' }}>
             <h3 style={{ margin: '0px' }}>Programmer</h3>
-            <span class="front">Ryusei&nbsp;Ishikawa</span>
-            <span class="back">xryuseix</span>
+            <span class="front">xryuseix</span>
+            <span class="back">Ryusei&nbsp;Ishikawa</span>
           </div>
           <h5 class="box">
             <span class="box-title">Study</span>
