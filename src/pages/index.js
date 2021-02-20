@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Meta from '../components/meta'
+
 import { StaticImage } from 'gatsby-plugin-image'
+
 import './index.css'
 
 const SiteIndex = ({ location }) => {
@@ -32,6 +35,29 @@ const SiteIndex = ({ location }) => {
           </h5>
         </section>
       </div>
+
+      <ul class="footer-menu">
+        <li class="footer-column scale">
+          <Link href="/news">
+            <h3>News</h3>
+          </Link>
+        </li>
+        <li class="footer-column scale">
+          <Link href="/apps">
+            <h3>Apps</h3>
+          </Link>
+        </li>
+        <li class="footer-column scale">
+          <Link href="/career">
+            <h3>Career</h3>
+          </Link>
+        </li>
+        <li class="footer-column scale">
+          <Link href="/account">
+            <h3>Account</h3>
+          </Link>
+        </li>
+      </ul>
     </Layout>
   )
 }
