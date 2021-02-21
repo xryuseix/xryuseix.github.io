@@ -47,8 +47,8 @@ const SiteIndex = ({ location }) => {
           </Link>
         </li>
         <li class="footer-column scale">
-          <Link href="/career">
-            <h3>Career</h3>
+          <Link href="/achievement">
+            <h3>Achieve</h3>
           </Link>
         </li>
         <li class="footer-column scale">

@@ -26,8 +26,8 @@ export default () => (
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link class="nav-link" href="/career">
-                Career
+              <Link class="nav-link" href="/achievement">
+                Achievement
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
