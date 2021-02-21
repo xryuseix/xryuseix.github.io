@@ -9,9 +9,8 @@ import saplagDemo from '../../images/saplag/sa-plag_demo.gif'
 import './sa-plag.css'
 
 const SiteIndex = ({ location }) => {
-  const siteTitle = 'SA-Plag'
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title="All posts" />
       <Meta title="SA-Plag" />
 

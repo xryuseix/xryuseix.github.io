@@ -6,11 +6,9 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
-
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title="All posts" />
       <Meta title="news" />
       <h1>News</h1>

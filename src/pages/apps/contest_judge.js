@@ -5,12 +5,11 @@ import SEO from '../../components/seo'
 import Meta from '../../components/meta'
 
 const SiteIndex = ({ location }) => {
-  const siteTitle = 'xryuseix judge'
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title="All posts" />
-      <h1>xryuseix judge</h1>
       <Meta title="xryuseix judge" />
+      <h1>xryuseix judge</h1>
       <div class="spreadsheets">
         <h1>RiPProコンテストサイト</h1>
         <h2>注 : 更新は5分おきです．chrome以外は動かないかもしれません．</h2>

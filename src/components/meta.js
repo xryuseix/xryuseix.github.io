@@ -2,14 +2,12 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 
 export default (props) => {
-  // html部分の前に処理が入ると、( から { に変わることに注意
-  const baseTitle = "xryuseix's HomePage"
-  const title = props.title ? `${props.title} | ${baseTitle}` : baseTitle
+  const title = `${props.title}`
   return (
     <Helmet>
       <html lang="ja" />
       <title>{title}</title>
-      <meta name="description" content={props.desc} />
+      <meta name="description"/>
       <link
         rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"

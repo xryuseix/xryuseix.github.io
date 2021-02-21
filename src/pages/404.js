@@ -6,10 +6,8 @@ import SEO from '../components/seo'
 import Meta from '../components/meta'
 
 const NotFoundPage = ({ location }) => {
-  const siteTitle = '404: Not Found'
-
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title="404: Not Found" />
       <Meta title="404" />
       <h1>

@@ -10,9 +10,8 @@ import { StaticImage } from 'gatsby-plugin-image'
 import './index.css'
 
 const SiteIndex = ({ location }) => {
-  const siteTitle = 'トップページ'
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title="xryuseix" />
       <Meta title="Home" />
       <div class="flexbox">

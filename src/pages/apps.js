@@ -11,12 +11,11 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import './apps.css'
 
 const SiteIndex = ({ location }) => {
-  const siteTitle = '作品一覧'
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Meta title="作品一覧" />
-      <h1>作品一覧</h1>
+    <Layout location={location}>
+      <SEO title="Applications" />
+      <Meta title="Applications" />
+      <h1>Applications</h1>
       <br />
       <details>
         <summary>もくじ</summary>
