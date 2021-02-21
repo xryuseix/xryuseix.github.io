@@ -38,7 +38,7 @@ const SiteIndex = ({ location }) => {
         </div>
         <div class="logo">
           <div class="service">Facebook</div>
-          <Link href="https://www.facebook.com/profile.php?id=100010586593125" target="_blank">
+          <Link href="https://www.facebook.com/profile.php?id=100010586593125" target="_blank" rel="noopener noreferrer">
             <div class="service_logo">
               <StaticImage src="../../static/icons/facebook.png" alt="logo" style={imageStyle} />
             </div>
