@@ -12,7 +12,7 @@ import './index.css'
 const SiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO title="xryuseix" />
+      <SEO title="xryuseix" description="ここがトップページや！！！！！！！！！" />
       <Meta title="Home" />
       <div class="flexbox">
         <div class="icon">

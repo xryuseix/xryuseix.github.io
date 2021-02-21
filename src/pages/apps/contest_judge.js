@@ -8,7 +8,7 @@ const SiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title="All posts" />
-      <Meta title="xryuseix judge" />
+      <Meta title="xryuseix judge" description="簡易的なクイズの成績判定システムです． 立命館大学プロジェクト連合合同イベントなどで使用しました．" />
       <h1>xryuseix judge</h1>
       <div class="spreadsheets">
         <h1>RiPProコンテストサイト</h1>

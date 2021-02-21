@@ -5,10 +5,9 @@ import SEO from '../components/seo'
 import Meta from '../components/meta'
 
 const SiteIndex = ({ location }) => {
-  const siteTitle = 'Career'
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+    <Layout location={location}>
+      <SEO title="All posts" description="過去の実績について記載します．" />
       <h1>Career</h1>
       <Meta title="Career" />
     </Layout>

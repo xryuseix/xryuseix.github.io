@@ -8,7 +8,7 @@ import Meta from '../components/meta'
 const NotFoundPage = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO title="404: Not Found" />
+      <SEO title="404: Not Found" description="404 Not Foundページにゃん"/>
       <Meta title="404" />
       <h1>
         404: にゃっと ふぁうんど

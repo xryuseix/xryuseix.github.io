@@ -13,7 +13,7 @@ import './apps.css'
 const SiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO title="Applications" />
+      <SEO title="Applications" description="過去に作ったアプリケーションのまとめです．" />
       <Meta title="Applications" />
       <h1>Applications</h1>
       <br />

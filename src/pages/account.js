@@ -13,7 +13,7 @@ const SiteIndex = ({ location }) => {
   const siteTitle = 'Account'
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="All posts" description="各Webページのアカウントについて記載します．" />
       <Meta title="Account" />
       <h1>Account</h1>
       <div class="logos">

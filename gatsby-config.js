@@ -4,7 +4,7 @@ module.exports = {
     author: {
       name: `ryusei ishikawa`,
     },
-    description: `This is my HomePage!`,
+    description: `This is xryuseix's HomePage!`,
     siteUrl: `https://xryuseix.github.io`,
     social: {
       twitter: `ryusei_ishika`,

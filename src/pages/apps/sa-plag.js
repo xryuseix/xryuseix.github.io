@@ -11,7 +11,7 @@ import './sa-plag.css'
 const SiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO title="All posts" />
+      <SEO title="All posts" description="ソースコードの盗作を判定するWeb APIです．AIが競技プログラミングのソースコードを学習しました．" />
       <Meta title="SA-Plag" />
 
       <table style={{ 'text-align': 'center' }}>
