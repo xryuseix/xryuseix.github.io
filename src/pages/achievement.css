@@ -1,0 +1,15 @@
+.year, url {
+    width:20%;
+}
+.detail {
+    width:60%;
+}
+th {
+    border-bottom: 1px solid #353A40;
+}
+.content:hover {
+    background-color: #dcdcdc;
+}
+.title {
+    font-size: 1.1em;
+}
