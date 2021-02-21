@@ -19,7 +19,6 @@ const SiteIndex = ({ location }) => {
           <th style={{ width: '20%', height: 'auto' }}>
             <StaticImage src="../../images/saplag/sa-plag_logo.png" alt="SA-Plag logo" />
           </th>
-          <th style={{ width: '10%', height: 'auto' }}></th>
           <th style={{ width: '70%', height: 'auto', 'text-align': 'left' }}>
             <div style={{ 'font-size': '4em' }}>SA-Plag</div>
           </th>
