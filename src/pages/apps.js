@@ -69,7 +69,7 @@ const SiteIndex = ({ location }) => {
                     </Link>
                   </td>{' '}
                   <td style={{ width: '50%' }}>
-                    <Link href="https://github.com/xryuseix/SA-Plag" target="_blank">
+                    <Link href="https://github.com/xryuseix/SA-Plag" target="_blank" rel="noopener noreferrer">
                       <StaticImage
                         src="../../static/icons/GitHub.png"
                         alt="GitHub logo"
