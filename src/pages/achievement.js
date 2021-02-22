@@ -77,7 +77,7 @@ const SiteIndex = ({ location }) => {
         </tr>
         <tr class="content">
           <td class="year">2019</td>
-          <td class="detail">セキュリティ・キャンプ全国大会2019</td>
+          <td class="detail">セキュリティ・キャンプ全国大会2019 集中開発コース 暗号化通信ゼミ</td>
           <td class="url">
             <Link
               href="https://www.ipa.go.jp/jinzai/camp/2019/zenkoku2019_vote.html"
@@ -90,7 +90,7 @@ const SiteIndex = ({ location }) => {
         </tr>
         <tr class="content">
           <td class="year">2020-2021</td>
-          <td class="detail">若手セキュリティイノベーター育成プログラム SecHack365</td>
+          <td class="detail">若手セキュリティイノベーター育成プログラム SecHack365 研究駆動コース</td>
           <td class="url">
             <Link href="https://sechack365.nict.go.jp/" target="_blank" rel="noopener noreferrer">
               Link
@@ -218,5 +218,3 @@ const SiteIndex = ({ location }) => {
 }
 
 export default SiteIndex
-
-const ipaVulnNum = 10
