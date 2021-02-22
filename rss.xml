@@ -1,1 +1,54 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[xryuseix's HomePage]]></title><description><![CDATA[This is xryuseix's HomePage!]]></description><link>https://xryuseix.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 21 Feb 2021 20:41:44 GMT</lastBuildDate><item><title><![CDATA[Hello World]]></title><description><![CDATA[Hello World]]></description><link>https://xryuseix.github.io/news1/</link><guid isPermaLink="false">https://xryuseix.github.io/news1/</guid><pubDate>Sat, 22 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hello World&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World2]]></title><description><![CDATA[Hello World2]]></description><link>https://xryuseix.github.io/news2/</link><guid isPermaLink="false">https://xryuseix.github.io/news2/</guid><pubDate>Sat, 22 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hello World2&lt;/p&gt;</content:encoded></item></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[xryuseix's HomePage]]></title><description><![CDATA[This is xryuseix's HomePage!]]></description><link>https://xryuseix.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 22 Feb 2021 09:01:12 GMT</lastBuildDate><item><title><![CDATA[ホームページ開設のお知らせ]]></title><description><![CDATA[ホームページ開設のお知らせ 本日このWebページを一般公開しました． お仕事とかで役立てればと思います．   このページはGitHubで公開されています．ReactとGatsbyを用いて静的ページを生成し，これをGitHub Action…]]></description><link>https://xryuseix.github.io/ブログ開設/forst-commit/</link><guid isPermaLink="false">https://xryuseix.github.io/ブログ開設/forst-commit/</guid><pubDate>Sat, 22 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;ホームページ開設のお知らせ&lt;/h1&gt;
+&lt;p&gt;本日このWebページを一般公開しました．&lt;br&gt;
+お仕事とかで役立てればと思います．  &lt;/p&gt;
+&lt;p&gt;このページは&lt;a href=&quot;https://github.com/xryuseix/xryuseix.github.io&quot;&gt;GitHub&lt;/a&gt;で公開されています．ReactとGatsbyを用いて静的ページを生成し，これをGitHub Actionで自動ビルドしてリリースといった構成になっています．&lt;br&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 90.50632911392405%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAAC60lEQVQ4y61U60vTURjeX5MFWYJmSFIqTnGWeUtlKhWEUVGJKEjQB0kQipAiEqJPfSh3cSurDxFUorDrb1e3dJbuN+fcfW5rK3d7OufYRmtCXzzw7P2d933Pc55z3vdMcOT4CZQdq0JZeRWqaxtQc0a4Nyc4/Mf+C+o/VF6JiupalFfWkLWVzE+5BBKZArOyOcxK5yBTvIFcOc++me8/kMqVkMgVhTnlEuCAhyCVThOTRYbYSDSBTX8U0R8/mY/GMplMySLqS5PYfmAK170xKFU85jUEahc+cm7wxEfHlseLtW/rcDpd2HRvgXdtIpVKsVgulyuxgmQqg6nXBtx+ocKIVIcxuQ4jr1S4+nwBNncYyXiMkXg824TQTTbwIJvNFgjyZAXCRct3XJmW4NaMAtcI+h9J0Dv9EnXjTzDzdgk+zxbsK6swmszQ6TmsOhxFJCUKZZ+0ONo5jMbrk2iZeIqKnmGcHruPMvEo7j6TscR4PF50l7lctnBnfytlhKuubVSdHUJ9xw2IL4+joX0IA6OTaBocxodFLcKhID5/Ice3f4WLHJ3nXdhw8giFQggGgyWkrChS+Xv0DdyEUCiGsGUQzW39mJiaplnYiUYRDkcQiewQghD8gQB8fj9isRiiJJZXXkRIx8KSBvcePsadiQeQKN/h1+4u81MlHMfBbrczwrwyShwOh0sKJKA/+/UaHbQ9Njac4AxGVhSL1QaHYw3LNjsDz/PYJRtT0kwmW6zwwF5KOp2BwWiGnjOwtqBqaAF0egPxGZm1WJdhtixDT2KcwcTybPYVGEz5dQZ2AvZSYqQlTtU1QXS+G22dfahrFKG7bxAnyT9P78Al1De1orm1Ax0XxCynnVihqB094oskv5f5RG1daDnXxQoooKxqrY5BS3bWaPUwma1QqbVMoVqjY6qpGvqt1XEEJMdiZcpoPgX1F97ygd5hvsp50HkikWBtEQiQ9vAH4PX6Ctbr88FHkEwmUbx2r8q/AcSyyozwBzPuAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;top&quot;
+        title=&quot;top&quot;
+        src=&quot;/static/5b845580b9a54c0524142c0fb36691e3/f058b/top.png&quot;
+        srcset=&quot;/static/5b845580b9a54c0524142c0fb36691e3/c26ae/top.png 158w,
+/static/5b845580b9a54c0524142c0fb36691e3/6bdcf/top.png 315w,
+/static/5b845580b9a54c0524142c0fb36691e3/f058b/top.png 630w,
+/static/5b845580b9a54c0524142c0fb36691e3/40601/top.png 945w,
+/static/5b845580b9a54c0524142c0fb36691e3/78612/top.png 1260w,
+/static/5b845580b9a54c0524142c0fb36691e3/07a9c/top.png 1440w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;また，このホームページはを&lt;a href=&quot;https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=ja&quot;&gt;Lighthouse&lt;/a&gt;で確認したところ，トップページは十分な数値が出ました．他のページも同様の数値が出ました．よかったです．&lt;br&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 32.911392405063296%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABcklEQVQoz1WRS2/UQBCErewqHHLgyo7H87QXx3jX+LVLEqQIOAQh8RARISf+/7/40uPdC4fWVNf0VE13Z4XxbJRGK4M1AV04rq5ec7G6ZH0hsXrFen2OhBN3zlcLd/kfl3nv8dbi6xJfBsEOrTVqs0H5ApUrlFLkSnKt2CQu3Qmfp9PkKKdPWOoyZyxmrCl+z+ifE7aOBPmlvd9jH4/Yh4EQxCiGBdvnG+ynbqnxTYX9MWOfPuDmhmD9SVB/6TCPIvjvFjPUOGk//y6PxUD/EpNKxN7GBZvnI+rPAf+mwMzX6L9HiqcD+qHHFVZalhbjrsZ/HfH3HbEqF6dybnHChbs9QcYSfCB87IQbiOM7gvNY7wife+K3GZdGJlpZkFa63Z6hH9i3O5rrhqqqmIeReZoY3/dst9slDuPMNE5yTlSSF7pg6kfubm5JnaZ9ZM45jDGLSIwRKwtKnBP3ppG5nLkUqaZtW2J54pKAldrlTVqu4Bdqi8W/tw1QswAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;lighthouse&quot;
+        title=&quot;lighthouse&quot;
+        src=&quot;/static/38aa1e622e61788aa5246d68de6c9726/f058b/lighthouse.png&quot;
+        srcset=&quot;/static/38aa1e622e61788aa5246d68de6c9726/c26ae/lighthouse.png 158w,
+/static/38aa1e622e61788aa5246d68de6c9726/6bdcf/lighthouse.png 315w,
+/static/38aa1e622e61788aa5246d68de6c9726/f058b/lighthouse.png 630w,
+/static/38aa1e622e61788aa5246d68de6c9726/40601/lighthouse.png 945w,
+/static/38aa1e622e61788aa5246d68de6c9726/78612/lighthouse.png 1260w,
+/static/38aa1e622e61788aa5246d68de6c9726/bb072/lighthouse.png 1318w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Webページ作成は今までほとんどしたことなかったので，ちゃんとできてよかったです．設定不備とかまだ色々ありますが，よろしくお願いいたします．&lt;/p&gt;</content:encoded></item></channel></rss>
