@@ -16,6 +16,7 @@ const SiteIndex = ({ location }) => {
       <SEO title="All posts" description="各Webページのアカウントについて記載します．" />
       <Meta title="Account" />
       <h1>Account</h1>
+      <p>各サービスのアカウントです</p>
       <div class="logos">
         <div class="logo">
           <div class="service">Twitter</div>

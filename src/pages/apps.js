@@ -16,7 +16,7 @@ const SiteIndex = ({ location }) => {
       <SEO title="Applications" description="過去に作ったアプリケーションのまとめです．" />
       <Meta title="Applications" />
       <h1>Applications</h1>
-      <br />
+      <p>過去に作ったアプリケーションを一部紹介します</p>
       <details>
         <summary>もくじ</summary>
         <ul>

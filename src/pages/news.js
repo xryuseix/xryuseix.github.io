@@ -12,6 +12,7 @@ const BlogIndex = ({ data, location }) => {
       <SEO title="All posts" description="このホームページの最新情報や最近の活動について記述します．" />
       <Meta title="news" />
       <h1>News</h1>
+      <p>このページの新機能やブログの投稿，ちょっとしたニュースを個々に記載します</p>
       <ol style={{ listStyle: `none` }}>
         {posts.map((post) => {
           const title = post.frontmatter.title || post.fields.slug
