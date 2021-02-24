@@ -60,7 +60,7 @@ export default () => (
               </Link>
             </Nav.Item>
             <Nav.Item as="li" style={{ display: 'none' }}>
-              <form id="form1" action="http://localhost:8000/search" method="get">
+              <form id="form1" action="https://xryuseix.github.io/search" method="get">
                 <input id="sbox1" id="s" name="s" type="text" placeholder="xryuseix CTF!" />
                 <input id="sbtn1" type="submit" value="search" />
               </form>
