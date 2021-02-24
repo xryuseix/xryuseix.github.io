@@ -36,7 +36,12 @@ export default () => (
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link class="nav-link" href="https://github.com/xryuseix/xryuseix.github.io" target="_blank" rel="noopener noreferrer">
+              <Link
+                class="nav-link"
+                href="https://github.com/xryuseix/xryuseix.github.io"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Repository
                 <svg
                   width="1em"
@@ -53,6 +58,12 @@ export default () => (
                   <line x1="10" y1="14" x2="21" y2="3" />
                 </svg>
               </Link>
+            </Nav.Item>
+            <Nav.Item as="li" style={{ display: 'none' }}>
+              <form id="form1" action="http://localhost:8000/search" method="get">
+                <input id="sbox1" id="s" name="s" type="text" placeholder="xryuseix CTF!" />
+                <input id="sbtn1" type="submit" value="search" />
+              </form>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
