@@ -20,7 +20,7 @@ export default () => (
                 News
               </Link>
             </Nav.Item>
-            <Nav.Item>
+            <Nav.Item as="li">
               <Link class="nav-link" href="/apps">
                 Applications
               </Link>
@@ -59,10 +59,10 @@ export default () => (
                 </svg>
               </Link>
             </Nav.Item>
-            <Nav.Item as="li" style={{ display: 'none' }}>
+            <Nav.Item as="li">
               <form id="form1" action="https://xryuseix.github.io/search" method="get">
-                <input id="s" name="s" type="text" placeholder="xryuseix CTF!" />
-                <input type="submit" value="search" />
+                <input id="s" name="s" type="text" placeholder="xryuseix CTF!" style={{ display: 'none' }} />
+                <input type="submit" value="search" style={{ display: 'none' }} />
               </form>
             </Nav.Item>
           </Nav>
