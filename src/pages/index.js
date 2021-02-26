@@ -56,6 +56,11 @@ const SiteIndex = ({ location }) => {
             <h3>Account</h3>
           </Link>
         </li>
+        <li class="footer-column scale">
+          <Link href="/ctf">
+            <h3>CTF</h3>
+          </Link>
+        </li>
       </ul>
     </Layout>
   )

@@ -19,15 +19,12 @@ const SiteIndex = ({ location }) => {
         <input type="checkbox" id="label1" />
         <div class="hidden_show">
           <p>フラグ形式のテスト</p>
-          <FlagSubmit />
+          <FlagSubmit flag="xryuseixCTF{flag}" />
         </div>
       </div>
     </Layout>
   )
 }
-
-
-
 
 export default SiteIndex
 /* <p>このサイトの内容が多すぎて困ってます．検索ページを付けようか迷ってます...</p> */
