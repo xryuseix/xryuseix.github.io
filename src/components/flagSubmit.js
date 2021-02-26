@@ -8,10 +8,12 @@ class ToggleClass extends React.Component {
     this.state = { flagAcceptState: true }
     this.isSubmit = false
     this.flag = props.flag
+    this.id = props.id
     this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick(inputFlag) {
+    console.log(inputFlag)
     this.setState((state) => ({
       flagAcceptState: inputFlag === this.flag
     }))
@@ -21,11 +23,8 @@ class ToggleClass extends React.Component {
   render() {
     return (
       <div class="submitForm">
-        <div class="submit-column input">
-          <input type="text" id="textForm" />
-        </div>
         <div class="submit-column button">
-          <button onClick={() => this.handleClick(document.getElementById('textForm').value)}>Submit</button>
+          <button onClick={() => this.handleClick(document.getElementById(this.id).value)}>Submit</button>
         </div>
         <div
           class={
