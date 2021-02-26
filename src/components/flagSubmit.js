@@ -3,22 +3,29 @@ import React from 'react'
 class ToggleClass extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { isToggleOn: true }
-
-    // This binding is necessary to make `this` work in the callback
+    this.state = { flagAcceptState: true }
+    this.flag = 'xryuseixCTF{flag}'
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick() {
+  handleClick(inputFlag) {
     this.setState((state) => ({
-      isToggleOn: !state.isToggleOn
+      flagAcceptState: inputFlag === this.flag
     }))
   }
 
   render() {
-    return <button onClick={this.handleClick}>{this.state.isToggleOn ? 'ON' : 'OFF'}</button>
+    return (
+      <div>
+        <form>
+          <input type="text" id="textForm" />
+        </form>
+        {this.state.flagAcceptState ? 'SUCCESS' : 'FAILURE'}
+        <br />
+        <button onClick={() => this.handleClick(document.getElementById('textForm').value)}>Submit</button>
+      </div>
+    )
   }
 }
-
 
 export default ToggleClass

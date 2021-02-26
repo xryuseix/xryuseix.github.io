@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Meta from '../components/meta'
-import Toggle from '../components/flagSubmit'
+import FlagSubmit from '../components/flagSubmit'
 import './ctf.css'
 
 const SiteIndex = ({ location }) => {
@@ -19,7 +19,7 @@ const SiteIndex = ({ location }) => {
         <input type="checkbox" id="label1" />
         <div class="hidden_show">
           <p>フラグ形式のテスト</p>
-          <Toggle />
+          <FlagSubmit />
         </div>
       </div>
     </Layout>
