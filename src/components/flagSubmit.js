@@ -13,7 +13,6 @@ class ToggleClass extends React.Component {
   }
 
   handleClick(inputFlag) {
-    console.log(inputFlag)
     this.setState((state) => ({
       flagAcceptState: inputFlag === this.flag
     }))
