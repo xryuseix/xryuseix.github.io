@@ -108,7 +108,16 @@ const SiteIndex = ({ location }) => {
         </tr>
         <tr class="content">
           <td class="year">2021</td>
-          <td class="detail">情報通信システムセキュリティ研究会（ICSS）</td>
+          <td class="detail">
+            情報通信システムセキュリティ研究会（ICSS）
+            <details>
+              <summary>研究テーマ</summary>
+              <ul>
+                <li>「仮想背景を使用したリモート会議映像における秘匿された背景の再構築手法」 ○辻知希，石川琉聖（立命館大）・衛藤将史（NICT）・服部祐一（セキュアサイクル）・井上博之（広島市大）</li>
+                <li>「プログラミングコンテストにおけるソースコードの盗作検知手法の実装と評価」 ○石川琉聖（立命館大）・服部祐一（セキュアサイクル）・井上博之（広島市大）・猪俣敦夫（阪大）</li>
+              </ul>
+            </details>
+          </td>
           <td class="url">
             <Link
               href="https://www.ieice.org/ken/program/index.php?tgs_regid=4674e49d7365cbd99b30867d8c415e9417ba71c10dcd35acf8e0ca9a9d813f1b&amp;tgid=IEICE-ICSS"
