@@ -68,7 +68,7 @@ const SiteIndex = ({ location }) => {
           <div class="service">AtCoder</div>
           <Link href="https://atcoder.jp/users/xryuseix" target="_blank" rel="noopener noreferrer">
             <div class="service_logo">
-              <StaticImage src="../../static/icons/noimage.png" alt="logo" style={imageStyle} />
+              <StaticImage src="../../static/icons/atcoder.svg" alt="logo" style={imageStyle} />
             </div>
             <div class="userid">xryuseix</div>
           </Link>
