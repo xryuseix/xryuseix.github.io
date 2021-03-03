@@ -69,6 +69,12 @@ module.exports = {
         icon: `static/favicons/icon-32x32.png`,
       },
     },
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-191013017-1",
+      }
+    }
   ],
 }
