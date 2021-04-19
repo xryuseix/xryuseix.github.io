@@ -9,44 +9,39 @@ export default () => (
   <header className="bg-dark">
     <Container>
       <Navbar expand="md" variant="dark">
-        <Link href="/" class="navbar-brand">
+        <Link to="/" class="navbar-brand">
           Home
         </Link>
         <Navbar.Toggle aria-controls="navbarResponsive" />
         <Navbar.Collapse id="navbarResponsive" className="mr-auto">
           <Nav as="ul" className="mr-auto">
             <Nav.Item as="li">
-              <Link class="nav-link" href="/news">
+              <Link class="nav-link" to="/news">
                 News
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link class="nav-link" href="/apps">
+              <Link class="nav-link" to="/apps">
                 Applications
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link class="nav-link" href="/achievement">
+              <Link class="nav-link" to="/achievement">
                 Achievement
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link class="nav-link" href="/account">
+              <Link class="nav-link" to="/account">
                 Account
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link class="nav-link" href="/ctf">
+              <Link class="nav-link" to="/ctf">
                 CTF
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link
-                class="nav-link"
-                href="https://github.com/xryuseix/xryuseix.github.io"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a class="nav-link" href="https://github.com/xryuseix/xryuseix.github.io" target="_blank">
                 Repository
                 <svg
                   width="1em"
@@ -62,10 +57,10 @@ export default () => (
                   <polyline points="15 3 21 3 21 9" />
                   <line x1="10" y1="14" x2="21" y2="3" />
                 </svg>
-              </Link>
+              </a>
             </Nav.Item>
             <Nav.Item as="li">
-              <form id="form1" action="https://xryuseix.github.io/search" method="get">
+              <form id="form1" action="/search" method="get">
                 <input id="s" name="s" type="text" placeholder="xryuseix CTF!" style={{ display: 'none' }} />
                 <input type="submit" value="search" style={{ display: 'none' }} />
               </form>

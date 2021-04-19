@@ -37,27 +37,27 @@ const SiteIndex = ({ location }) => {
 
       <ul class="footer-menu">
         <li class="footer-column scale">
-          <Link href="/news">
+          <Link to="/news">
             <h3>News</h3>
           </Link>
         </li>
         <li class="footer-column scale">
-          <Link href="/apps">
+          <Link to="/apps">
             <h3>Apps</h3>
           </Link>
         </li>
         <li class="footer-column scale">
-          <Link href="/achievement">
+          <Link to="/achievement">
             <h3>Achieve</h3>
           </Link>
         </li>
         <li class="footer-column scale">
-          <Link href="/account">
+          <Link to="/account">
             <h3>Account</h3>
           </Link>
         </li>
         <li class="footer-column scale">
-          <Link href="/ctf">
+          <Link to="/ctf">
             <h3>CTF</h3>
           </Link>
         </li>

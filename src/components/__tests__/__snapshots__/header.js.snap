@@ -11,8 +11,13 @@ exports[`Header renders correctly 1`] = `
       className="navbar navbar-expand-md navbar-dark"
     >
       <a
+        aria-current="page"
         class="navbar-brand"
+        className=""
         href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        style={Object {}}
       >
         Home
       </a>
@@ -42,6 +47,8 @@ exports[`Header renders correctly 1`] = `
             <a
               class="nav-link"
               href="/news"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               News
             </a>
@@ -52,6 +59,8 @@ exports[`Header renders correctly 1`] = `
             <a
               class="nav-link"
               href="/apps"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Applications
             </a>
@@ -62,6 +71,8 @@ exports[`Header renders correctly 1`] = `
             <a
               class="nav-link"
               href="/achievement"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Achievement
             </a>
@@ -72,6 +83,8 @@ exports[`Header renders correctly 1`] = `
             <a
               class="nav-link"
               href="/account"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               Account
             </a>
@@ -82,6 +95,8 @@ exports[`Header renders correctly 1`] = `
             <a
               class="nav-link"
               href="/ctf"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
               CTF
             </a>
@@ -92,7 +107,6 @@ exports[`Header renders correctly 1`] = `
             <a
               class="nav-link"
               href="https://github.com/xryuseix/xryuseix.github.io"
-              rel="noopener noreferrer"
               target="_blank"
             >
               Repository
@@ -125,7 +139,7 @@ exports[`Header renders correctly 1`] = `
             className="nav-item"
           >
             <form
-              action="https://xryuseix.github.io/search"
+              action="/search"
               id="form1"
               method="get"
             >
