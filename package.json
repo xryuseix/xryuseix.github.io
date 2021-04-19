@@ -37,6 +37,7 @@
         "format": "prettier --write 'src/**/*.js'"
     },
     "devDependencies": {
+        "codecov": "^3.8.1",
         "prettier": "^2.2.1",
         "supports-color": "^8.1.1"
     }
