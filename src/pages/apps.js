@@ -9,7 +9,17 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import './apps.css'
 
-const AppData = [
+// 配列をシャッフル
+const shuffle = ([...array]) => {
+  for (let i = array.length - 1; i >= 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// アプリケーションリスト
+const AppData = shuffle([
   {
     appId: 'sa_plag',
     appLink: '/apps/sa-plag',
@@ -30,7 +40,7 @@ const AppData = [
     webPageLink: '/apps/contest_judge',
     githubLink: ''
   }
-]
+])
 
 const WebSite = (webPageLink) => {
   if (webPageLink === '') {
