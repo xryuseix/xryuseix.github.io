@@ -1,3 +1,205 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Meta renders correctly 1`] = `null`;
+exports[`Layout renders correctly 1`] = `
+<div>
+  <header
+    className="bg-dark"
+  >
+    <div
+      className="container"
+    >
+      <nav
+        className="navbar navbar-expand-md navbar-dark"
+      >
+        <a
+          aria-current="page"
+          class="navbar-brand"
+          className=""
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          style={Object {}}
+        >
+          Home
+        </a>
+        <button
+          aria-controls="navbarResponsive"
+          aria-label="Toggle navigation"
+          className="navbar-toggler collapsed"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+        <div
+          aria-expanded={null}
+          className="mr-auto navbar-collapse collapse"
+          id="navbarResponsive"
+        >
+          <ul
+            className="mr-auto navbar-nav"
+            onKeyDown={[Function]}
+          >
+            <li
+              className="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/news"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                News
+              </a>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/apps"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Applications
+              </a>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/achievement"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Achievement
+              </a>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/account"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                Account
+              </a>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="/ctf"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                CTF
+              </a>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <a
+                class="nav-link"
+                href="https://github.com/xryuseix/xryuseix.github.io"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Repository
+                <svg
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 1 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  />
+                  <polyline
+                    points="15 3 21 3 21 9"
+                  />
+                  <line
+                    x1="10"
+                    x2="21"
+                    y1="14"
+                    y2="3"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <form
+                action="/search"
+                id="form1"
+                method="get"
+              >
+                <input
+                  id="s"
+                  name="s"
+                  placeholder="xryuseix CTF!"
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                  type="text"
+                />
+                <input
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                  type="submit"
+                  value="search"
+                />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div
+    className="global-wrapper"
+    data-is-root-path={false}
+  >
+    <main />
+  </div>
+  <div
+    style={
+      Object {
+        "text-align": "center",
+      }
+    }
+  >
+    <footer>
+      <img
+        alt="アクセスカウンター"
+        border="0"
+        src="https://www.f-counter.net/j/45/1613887388/"
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      />
+      © 
+      2021
+      , Ryusei Ishikawa All Right Reserved.
+    </footer>
+  </div>
+</div>
+`;
