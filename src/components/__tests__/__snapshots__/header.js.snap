@@ -107,6 +107,7 @@ exports[`Header renders correctly 1`] = `
             <a
               class="nav-link"
               href="https://github.com/xryuseix/xryuseix.github.io"
+              rel="noopener noreferrer"
               target="_blank"
             >
               Repository

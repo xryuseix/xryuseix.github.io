@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<footer>
+  <img
+    alt="アクセスカウンター"
+    border="0"
+    src="https://www.f-counter.net/j/45/1613887388/"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  />
+  © 
+  2021
+  , Ryusei Ishikawa All Right Reserved.
+</footer>
+`;
