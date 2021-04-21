@@ -32,6 +32,44 @@ const AppData = [
   }
 ]
 
+const WebSite = (webPageLink) => {
+  if (webPageLink === '') {
+    return <td style={{ width: '50%' }}></td>
+  } else {
+    return (
+      <td style={{ width: '50%' }}>
+        <a href={Object.values(webPageLink).join('')}>
+          <StaticImage
+            src="../../static/favicons/icon-32x32.png"
+            alt="favicon"
+            style={{ width: '1em', margin: '0px 0.3em 0px 0px' }}
+          />
+          Webサイト
+        </a>
+      </td>
+    )
+  }
+}
+
+const GitHub = (githubLink) => {
+  if (Object.values(githubLink).join('') === '') {
+    return <td style={{ width: '50%' }}></td>
+  } else {
+    return (
+      <td style={{ width: '50%' }}>
+        <a href={Object.values(githubLink).join('')} target="_blank" rel="noopener noreferrer">
+          <StaticImage
+            src="../../static/icons/GitHub.png"
+            alt="GitHub logo"
+            style={{ width: '1em', margin: '0px 0.3em 0px 0px' }}
+          />
+          GitHub
+        </a>
+      </td>
+    )
+  }
+}
+
 /*
  アプリケーション管理
  appId ... 固有ID
@@ -64,26 +102,8 @@ const Apps = ({ appId, appLink, imageSrc, imageAlt, appTitle, appDesc, webPageLi
               <td colspan="2">{appDesc}</td>
             </tr>
             <tr align="center">
-              <td style={{ width: '50%' }}>
-                <Link to={webPageLink}>
-                  <StaticImage
-                    src="../../static/favicons/icon-32x32.png"
-                    alt="favicon"
-                    style={{ width: '1em', margin: '0px 0.3em 0px 0px' }}
-                  />
-                  Webサイト
-                </Link>
-              </td>{' '}
-              <td style={{ width: '50%' }}>
-                <a href={githubLink} target="_blank" rel="noopener noreferrer">
-                  <StaticImage
-                    src="../../static/icons/GitHub.png"
-                    alt="GitHub logo"
-                    style={{ width: '1em', margin: '0px 0.3em 0px 0px' }}
-                  />
-                  GitHub
-                </a>
-              </td>
+              <WebSite {...webPageLink} />
+              <GitHub {...githubLink} />
             </tr>
           </table>
         </td>
