@@ -39,7 +39,7 @@ const SiteIndex = ({ location }) => {
         <table style={{ margin: '30px 0px' }}>
           <tr>
             <td style={{ width: '50%' }}>
-              <Link href="/apps/sa-plag">
+              <Link to="/apps/sa-plag">
                 <img src={saplagDemo} alt="SA-Plag Demo" style={{ width: '100%', height: 'auto' }} />
               </Link>
             </td>{' '}
@@ -59,7 +59,7 @@ const SiteIndex = ({ location }) => {
                 </tr>
                 <tr align="center">
                   <td style={{ width: '50%' }}>
-                    <Link href="/apps/sa-plag">
+                    <Link to="/apps/sa-plag">
                       <StaticImage
                         src="../../static/favicons/icon-32x32.png"
                         alt="favicon"
@@ -69,14 +69,14 @@ const SiteIndex = ({ location }) => {
                     </Link>
                   </td>{' '}
                   <td style={{ width: '50%' }}>
-                    <Link href="https://github.com/xryuseix/SA-Plag" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/xryuseix/SA-Plag" target="_blank" rel="noopener noreferrer">
                       <StaticImage
                         src="../../static/icons/GitHub.png"
                         alt="GitHub logo"
                         style={{ width: '1em', margin: '0px 0.3em 0px 0px' }}
                       />
                       GitHub
-                    </Link>
+                    </a>
                   </td>
                 </tr>
               </table>
@@ -89,7 +89,7 @@ const SiteIndex = ({ location }) => {
         <table style={{ margin: '30px 0px' }}>
           <tr>
             <td style={{ width: '50%' }}>
-              <Link href="/apps/contest_judge">
+              <Link to="/apps/contest_judge">
                 <StaticImage
                   src="../images/xryuseix_judge.png"
                   alt="xryuseix judge"
@@ -111,7 +111,7 @@ const SiteIndex = ({ location }) => {
                 </tr>
                 <tr align="center">
                   <td style={{ width: '50%' }}>
-                    <Link href="/apps/contest_judge">
+                    <Link to="/apps/contest_judge">
                       <StaticImage
                         src="../../static/favicons/icon-32x32.png"
                         alt="favicon"

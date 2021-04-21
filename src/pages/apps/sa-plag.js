@@ -30,9 +30,9 @@ const SiteIndex = ({ location }) => {
         <p>AIが競技プログラミングのソースコードを学習しました．</p>
       </div>
       <div style={{ 'text-align': 'center' }}>
-        <Link href="https://sa-plag.herokuapp.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://sa-plag.herokuapp.com" target="_blank" rel="noopener noreferrer">
           <img src={saplagDemo} alt="SA-Plag Demo" style={{ width: '100%', height: 'auto' }} />
-        </Link>
+        </a>
         <h3>使用するには画像をクリックしてください</h3>
       </div>
       <br />
@@ -41,13 +41,13 @@ const SiteIndex = ({ location }) => {
       <div style={{ 'text-align': 'center' }}>
         この成果物はSecHack365内で作成されました．
         <br />
-        <Link href="https://sechack365.nict.go.jp/" target="_blank" rel="noopener noreferrer">
+        <a href="https://sechack365.nict.go.jp/" target="_blank" rel="noopener noreferrer">
           <StaticImage
             src="../../images/saplag/SecHack365.png"
             alt="SecHack365 logo"
             style={{ width: '40%', height: 'auto' }}
           />
-        </Link>
+        </a>
       </div>
     </Layout>
   )
