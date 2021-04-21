@@ -9,34 +9,34 @@ const Header = (props) =>  (
   <header className="bg-dark">
     <Container>
       <Navbar expand="md" variant="dark">
-        <Link to="/" class="navbar-brand">
+        <Link to="/" className="navbar-brand">
           Home
         </Link>
         <Navbar.Toggle aria-controls="navbarResponsive" />
         <Navbar.Collapse id="navbarResponsive" className="mr-auto">
           <Nav as="ul" className="mr-auto">
             <Nav.Item as="li">
-              <Link class="nav-link" to="/news">
+              <Link className="nav-link" to="/news">
                 News
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link class="nav-link" to="/apps">
+              <Link className="nav-link" to="/apps">
                 Applications
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link class="nav-link" to="/achievement">
+              <Link className="nav-link" to="/achievement">
                 Achievement
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link class="nav-link" to="/account">
+              <Link className="nav-link" to="/account">
                 Account
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link class="nav-link" to="/ctf">
+              <Link className="nav-link" to="/ctf">
                 CTF
               </Link>
             </Nav.Item>
