@@ -41,7 +41,12 @@ export default () => (
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <a class="nav-link" href="https://github.com/xryuseix/xryuseix.github.io" target="_blank">
+              <a
+                class="nav-link"
+                href="https://github.com/xryuseix/xryuseix.github.io"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Repository
                 <svg
                   width="1em"
