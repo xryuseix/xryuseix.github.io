@@ -24,14 +24,14 @@ const SiteIndex = ({ location }) => {
             <span class="front">xryuseix</span>
             <span class="back">Ryusei&nbsp;Ishikawa</span>
           </div>
-          <h5 class="box">
+          <div class="box">
             <span class="box-title">Study</span>
             Algorithm &amp; Security
-          </h5>
-          <h5 class="box">
+          </div>
+          <div class="box">
             <span class="box-title">College</span>
             Ritsumeikan University
-          </h5>
+          </div>
         </section>
       </div>
 
