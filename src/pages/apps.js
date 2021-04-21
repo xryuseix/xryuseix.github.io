@@ -9,6 +9,11 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import './apps.css'
 
+import sa_plagImage from '../images/saplag/sa-plag_demo.png'
+import xryuseix_judgeImage from '../images/xryuseix_judge.png'
+import zoomgImage from '../images/zoomg/zoomg.png'
+
+
 // 配列をシャッフル
 const shuffle = ([...array]) => {
   for (let i = array.length - 1; i >= 0; i--) {
@@ -23,7 +28,7 @@ const AppData = shuffle([
   {
     appId: 'sa_plag',
     appLink: '/apps/sa-plag',
-    imageSrc: '../images/saplag/sa-plag_demo.png',
+    imageSrc: sa_plagImage,
     imageAlt: 'SA-Plag Demo',
     appTitle: 'SA-Plag',
     appDesc: 'ソースコードの盗作を判定するWeb APIです．<br />AIが競技プログラミングのソースコードを学習しました．',
@@ -33,7 +38,7 @@ const AppData = shuffle([
   {
     appId: 'xryuseix_judge',
     appLink: '/apps/contest_judge',
-    imageSrc: '../images/xryuseix_judge.png',
+    imageSrc: xryuseix_judgeImage,
     imageAlt: 'xryuseix judge',
     appTitle: 'xryuseix judge',
     appDesc: '簡易的なクイズの成績判定システムです． 立命館大学プロジェクト連合合同イベントなどで使用しました．',
@@ -43,7 +48,7 @@ const AppData = shuffle([
   {
     appId: 'zoomg',
     appLink: 'https://github.com/Tsuku43/zoomg',
-    imageSrc: '../images/zoomg/zoomg.png',
+    imageSrc: zoomgImage,
     imageAlt: 'zoomg',
     appTitle: 'zoomg',
     appDesc: 'バーチャル背景適用済み動画から部屋の画像を復元するライブラリ',
@@ -53,7 +58,7 @@ const AppData = shuffle([
 ])
 
 const WebSite = (webPageLink) => {
-  if (Object.values(githubLink).join('') === '') {
+  if (Object.values(webPageLink).join('') === '') {
     return <td style={{ width: '50%' }}></td>
   } else {
     return (
@@ -102,36 +107,38 @@ const GitHub = (githubLink) => {
  githubLink ... GitHubのリンク
 */
 
-const Apps = ({ appId, appLink, imageSrc, imageAlt, appTitle, appDesc, webPageLink, githubLink }) => (
-  <div id={appId}>
-    <table style={{ margin: '30px 0px' }}>
-      <tr>
-        <td style={{ width: '50%' }}>
-          <Link to={appLink}>
-            <img src={imageSrc} alt={imageAlt} style={{ width: '100%', height: 'auto' }} />
-          </Link>
-        </td>{' '}
-        <td valign="top">
-          <table style={{ margin: '0px 0px 0px 10px' }}>
-            <tr align="center">
-              <th colspan="2" style={{ 'font-size': '2em' }}>
-                {appTitle}
-              </th>
-            </tr>
-            <tr>
-              <td colspan="2">{appDesc}</td>
-            </tr>
-            <tr align="center">
-              <WebSite {...webPageLink} />
-              <GitHub {...githubLink} />
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-    <hr />
-  </div>
-)
+const Apps = ({ appId, appLink, imageSrc, imageAlt, appTitle, appDesc, webPageLink, githubLink }) => {
+  return (
+    <div id={appId}>
+      <table style={{ margin: '30px 0px' }}>
+        <tr>
+          <td style={{ width: '50%' }}>
+            <Link to={appLink}>
+              <img src={imageSrc} alt={imageAlt} style={{ width: '100%', height: 'auto' }} />
+            </Link>
+          </td>{' '}
+          <td valign="top">
+            <table style={{ margin: '0px 0px 0px 10px' }}>
+              <tr align="center">
+                <th colspan="2" style={{ 'font-size': '2em' }}>
+                  {appTitle}
+                </th>
+              </tr>
+              <tr>
+                <td colspan="2">{appDesc}</td>
+              </tr>
+              <tr align="center">
+                <WebSite {...webPageLink} />
+                <GitHub {...githubLink} />
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <hr />
+    </div>
+  )
+}
 
 const SiteIndex = ({ location }) => {
   return (
