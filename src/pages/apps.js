@@ -53,7 +53,7 @@ const AppData = shuffle([
 ])
 
 const WebSite = (webPageLink) => {
-  if (webPageLink === '') {
+  if (Object.values(githubLink).join('') === '') {
     return <td style={{ width: '50%' }}></td>
   } else {
     return (
