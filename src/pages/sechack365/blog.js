@@ -4,7 +4,6 @@ import Helmet from 'react-helmet'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import Meta from '../../components/meta'
-import { StaticImage } from 'gatsby-plugin-image'
 import './blog.css'
 
 const SiteIndex = ({ location }) => {

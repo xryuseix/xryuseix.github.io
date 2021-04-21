@@ -4,7 +4,6 @@ import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import Meta from '../../components/meta'
 import { StaticImage } from 'gatsby-plugin-image'
-import { Link } from 'gatsby'
 import saplagDemo from '../../images/saplag/sa-plag_demo.gif'
 import './sa-plag.css'
 
