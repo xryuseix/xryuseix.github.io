@@ -12,10 +12,10 @@ import './apps.css'
 // 配列をシャッフル
 const shuffle = ([...array]) => {
   for (let i = array.length - 1; i >= 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j], array[i]]
   }
-  return array;
+  return array
 }
 
 // アプリケーションリスト
@@ -39,6 +39,16 @@ const AppData = shuffle([
     appDesc: '簡易的なクイズの成績判定システムです． 立命館大学プロジェクト連合合同イベントなどで使用しました．',
     webPageLink: '/apps/contest_judge',
     githubLink: ''
+  },
+  {
+    appId: 'zoomg',
+    appLink: 'https://github.com/Tsuku43/zoomg',
+    imageSrc: '../images/zoomg/zoomg.png',
+    imageAlt: 'zoomg',
+    appTitle: 'zoomg',
+    appDesc: 'バーチャル背景適用済み動画から部屋の画像を復元するライブラリ',
+    webPageLink: '',
+    githubLink: 'https://github.com/Tsuku43/zoomg'
   }
 ])
 
