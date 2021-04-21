@@ -34,7 +34,7 @@
         "develop": "gatsby develop",
         "build": "gatsby build",
         "serve": "gatsby serve",
-        "test:coverage": "jest --coverage --passWithNoTests",
+        "test:coverage": "jest --coverage --passWithNoTests -u",
         "format": "prettier --write 'src/**/*.js'"
     },
     "devDependencies": {
