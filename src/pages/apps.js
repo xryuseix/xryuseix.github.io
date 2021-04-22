@@ -13,7 +13,6 @@ import sa_plagImage from '../images/saplag/sa-plag_demo.png'
 import xryuseix_judgeImage from '../images/xryuseix_judge.png'
 import zoomgImage from '../images/zoomg/zoomg.png'
 
-
 // 配列をシャッフル
 const shuffle = ([...array]) => {
   for (let i = array.length - 1; i >= 0; i--) {
@@ -112,9 +111,9 @@ const Apps = ({ appId, appLink, imageSrc, imageAlt, appTitle, appDesc, webPageLi
     <div id={appId}>
       <table style={{ margin: '30px 0px' }}>
         <tr>
-          <td style={{ width: '50%' }}>
+          <td style={{ width: '50%', 'margin-left': 'auto', 'text-align': 'center' }}>
             <Link to={appLink}>
-              <img src={imageSrc} alt={imageAlt} style={{ width: '100%', height: 'auto' }} />
+              <img src={imageSrc} alt={imageAlt} style={{ 'max-width': '100%', 'max-height': '250px' }} />
             </Link>
           </td>{' '}
           <td valign="top">
