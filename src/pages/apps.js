@@ -13,7 +13,6 @@ import sa_plagImage from '../images/saplag/sa-plag_demo.png'
 import xryuseix_judgeImage from '../images/xryuseix_judge.png'
 import zoomgImage from '../images/zoomg/zoomg.png'
 
-
 // 配列をシャッフル
 const shuffle = ([...array]) => {
   for (let i = array.length - 1; i >= 0; i--) {
@@ -31,7 +30,7 @@ const AppData = shuffle([
     imageSrc: sa_plagImage,
     imageAlt: 'SA-Plag Demo',
     appTitle: 'SA-Plag',
-    appDesc: 'ソースコードの盗作を判定するWeb APIです．<br />AIが競技プログラミングのソースコードを学習しました．',
+    appDesc: `ソースコードの盗作を判定するWeb APIです．\nAIが競技プログラミングのソースコードを学習しました．`,
     webPageLink: '/apps/sa-plag',
     githubLink: 'https://github.com/xryuseix/SA-Plag'
   },
@@ -127,7 +126,9 @@ const Apps = ({ appId, appLink, imageSrc, imageAlt, appTitle, appDesc, webPageLi
                 </th>
               </tr>
               <tr>
-                <td colspan="2">{appDesc}</td>
+                <td colspan="2" style={{ 'white-space': 'pre-wrap' }}>
+                  {appDesc}
+                </td>
               </tr>
               <tr align="center">
                 <WebSite {...webPageLink} />
