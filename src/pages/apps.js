@@ -13,6 +13,7 @@ import sa_plagImage from '../images/saplag/sa-plag_demo.png'
 import xryuseix_judgeImage from '../images/xryuseix_judge.png'
 import zoomgImage from '../images/zoomg/zoomg.png'
 
+
 // 配列をシャッフル
 const shuffle = ([...array]) => {
   for (let i = array.length - 1; i >= 0; i--) {
@@ -56,6 +57,7 @@ const AppData = shuffle([
   }
 ])
 
+/* Webサイトリンク生成コンポーネント */
 const WebSite = (webPageLink) => {
   if (Object.values(webPageLink).join('') === '') {
     return <td style={{ width: '50%' }}></td>
@@ -75,6 +77,7 @@ const WebSite = (webPageLink) => {
   }
 }
 
+/* GitHubリンク生成コンポーネント */
 const GitHub = (githubLink) => {
   if (Object.values(githubLink).join('') === '') {
     return <td style={{ width: '50%' }}></td>
@@ -139,6 +142,24 @@ const Apps = ({ appId, appLink, imageSrc, imageAlt, appTitle, appDesc, webPageLi
   )
 }
 
+/* もくじのコンポーネント */
+const Summary = () => {
+  return (
+    <details>
+      <summary>もくじ</summary>
+      <ul>
+        {AppData.map((data) => (
+          <li>
+            <AnchorLink href={`#${data.appId}`} offset="50">
+              {data.appTitle}
+            </AnchorLink>
+          </li>
+        ))}
+      </ul>
+    </details>
+  )
+}
+
 const SiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
@@ -146,22 +167,7 @@ const SiteIndex = ({ location }) => {
       <Meta title="Applications" />
       <h1>Applications</h1>
       <p>過去に作ったアプリケーションを一部紹介します</p>
-      <details>
-        <summary>もくじ</summary>
-        <ul>
-          <li>
-            <AnchorLink href="#sa_plag" offset="50">
-              SA-Plag
-            </AnchorLink>
-          </li>
-          <li>
-            <AnchorLink href="#xryuseix_judge" offset="50">
-              xryuseix judge
-            </AnchorLink>
-          </li>
-        </ul>
-      </details>
-
+      <Summary />
       {AppData.map((data) => (
         <Apps {...data} />
       ))}
