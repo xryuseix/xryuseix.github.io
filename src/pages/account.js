@@ -108,6 +108,24 @@ const SiteIndex = ({ location }) => {
             <div class="userid">xryuseix</div>
           </a>
         </div>
+        <div class="logo">
+          <div class="service">Instagram</div>
+          <a href="https://www.instagram.com/ryusei_ishika/" target="_blank" rel="noopener noreferrer">
+            <div class="service_logo">
+              <StaticImage src="../../static/icons/noimage.png" alt="logo" style={imageStyle} />
+            </div>
+            <div class="userid">ryusei_ishika</div>
+          </a>
+        </div>
+        <div class="logo">
+          <div class="service">Discord</div>
+          <a href="https://discord.com/" target="_blank" rel="noopener noreferrer">
+            <div class="service_logo">
+              <StaticImage src="../../static/icons/noimage.png" alt="logo" style={imageStyle} />
+            </div>
+            <div class="userid">xryuseix#9439</div>
+          </a>
+        </div>
       </div>
     </Layout>
   )
