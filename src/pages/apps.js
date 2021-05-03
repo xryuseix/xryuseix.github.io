@@ -14,6 +14,7 @@ import sa_plagImage from '../images/saplag/sa-plag_demo.png'
 import xryuseix_judgeImage from '../images/xryuseix_judge.png'
 import zoomgImage from '../images/zoomg/zoomg.png'
 import cpsttImage from '../images/cpstt/cpstt_logo.png'
+import proofLeaderImage from '../images/proofLeader.png'
 
 /* 配列をシャッフル */
 const shuffle = ([...array]) => {
@@ -65,6 +66,16 @@ const AppData = shuffle([
     appDesc: '競技プログラミング用 ストレステストツール',
     webPageLink: '',
     githubLink: 'https://github.com/xryuseix/CPSTT'
+  },
+  {
+    appId: 'ProofLeader',
+    appLink: 'https://github.com/xryuseix/ProofLeader',
+    imageSrc: proofLeaderImage,
+    imageAlt: 'ProofLeader',
+    appTitle: 'ProofLeader',
+    appDesc: 'markdownファイルの句読点や整数表記を修正',
+    webPageLink: '',
+    githubLink: 'https://github.com/xryuseix/ProofLeader'
   }
 ])
 
