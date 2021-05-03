@@ -9,11 +9,13 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import './apps.css'
 
+/* 挿入する画像一覧 */
 import sa_plagImage from '../images/saplag/sa-plag_demo.png'
 import xryuseix_judgeImage from '../images/xryuseix_judge.png'
 import zoomgImage from '../images/zoomg/zoomg.png'
+import cpsttImage from '../images/cpstt/cpstt_logo.png'
 
-// 配列をシャッフル
+/* 配列をシャッフル */
 const shuffle = ([...array]) => {
   for (let i = array.length - 1; i >= 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
@@ -22,7 +24,7 @@ const shuffle = ([...array]) => {
   return array
 }
 
-// アプリケーションリスト
+/* アプリケーションリスト */
 const AppData = shuffle([
   {
     appId: 'sa_plag',
@@ -53,6 +55,16 @@ const AppData = shuffle([
     appDesc: 'バーチャル背景適用済み動画から部屋の画像を復元するライブラリ',
     webPageLink: '',
     githubLink: 'https://github.com/Tsuku43/zoomg'
+  },
+  {
+    appId: 'cpstt',
+    appLink: 'https://github.com/Tsuku43/zoomg',
+    imageSrc: cpsttImage,
+    imageAlt: 'Competitive Programming Stress Test Tools',
+    appTitle: 'Competitive Programming Stress Test Tools',
+    appDesc: '競技プログラミング用 ストレステストツール',
+    webPageLink: '',
+    githubLink: 'https://github.com/xryuseix/CPSTT'
   }
 ])
 
