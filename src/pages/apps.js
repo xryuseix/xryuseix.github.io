@@ -131,7 +131,7 @@ const Apps = ({ appId, appLink, imageSrc, imageAlt, appTitle, appDesc, webPageLi
             </Link>
           </td>{' '}
           <td valign="top">
-            <table style={{ margin: '0px 0px 0px 10px' }}>
+            <table style={{ margin: '0px 0px 0px 10px', 'border-collapse': 'separate', 'border-spacing': '0px 10px' }}>
               <tr align="center">
                 <th colspan="2" style={{ 'font-size': '2em' }}>
                   {appTitle}
