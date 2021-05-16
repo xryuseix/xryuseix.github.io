@@ -98,7 +98,18 @@ const SiteIndex = ({ location }) => {
         </tr>
         <tr class="content">
           <td class="year">2020</td>
-          <td class="detail">AVTOKYO 2020 Talks</td>
+          <td class="detail">
+            AVTOKYO 2020 Talks
+            <details>
+              <summary>発表テーマ</summary>
+              <ul>
+                <li>
+                  [jp] ビデオチャットの映像から部屋が盗み見られる！？
+                  バーチャル背景適用済み映像から部屋の画像を復元する手法とその自動化 (石川 琉聖, 辻 知希)
+                </li>
+              </ul>
+            </details>
+          </td>
           <td class="url">
             <a href="https://www.avtokyo.org/2020" target="_blank" rel="noopener noreferrer">
               Link
