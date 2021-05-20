@@ -161,12 +161,12 @@ const AchievesContent = ({ year, detail, url }) => {
 }
 
 const AchievementData = [
-  { title: 'School', content: SchoolData },
-  { title: 'Work', content: WorkData },
-  { title: 'Event', content: EventData },
-  { title: 'Media', content: MediaData },
-  { title: 'Hack', content: HackData },
-  { title: 'Qualification', content: QualificationData }
+  { title: 'School', Content: SchoolData },
+  { title: 'Work', Content: WorkData },
+  { title: 'Event', Content: EventData },
+  { title: 'Media', Content: MediaData },
+  { title: 'Hack', Content: HackData },
+  { title: 'Qualification', Content: QualificationData }
 ]
 
 /* 
