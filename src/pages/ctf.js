@@ -14,12 +14,25 @@ const ProblemsData = [
         This Problems Answer is <code>xryuseixCTF&#123;flag&#125;</code>
       </>
     ),
-    flag: 'xryuseixCTF{flag}',
+    flag: 'xryuseixCTF{flag}'
   },
   {
     title: '[Web](100) Wandering',
-    statement: "このサイトの内容が多すぎて困ってます．検索ページを付けようか迷ってます...",
-    flag: 'xryuseixCTF{XSS_51y0ut051t3t3_ku54}',
+    statement: 'このサイトの内容が多すぎて困ってます．検索ページを付けようか迷ってます...',
+    flag: 'xryuseixCTF{XSS_51y0ut051t3t3_ku54}'
+  },
+  {
+    title: '[misc](200) Time measurement',
+    statement: (
+      <>
+        実行時間を計測するサイトがあります．試してみてください！
+        <br />
+        <a href="https://redos-server.herokuapp.com/" target="_blank" rel="noopener noreferrer">
+          https://redos-server.herokuapp.com/
+        </a>
+      </>
+    ),
+    flag: 'xryuseixCTF{flag}'
   }
 ]
 
@@ -29,7 +42,7 @@ const ProblemsData = [
  statement ... 問題文
  flag ... 答え
 */
-const Problems = ({ title,  statement, flag }) => {
+const Problems = ({ title, statement, flag }) => {
   const label = Math.random().toString(36).slice(-12)
   const id = Math.random().toString(36).slice(-12)
   return (
@@ -37,9 +50,7 @@ const Problems = ({ title,  statement, flag }) => {
       <label htmlFor={label}>{title}</label>
       <input type="checkbox" id={label} />
       <div class="hidden_show">
-        <p>
-          {statement}
-        </p>
+        <p>{statement}</p>
         <div class="submit-column input">
           <input type="text" id={id} />
         </div>
