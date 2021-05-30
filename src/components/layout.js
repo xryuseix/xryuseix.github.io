@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import { StaticImage } from 'gatsby-plugin-image'
 import '../utils/global.css'
 import './layout.css'
 
@@ -10,9 +11,12 @@ const Layout = ({ location, title, children }) => {
 
   return (
     <div>
-      {/* <div className="header_button">AA</div> */}
       <div className="header">
-        <Header />
+        <Header className="header_menu" />
+        <div className="header_button">
+          <StaticImage src="../images/header_button.png" alt="button"/>
+          <div class="image_mask"></div>
+        </div>
       </div>
       <br />
       <div className="global-wrapper" data-is-root-path={isRootPath}>
