@@ -5,7 +5,7 @@ import '../components/header.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 
-const Header = (props) =>  (
+const Header = (props) => (
   <header className="bg-dark">
     <Container>
       <Navbar expand="md" variant="dark">
