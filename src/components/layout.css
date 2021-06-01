@@ -31,3 +31,9 @@
 .header_button:hover .image_mask {
   opacity: 1;
 }
+
+@media (max-width: 1230px){
+  .header_button {
+    display: none;
+  }
+}
