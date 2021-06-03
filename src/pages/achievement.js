@@ -8,7 +8,6 @@ import VULNLIST from '../utils/ipaVulnerability/vulnList'
 import VULNNUM from '../utils/ipaVulnerability/vulnNum'
 
 import './achievement.css'
-import icssBagde from '../images/badges/icss.svg'
 
 const SchoolData = [
   {
@@ -74,7 +73,7 @@ const EventData = [
           <summary>研究テーマ</summary>
           <ul>
             <li>
-              <img src={icssBagde} style={{ height: '1.4em' }} alt="ICSS badge" />
+              <img src="https://img.shields.io/badge/ICSS研究賞-🏆-E3C96F" alt="ICSS badge" />
               「仮想背景を使用したリモート会議映像における秘匿された背景の再構築手法」
               ○辻知希，石川琉聖（立命館大）・衛藤将史（NICT）・服部祐一（セキュアサイクル）・井上博之（広島市大）
             </li>
