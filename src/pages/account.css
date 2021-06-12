@@ -1,47 +1,49 @@
+/** @format */
+
 .logos {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    -webkit-flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  -webkit-flex-wrap: wrap;
 }
 .logo {
-    width: 155px;
-    height: 140px;
-    text-align: center;
-    border: 2px solid #eee;
-    box-sizing: border-box;
-    margin:2px 2px;
-    position: relative;
+  width: 155px;
+  height: 140px;
+  text-align: center;
+  border: 2px solid #eee;
+  box-sizing: border-box;
+  margin: 2px 2px;
+  position: relative;
 }
 .service {
-    background: #353A40;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.1em;
-    height: 18%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: #353a40;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1em;
+  height: 18%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .service_logo {
-    height: 64%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 64%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .userid {
-    height: 18%;
-    color: #353A40;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 18%;
+  color: #353a40;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    position: absolute;
-    bottom:0;
-    left:50%;
-    transform: translateX(-50%);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }

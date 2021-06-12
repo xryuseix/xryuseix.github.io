@@ -14,7 +14,7 @@ const Layout = ({ location, title, children }) => {
       <div className="header">
         <Header className="header_menu" />
         <div className="header_button">
-          <StaticImage src="../images/header_button.png" alt="button"/>
+          <StaticImage src="../images/header_button.png" alt="button" />
           <div class="image_mask"></div>
         </div>
       </div>

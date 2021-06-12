@@ -1,14 +1,19 @@
-import React from 'react'
+/** @format */
 
-import Layout from '../../components/layout'
-import SEO from '../../components/seo'
-import Meta from '../../components/meta'
+import React from "react";
+
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
+import Meta from "../../components/meta";
 
 const SiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title="All posts" />
-      <Meta title="xryuseix judge" description="簡易的なクイズの成績判定システムです． 立命館大学プロジェクト連合合同イベントなどで使用しました．" />
+      <Meta
+        title="xryuseix judge"
+        description="簡易的なクイズの成績判定システムです． 立命館大学プロジェクト連合合同イベントなどで使用しました．"
+      />
       <h1>xryuseix judge</h1>
       <div class="spreadsheets">
         <h1>RiPProコンテストサイト</h1>
@@ -82,7 +87,7 @@ const SiteIndex = ({ location }) => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default SiteIndex
+export default SiteIndex;

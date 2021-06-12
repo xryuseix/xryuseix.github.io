@@ -1,11 +1,13 @@
+/** @format */
+
 .apps_details ul {
-    border: solid 2px skyblue;
-    border-radius: 5px;
-    padding: 0.5em 1em 0.5em 2.3em;
-    position: relative;
+  border: solid 2px skyblue;
+  border-radius: 5px;
+  padding: 0.5em 1em 0.5em 2.3em;
+  position: relative;
 }
 
 .apps_details ul li {
-    line-height: 1.5;
-    padding: 0.5em 0;
+  line-height: 1.5;
+  padding: 0.5em 0;
 }
