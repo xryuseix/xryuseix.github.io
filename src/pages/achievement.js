@@ -22,10 +22,10 @@ const SchoolData = [
         立命館大学 情報理工学部 セキュリティ・ネットワークコース
         <details>
           <summary>詳細</summary>
-          <table className="achievement_table">
+          <table className="achievement_min-table">
             <tr>
-              <td className="achievement_table-title">入試方式</td>{' '}
-              <td className="achievement_table-content">
+              <td className="achievement_min-table-title">入試方式</td>{' '}
+              <td className="achievement_min-table-content">
                 AO入試
                 <details className="achievement_details">
                   <summary>提出した自作ソフトウェア</summary>
@@ -39,8 +39,8 @@ const SchoolData = [
               </td>
             </tr>
             <tr>
-              <td className="achievement_table-title">サークル</td>{' '}
-              <td className="achievement_table-content">
+              <td className="achievement_min-table-title">サークル</td>{' '}
+              <td className="achievement_min-table-content">
                 <ul>
                   <li>情報理工学部プロジェクト団体 RiPPro 2020年度団体長</li>
                   <li>情報理工学部プロジェクト団体 RiST 2020年度副団体長</li>
@@ -183,10 +183,10 @@ const QualificationData = [
 */
 const AchievesContent = ({ year, detail, url }) => {
   return (
-    <tr class="content">
-      <td class="year">{year}</td>
-      <td class="detail">{detail}</td>
-      <td class="url">
+    <tr class="achievement_content">
+      <td class="achievement_year">{year}</td>
+      <td class="achievement_detail">{detail}</td>
+      <td class="achievement_url">
         <a href={url} target="_blank" rel="noopener noreferrer">
           Link
         </a>
@@ -213,11 +213,11 @@ const Achieves = ({ title, Content }) => {
   return (
     <>
       <h2>{title}</h2>
-      <table>
-        <tr class="title">
-          <th class="year">年</th>
-          <th class="detail">内容</th>
-          <th class="url">URL</th>
+      <table className="achievement_table">
+        <tr class="achievement_title">
+          <th class="achievement_year">年</th>
+          <th class="achievement_detail">内容</th>
+          <th class="achievement_url">URL</th>
         </tr>
         {Content.map((data) => (
           <AchievesContent {...data} />
