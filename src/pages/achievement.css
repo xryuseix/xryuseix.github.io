@@ -13,3 +13,37 @@ th {
 .title {
     font-size: 1.1em;
 }
+
+/* 表形式の詳細コンテンツ */
+
+.achievement_table-title {
+    border-right:solid 3px skyblue;
+}
+
+.achievement_table-content {
+    width: 80%;
+    padding: 0.5em 1em 0.5em 1.5em;
+}
+
+.achievement_table-content ul li {
+    line-height: 1.2;
+    padding: 0.5em 0;
+}
+
+.achievement_table tr:hover {
+    background-color: #cccccc;
+}
+
+/* リスト形式の詳細コンテンツ */
+
+.achievement_details ul {
+    border: solid 2px skyblue;
+    border-radius: 5px;
+    padding: 0.5em 1em 0.5em 2.3em;
+    position: relative;
+}
+
+.achievement_details ul li {
+    line-height: 1.5;
+    padding: 0.5em 0;
+}

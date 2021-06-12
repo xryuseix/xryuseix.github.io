@@ -169,7 +169,7 @@ const Apps = ({ appId, appLink, imageSrc, imageAlt, appTitle, appDesc, webPageLi
 /* もくじのコンポーネント */
 const Summary = () => {
   return (
-    <details>
+    <details className="apps_details">
       <summary>もくじ</summary>
       <ul>
         {AppData.map((data) => (

@@ -17,7 +17,40 @@ const SchoolData = [
   },
   {
     year: '2019-',
-    detail: '立命館大学 情報理工学部 セキュリティ・ネットワークコース',
+    detail: (
+      <>
+        立命館大学 情報理工学部 セキュリティ・ネットワークコース
+        <details>
+          <summary>詳細</summary>
+          <table className="achievement_table">
+            <tr>
+              <td className="achievement_table-title">入試方式</td>{' '}
+              <td className="achievement_table-content">
+                AO入試
+                <details className="achievement_details">
+                  <summary>提出した自作ソフトウェア</summary>
+                  <ul>
+                    <li>暗号化ソフトウェア</li>
+                    <li>
+                      シーザー暗号，ADFGVX暗号，ワンタイムパッド，自作暗号であるcubing暗号を暗号化・復号できるソフトウェア(現在の仕様と大幅に異なる)
+                    </li>
+                  </ul>
+                </details>
+              </td>
+            </tr>
+            <tr>
+              <td className="achievement_table-title">サークル</td>{' '}
+              <td className="achievement_table-content">
+                <ul>
+                  <li>情報理工学部プロジェクト団体 RiPPro 2020年度団体長</li>
+                  <li>情報理工学部プロジェクト団体 RiST 2020年度副団体長</li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </details>
+      </>
+    ),
     url: 'http://www.ritsumei.ac.jp/'
   }
 ]
@@ -51,7 +84,7 @@ const EventData = [
     detail: (
       <>
         AVTOKYO 2020 Talks
-        <details>
+        <details className="achievement_details">
           <summary>発表テーマ</summary>
           <ul>
             <li>
@@ -69,7 +102,7 @@ const EventData = [
     detail: (
       <>
         情報通信システムセキュリティ研究会（ICSS）
-        <details>
+        <details className="achievement_details">
           <summary>研究テーマ</summary>
           <ul>
             <li>
@@ -109,7 +142,7 @@ const HackData = [
     detail: (
       <>
         IPA 脆弱性関連情報届出受理 <VULNNUM />件
-        <details>
+        <details className="achievement_details">
           <summary>取得番号一覧</summary>
           <VULNLIST />
         </details>
