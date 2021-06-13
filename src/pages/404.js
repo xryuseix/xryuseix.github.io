@@ -1,11 +1,9 @@
-/** @format */
+import React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 
-import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
-
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Meta from "../components/meta";
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Meta from '../components/meta'
 
 const NotFoundPage = ({ location }) => {
   return (
@@ -16,10 +14,10 @@ const NotFoundPage = ({ location }) => {
         404: にゃっと ふぁうんど
         <svg
           style={{
-            margin: "4px 10px",
-            fill: "rgb(255, 182, 193)",
-            width: "1.2em",
-            height: "1.2em",
+            margin: '4px 10px',
+            fill: 'rgb(255, 182, 193)',
+            width: '1.2em',
+            height: '1.2em'
           }}
           version="1.1"
           viewBox="0 0 512 512"
@@ -48,11 +46,11 @@ const NotFoundPage = ({ location }) => {
           />
         </svg>
       </h1>
-      <div style={{ "text-align": "center" }}>
+      <div style={{ 'text-align': 'center' }}>
         <StaticImage src="../images/404cat.png" alt="nuko" />
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default NotFoundPage;
+export default NotFoundPage

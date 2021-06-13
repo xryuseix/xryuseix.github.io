@@ -1,6 +1,4 @@
-/** @format */
-
-.logos {
+.account_logos {
   margin: 0;
   padding: 0;
   display: flex;
@@ -9,7 +7,7 @@
   width: 100%;
   -webkit-flex-wrap: wrap;
 }
-.logo {
+.account_logo {
   width: 155px;
   height: 140px;
   text-align: center;
@@ -18,7 +16,7 @@
   margin: 2px 2px;
   position: relative;
 }
-.service {
+.account_service {
   background: #353a40;
   color: #fff;
   font-weight: bold;
@@ -28,13 +26,13 @@
   justify-content: center;
   align-items: center;
 }
-.service_logo {
+.account_service-logo {
   height: 64%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.userid {
+.account_userid {
   height: 18%;
   color: #353a40;
   font-weight: bold;

@@ -1,14 +1,14 @@
-.header {
+.layout_header {
   position: fixed;
   width: 100%;
   z-index: 1;
 }
 
-.header_menu {
+.layout_header-menu {
   position: relative;
 }
 
-.header_button {
+.layout_header-button {
   position: absolute;
   z-index: 2;
   top: 5px;
@@ -16,7 +16,7 @@
   width: 50px;
 }
 
-.header_button .image_mask {
+.layout_header-button .layout_image-mask {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -28,12 +28,12 @@
   transition: all 0.1s ease;
 }
 
-.header_button:hover .image_mask {
+.layout_header-button:hover .layout_image-mask {
   opacity: 1;
 }
 
 @media (max-width: 1230px) {
-  .header_button {
+  .layout_header-button {
     display: none;
   }
 }

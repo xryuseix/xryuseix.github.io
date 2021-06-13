@@ -1,4 +1,4 @@
-.submitForm {
+.ctf_submitForm {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -7,20 +7,20 @@
   -webkit-flex-wrap: wrap;
 }
 
-.submit-column {
+.ctf_submit-column {
   box-sizing: border-box;
   margin: 2px 2px;
 }
 
-.submit-success {
+.ctf_submit-success {
   background-color: #5cb85c;
 }
 
-.submit-failure {
+.ctf_submit-failure {
   background-color: #f0ad4e;
 }
 
-.output {
+.ctf_output {
   width: 6em;
   font-size: 75%;
   font-weight: bold;
@@ -33,7 +33,7 @@
   height: 2.5em;
 }
 
-.submitForm .button button {
+.ctf_submitForm .ctf_button button {
   color: #fff;
   background-color: #337ab7;
   border-color: #2e6da4;

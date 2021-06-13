@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import '../components/header.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 
@@ -42,7 +41,7 @@ const Header = (props) => (
             </Nav.Item>
             <Nav.Item as="li">
               <a
-                class="nav-link"
+                className="nav-link"
                 href="https://github.com/xryuseix/xryuseix.github.io"
                 target="_blank"
                 rel="noopener noreferrer"

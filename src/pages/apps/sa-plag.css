@@ -1,13 +1,11 @@
-/** @format */
-
-.whats_sa_plag {
+.sa-plag_whats {
   position: relative;
   margin: 2em 0;
   padding: 0.5em 1em;
   border: solid 3px #000000;
   border-radius: 8px;
 }
-.whats_sa_plag .box-title {
+.sa-plag_whats .box-title {
   position: absolute;
   display: inline-block;
   top: -13px;
@@ -19,7 +17,7 @@
   color: #000000;
   font-weight: bold;
 }
-.whats_sa_plag p {
+.sa-plag_whats p {
   margin: 0;
   padding: 0;
 }

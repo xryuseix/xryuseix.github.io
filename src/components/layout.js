@@ -11,11 +11,11 @@ const Layout = ({ location, title, children }) => {
 
   return (
     <div>
-      <div className="header">
-        <Header className="header_menu" />
-        <div className="header_button">
+      <div className="layout_header">
+        <Header className="layout_header-menu" />
+        <div className="layout_header-button">
           <StaticImage src="../images/header_button.png" alt="button" />
-          <div class="image_mask"></div>
+          <div className="layout_image-mask"></div>
         </div>
       </div>
       <br />

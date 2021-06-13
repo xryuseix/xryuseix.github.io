@@ -1,16 +1,12 @@
-/**
- * /*全体
- *
- * @format
- */
+/* 全体 */
 
-.hidden_box {
+.ctf_hidden-box {
   margin: 0.5em 0;
   padding: 0;
 }
 
-/*ボタン装飾*/
-.hidden_box label {
+/* ボタン装飾 */
+.ctf_hidden-box label {
   width: 100%;
   padding: 15px;
   font-weight: bold;
@@ -20,18 +16,18 @@
   transition: 0.5s;
 }
 
-/*ボタンホバー時*/
-.hidden_box label:hover {
+/* ボタンホバー時 */
+.ctf_hidden-box label:hover {
   background: silver;
 }
 
-/*チェックは見えなくする*/
-.hidden_box > input {
+/* チェックは見えなくする */
+.ctf_hidden-box > input {
   display: none;
 }
 
-/*中身を非表示にしておく*/
-.hidden_box .hidden_show {
+/* 中身を非表示にしておく */
+.ctf_hidden-box .ctf_hidden-show {
   height: 0;
   padding: 0;
   overflow: hidden;
@@ -39,8 +35,8 @@
   transition: 0.8s;
 }
 
-/*クリックで中身表示*/
-.hidden_box input:checked ~ .hidden_show {
+/* クリックで中身表示 */
+.ctf_hidden-box input:checked ~ .ctf_hidden-show {
   padding: 10px 0;
   height: auto;
   opacity: 1;

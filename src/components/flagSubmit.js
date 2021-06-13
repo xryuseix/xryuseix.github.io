@@ -21,17 +21,17 @@ class ToggleClass extends React.Component {
 
   render() {
     return (
-      <div class="submitForm">
-        <div class="submit-column button">
+      <div className="ctf_submitForm">
+        <div className="ctf_submit-column ctf_button">
           <button onClick={() => this.handleClick(document.getElementById(this.id).value)}>Submit</button>
         </div>
         <div
-          class={
+          className={
             this.isSubmit
               ? this.state.flagAcceptState
-                ? 'submit-column output submit-success'
-                : 'submit-column output submit-failure'
-              : 'submit-column output'
+                ? 'ctf_submit-column ctf_output ctf_submit-success'
+                : 'ctf_submit-column ctf_output ctf_submit-failure'
+              : 'ctf_submit-column ctf_output'
           }
         >
           {this.isSubmit ? (this.state.flagAcceptState ? 'SUCCESS' : 'FAILURE') : ''}

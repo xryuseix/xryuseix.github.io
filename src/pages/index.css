@@ -1,20 +1,16 @@
-/**
- * /* ホバーしたとき名前を変える処理
- *
- * @format
- */
+/* ホバーしたとき名前を変える処理 */
 
-.rotate .front {
+.index_rotate .index_front {
   animation: 3s fadeIn forwards;
 }
-.rotate .back {
+.index_rotate .index_back {
   display: none;
 }
-.rotate:hover .front {
+.index_rotate:hover .index_front {
   animation: 3s fadeOut forwards;
   display: none;
 }
-.rotate:hover .back {
+.index_rotate:hover .index_back {
   animation: 3s fadeIn forwards;
   display: inline-block;
   vertical-align: top;
@@ -38,19 +34,18 @@
 
 /* レスポンシブ処理 */
 @media (max-width: 500px) {
-  .icon,
-  .title {
+  .index_icon {
     text-align: center;
   }
 }
 @media (min-width: 500px) {
-  .flexbox {
+  .index_flexbox {
     display: flex;
   }
 }
 
 /* 枠線 */
-.box {
+.index_box {
   position: relative;
   margin: 2em 0;
   padding: 0.5em 1em;
@@ -59,7 +54,7 @@
   width: 14em;
   font-size: 2;
 }
-.box .box-title {
+.index_box .index_box-title {
   position: absolute;
   display: inline-block;
   top: -13px;
@@ -71,13 +66,13 @@
   color: #000000;
   font-weight: bold;
 }
-.box span {
+.index_box span {
   margin: 0;
   padding: 0;
 }
 
 /* フッターのメニュー */
-.footer-menu {
+.index_footer-menu {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -89,30 +84,30 @@
   justify-content: center;
   -webkit-justify-content: center;
 }
-.footer-column {
+.index_footer-column {
   width: 19%;
   text-align: center;
   border: 2px solid #eee;
   box-sizing: border-box;
   margin: 2px 2px;
 }
-.footer-column h3 {
+.index_footer-column h3 {
   background: #353a40;
   color: #fff;
   padding: 10px;
   margin: 0;
 }
 @media screen and (max-width: 800px) {
-  .footer-munu {
+  .index_footer-munu {
     flex-direction: column;
     -webkit-flex-direction: column;
   }
-  .footer-column {
+  .index_footer-column {
     flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
     width: 10em;
   }
 }
-.scale:hover {
+.index_scale:hover {
   transform: scale(1.1);
 }
