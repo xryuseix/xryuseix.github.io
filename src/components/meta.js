@@ -11,6 +11,15 @@ const Meta = (props) => {
       <title>{title}</title>
       <meta name="Description" content={description} />
       <meta charset="UTF-8" />
+      <meta
+        name="thumbnail"
+        content="https://raw.githubusercontent.com/xryuseix/xryuseix.github.io/master/images/toppage.png"
+      />
+      <meta
+        property="og:image"
+        content="https://raw.githubusercontent.com/xryuseix/xryuseix.github.io/master/images/toppage.png"
+        data-react-helmet="true"
+      />
     </Helmet>
   )
 }
