@@ -29,6 +29,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const defaultImage = 'https://raw.githubusercontent.com/xryuseix/xryuseix.github.io/master/images/toppage.png'
 
   return (
     <Helmet
