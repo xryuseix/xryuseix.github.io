@@ -15,6 +15,7 @@ const Meta = (props) => {
         name="thumbnail"
         content="https://raw.githubusercontent.com/xryuseix/xryuseix.github.io/master/images/toppage.png"
       />
+      <meta name="google-site-verification" content="x-E8UhtCu2MqZL7QbcHKp-bij9CVrvOq5J4IeIK9NyY" />
     </Helmet>
   )
 }
