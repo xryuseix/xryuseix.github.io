@@ -8,7 +8,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 import './account.css'
 
-const SiteIndex = ({ location }) => {
+const AccountSiteIndex = ({ location }) => {
   const siteTitle = 'Account'
   return (
     <Layout location={location} title={siteTitle}>
@@ -131,6 +131,6 @@ const SiteIndex = ({ location }) => {
   )
 }
 
-export default SiteIndex
+export default AccountSiteIndex
 
 const imageStyle = { 'max-width': '80px', 'max-height': '80px' }

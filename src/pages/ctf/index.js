@@ -7,7 +7,7 @@ import FlagSubmit from '../../components/flagSubmit'
 import sha512 from 'js-sha512';
 
 import './ctf.css'
-import misc_Test from './content/enc_pdf.pdf'
+import misc_Test from './content/problem.pdf'
 
 const ProblemsData = [
   {

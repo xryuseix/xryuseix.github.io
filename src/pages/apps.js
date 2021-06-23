@@ -196,7 +196,7 @@ const Summary = () => {
   )
 }
 
-const SiteIndex = ({ location }) => {
+const AppSiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title="Applications" description="過去に作ったアプリケーションのまとめです．" />
@@ -211,4 +211,4 @@ const SiteIndex = ({ location }) => {
   )
 }
 
-export default SiteIndex
+export default AppSiteIndex

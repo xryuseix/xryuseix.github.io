@@ -227,7 +227,7 @@ const Achieves = ({ title, Content }) => {
   )
 }
 
-const SiteIndex = ({ location }) => {
+const AchieveSiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title="All posts" description="過去の実績について記載します．" />
@@ -241,4 +241,4 @@ const SiteIndex = ({ location }) => {
   )
 }
 
-export default SiteIndex
+export default AchieveSiteIndex
