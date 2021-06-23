@@ -1,4 +1,5 @@
 import React from 'react'
+import sha512 from 'js-sha512'
 
 import './flagSubmit.css'
 
@@ -14,7 +15,7 @@ class ToggleClass extends React.Component {
 
   handleClick(inputFlag) {
     this.setState((state) => ({
-      flagAcceptState: inputFlag === this.flag
+      flagAcceptState: sha512(inputFlag) === this.flag
     }))
     this.isSubmit = true
   }

@@ -4,6 +4,8 @@ import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import Meta from '../../components/meta'
 import FlagSubmit from '../../components/flagSubmit'
+import sha512 from 'js-sha512';
+
 import './ctf.css'
 import misc_Test from './content/enc_pdf.pdf'
 
@@ -35,8 +37,16 @@ const ProblemsData = [
         </a>
       </>
     ),
-    flag: 'xryuseixCTF{flag}',
-    answer: 'ReDoS攻撃が成立します'
+    flag: 'xryuseixCTF{Thi5_i5_ReD05_4tt4ck}',
+    answer: (
+      <>
+        ReDoS攻撃が成立します．
+        <br />
+        <a href="https://redos-server.herokuapp.com/aaaaaaaaaaaaaaaaaaaaaaaaa">
+          https://redos-server.herokuapp.com/aaaaaaaaaaaaaaaaaaaaaaaaa
+        </a>
+      </>
+    )
   },
   {
     title: '[misc](200) Test',
@@ -77,7 +87,7 @@ const Problems = ({ title, statement, flag, answer }) => {
         <div className="ctf_submit-column input">
           <input type="text" id={id} />
         </div>
-        <FlagSubmit flag={flag} id={id} />
+        <FlagSubmit flag={sha512(flag)} id={id} />
         <details style={{ display: 'none' }}>
           <summary>答え</summary>
           {answer}
@@ -87,14 +97,14 @@ const Problems = ({ title, statement, flag, answer }) => {
   )
 }
 
-const SiteIndex = ({ location }) => {
+const CtfSiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
       <SEO title="CTF" description="CTF問題をここにおきます．基本的に簡単です．" />
       <Meta title="CTF" />
       <h1>CTF</h1>
       <p>CTF問題をここにおきます．基本的に簡単です．</p>
-      <h3>このページのソースはみないでね，フラグがそのまま載ってます．</h3>
+      <p>このページのソースはみないでね，フラグがそのまま載ってます．</p>
       {ProblemsData.map((data) => (
         <Problems {...data} />
       ))}
@@ -102,4 +112,4 @@ const SiteIndex = ({ location }) => {
   )
 }
 
-export default SiteIndex
+export default CtfSiteIndex
