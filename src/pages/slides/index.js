@@ -1,23 +1,29 @@
 import React from 'react'
 import { pdfjs, Document, Page } from 'react-pdf'
 
-import Layout from '../components/layout'
-import Meta from '../components/meta'
-import Seo from '../components/seo'
+import Layout from '../../components/layout'
+import Meta from '../../components/meta'
+import Seo from '../../components/seo'
 
-import samplePDF from './sample.pdf'
+import pythonInput from './pdf/python_input.pdf'
 
 const Slides = [
   {
-    title: 'Python2.xのinput関数にRCE脆弱性がある話',
-    description: 'これはサンプルの説明です',
-    content: samplePDF,
+    title: 'Python2.x の input 関数にRCE 脆弱性がある話',
+    description: (
+      <>
+        Python2.x の input 関数にRCE 脆弱性がある話
+        <br />
+        RiST(立命館セキュリティチーム) 5/17 輪講の資料です
+      </>
+    ),
+    content: pythonInput,
     page: 16,
-    keyword: 'security'
+    keyword: ['security', 'python']
   }
 ]
 
-class Counter extends React.Component {
+class Slide extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -70,7 +76,7 @@ const SlideSiteIndex = ({ location }) => {
       <Meta title="Slides" />
       {Slides.map((data) => (
         <Document file={data.content}>
-          <Counter maxpage={data.page} />
+          <Slide maxpage={data.page} />
         </Document>
       ))}
     </Layout>
