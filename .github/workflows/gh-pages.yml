@@ -34,8 +34,11 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
 
-    - name: install
+    - name: install-npm
       run: npm ci
+
+    - name: install-yarn
+      run: yarn
     
     - name: format
       run: npm run format
