@@ -12,8 +12,7 @@ exports[`Header renders correctly 1`] = `
     >
       <a
         aria-current="page"
-        class="navbar-brand"
-        className=""
+        className="navbar-brand"
         href="/"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -45,7 +44,7 @@ exports[`Header renders correctly 1`] = `
             className="nav-item"
           >
             <a
-              class="nav-link"
+              className="nav-link"
               href="/news"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -57,7 +56,7 @@ exports[`Header renders correctly 1`] = `
             className="nav-item"
           >
             <a
-              class="nav-link"
+              className="nav-link"
               href="/apps"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -69,7 +68,7 @@ exports[`Header renders correctly 1`] = `
             className="nav-item"
           >
             <a
-              class="nav-link"
+              className="nav-link"
               href="/achievement"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -81,7 +80,7 @@ exports[`Header renders correctly 1`] = `
             className="nav-item"
           >
             <a
-              class="nav-link"
+              className="nav-link"
               href="/account"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -93,7 +92,7 @@ exports[`Header renders correctly 1`] = `
             className="nav-item"
           >
             <a
-              class="nav-link"
+              className="nav-link"
               href="/ctf"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -105,7 +104,7 @@ exports[`Header renders correctly 1`] = `
             className="nav-item"
           >
             <a
-              class="nav-link"
+              className="nav-link"
               href="https://github.com/xryuseix/xryuseix.github.io"
               rel="noopener noreferrer"
               target="_blank"

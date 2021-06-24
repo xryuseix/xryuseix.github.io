@@ -20,6 +20,7 @@
         "gatsby-transformer-remark": "^4.5.0",
         "gatsby-transformer-sharp": "^3.8.0",
         "gh-pages": "^3.2.3",
+        "identity-obj-proxy": "^3.0.0",
         "jest": "^27.0.5",
         "js-sha512": "^0.8.0",
         "prettier": "^2.3.1",
