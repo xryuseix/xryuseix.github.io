@@ -1,5 +1,6 @@
 {
     "dependencies": {
+        "babel-jest": "^27.0.5",
         "bootstrap": "^5.0.2",
         "canvas": "^2.8.0",
         "gatsby": "^3.8.0",
