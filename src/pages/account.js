@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Meta from '../components/meta'
 
 import { StaticImage } from 'gatsby-plugin-image'
@@ -12,7 +12,7 @@ const AccountSiteIndex = ({ location }) => {
   const siteTitle = 'Account'
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" description="各Webページのアカウントについて記載します．" />
+      <Seo title="All posts" description="各Webページのアカウントについて記載します．" />
       <Meta title="Account" />
       <h1>Account</h1>
       <p>各サービスのアカウントです</p>

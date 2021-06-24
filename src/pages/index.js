@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Meta from '../components/meta'
 
 import { StaticImage } from 'gatsby-plugin-image'
@@ -12,7 +12,7 @@ import './index.css'
 const SiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO title="xryuseix" description="ここがトップページや！！！！！！！！！" />
+      <Seo title="xryuseix" description="ここがトップページや！！！！！！！！！" />
       <Meta title="Home" />
       <div className="index_flexbox">
         <div className="index_icon">

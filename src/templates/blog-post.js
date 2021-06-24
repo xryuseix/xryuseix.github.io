@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Meta from '../components/meta'
 
 const BlogPostTemplate = ({ data, location }) => {
@@ -12,7 +12,7 @@ const BlogPostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={post.frontmatter.title} />
+      <Seo title={post.frontmatter.title} />
       <Meta title="news" />
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />

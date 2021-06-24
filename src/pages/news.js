@@ -3,13 +3,13 @@ import { Link, graphql } from 'gatsby'
 
 import Meta from '../components/meta'
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
   return (
     <Layout location={location}>
-      <SEO title="All posts" description="このホームページの最新情報や最近の活動について記述します．" />
+      <Seo title="All posts" description="このホームページの最新情報や最近の活動について記述します．" />
       <Meta title="news" />
       <h1>News</h1>
       <p>このページの新機能やブログの投稿，ちょっとしたニュースをここに記載します</p>

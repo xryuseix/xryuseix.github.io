@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../../components/layout'
-import SEO from '../../components/seo'
+import Seo from '../../components/seo'
 import Meta from '../../components/meta'
 import { StaticImage } from 'gatsby-plugin-image'
 import saplagDemo from '../../images/saplag/sa-plag_demo.gif'
@@ -10,7 +10,7 @@ import './sa-plag.css'
 const SiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO
+      <Seo
         title="All posts"
         description="ソースコードの盗作を判定するWeb APIです．AIが競技プログラミングのソースコードを学習しました．"
       />

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../../components/layout'
-import SEO from '../../components/seo'
+import Seo from '../../components/seo'
 import Meta from '../../components/meta'
 import FlagSubmit from '../../components/flagSubmit'
 import sha512 from 'js-sha512';
@@ -100,7 +100,7 @@ const Problems = ({ title, statement, flag, answer }) => {
 const CtfSiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO title="CTF" description="CTF問題をここにおきます．基本的に簡単です．" />
+      <Seo title="CTF" description="CTF問題をここにおきます．基本的に簡単です．" />
       <Meta title="CTF" />
       <h1>CTF</h1>
       <p>CTF問題をここにおきます．基本的に簡単です．</p>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Meta from '../components/meta'
 import { StaticImage } from 'gatsby-plugin-image'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
@@ -199,7 +199,7 @@ const Summary = () => {
 const AppSiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO title="Applications" description="過去に作ったアプリケーションのまとめです．" />
+      <Seo title="Applications" description="過去に作ったアプリケーションのまとめです．" />
       <Meta title="Applications" />
       <h1>Applications</h1>
       <p>過去に作ったアプリケーションを一部紹介します</p>

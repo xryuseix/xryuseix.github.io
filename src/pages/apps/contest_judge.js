@@ -1,13 +1,13 @@
 import React from 'react'
 
 import Layout from '../../components/layout'
-import SEO from '../../components/seo'
+import Seo from '../../components/seo'
 import Meta from '../../components/meta'
 
 const SiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO title="All posts" />
+      <Seo title="All posts" />
       <Meta
         title="xryuseix judge"
         description="簡易的なクイズの成績判定システムです． 立命館大学プロジェクト連合合同イベントなどで使用しました．"
@@ -19,7 +19,7 @@ const SiteIndex = ({ location }) => {
         (googleが5分おきに更新すると言ってますが，5分以上待たされることは普通にあります)
         <br />
         <iframe
-          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS2YeEfXDZ-ANvSbNufYhQFFmzMEV6m9T97RMXMuVQ1qUae4FQoxyvvYlkyy938UVyfC8Ygx2pR9iBw/pubhtml?gid=1333289856&amp;single=true&amp;chrome=false&amp;headers=false&range=I1:I2"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS2YeEfXDZ-ANvSbNufYhQFFmzMEV6m9T97RMXMuVQ1qUae4FQoxyvvYlkyy938UVyfC8Ygx2pR9iBw/pubhtml?gid=1333289856&amp;single=true&amp;chrome=false&amp;headers=false&amp;range=I1:I2"
           width="147"
           height="57"
           frameborder="0"
@@ -32,7 +32,7 @@ const SiteIndex = ({ location }) => {
         <div class="Submissions">
           <h2>Submissions</h2>
           <iframe
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS2YeEfXDZ-ANvSbNufYhQFFmzMEV6m9T97RMXMuVQ1qUae4FQoxyvvYlkyy938UVyfC8Ygx2pR9iBw/pubhtml?gid=1877264206&amp;single=true&amp;chrome=false&amp;headers=false&range=A1:E10000"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS2YeEfXDZ-ANvSbNufYhQFFmzMEV6m9T97RMXMuVQ1qUae4FQoxyvvYlkyy938UVyfC8Ygx2pR9iBw/pubhtml?gid=1877264206&amp;single=true&amp;chrome=false&amp;headers=false&amp;range=A1:E10000"
             width="450"
             height="360"
             frameborder="0"
@@ -46,7 +46,7 @@ const SiteIndex = ({ location }) => {
         <div class="Ranking">
           <h2>Ranking</h2>
           <iframe
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS2YeEfXDZ-ANvSbNufYhQFFmzMEV6m9T97RMXMuVQ1qUae4FQoxyvvYlkyy938UVyfC8Ygx2pR9iBw/pubhtml?gid=1333289856&amp;single=true&amp;chrome=false&amp;headers=false&range=A1:G10000"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS2YeEfXDZ-ANvSbNufYhQFFmzMEV6m9T97RMXMuVQ1qUae4FQoxyvvYlkyy938UVyfC8Ygx2pR9iBw/pubhtml?gid=1333289856&amp;single=true&amp;chrome=false&amp;headers=false&amp;range=A1:G10000"
             width="470"
             height="360"
             frameborder="0"

@@ -1,11 +1,11 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Meta from '../components/meta'
 
-import VULNLIST from '../utils/ipaVulnerability/vulnList'
-import VULNNUM from '../utils/ipaVulnerability/vulnNum'
+import VulnList from '../utils/ipaVulnerability/vulnList'
+import VulnNum from '../utils/ipaVulnerability/vulnNum'
 
 import './achievement.css'
 
@@ -118,8 +118,7 @@ const EventData = [
         </details>
       </>
     ),
-    url:
-      'https://www.ieice.org/ken/program/index.php?tgs_regid=4674e49d7365cbd99b30867d8c415e9417ba71c10dcd35acf8e0ca9a9d813f1b&tgid=IEICE-ICSS'
+    url: 'https://www.ieice.org/ken/program/index.php?tgs_regid=4674e49d7365cbd99b30867d8c415e9417ba71c10dcd35acf8e0ca9a9d813f1b&tgid=IEICE-ICSS'
   },
   {
     year: '2021',
@@ -141,10 +140,10 @@ const HackData = [
     year: '2020-',
     detail: (
       <>
-        IPA 脆弱性関連情報届出受理 <VULNNUM />件
+        IPA 脆弱性関連情報届出受理 <VulnNum />件
         <details className="achievement_details">
           <summary>取得番号一覧</summary>
-          <VULNLIST />
+          <VulnList />
         </details>
       </>
     ),
@@ -230,7 +229,7 @@ const Achieves = ({ title, Content }) => {
 const AchieveSiteIndex = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEO title="All posts" description="過去の実績について記載します．" />
+      <Seo title="All posts" description="過去の実績について記載します．" />
       <Meta title="Achievement" />
       <h1>Achievement</h1>
       <p>過去の実績について記載します</p>
