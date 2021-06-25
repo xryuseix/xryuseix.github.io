@@ -20,7 +20,7 @@
 
 /* スライドのPDF表示部分 */
 .slide_pdf_view {
-  /* box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.66); */
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.8);
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
