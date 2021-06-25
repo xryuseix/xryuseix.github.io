@@ -4,7 +4,9 @@ import { pdfjs, Document, Page } from 'react-pdf'
 import Layout from '../../components/layout'
 import Meta from '../../components/meta'
 import Seo from '../../components/seo'
+import './slides.css'
 
+/* slide PDF */
 import pythonInput from './pdf/python_input.pdf'
 import PDFCrack from './pdf/PDFCrack.pdf'
 import ReDoS from './pdf/ReDoS.pdf'
@@ -21,23 +23,23 @@ const Slides = [
     ),
     content: pythonInput,
     page: 16,
-    keyword: ['security', 'Python'],
-    id: 'サンプルスライド1'
+    keyword: ['Security', 'Python'],
+    id: 'default'
   },
   {
     title: 'PDFのやつ',
     description: <>PDFの説明</>,
     content: PDFCrack,
     page: 26,
-    keyword: ['security', 'PDF'],
+    keyword: ['Security', 'PDF'],
     id: 'サンプルスライド2'
   },
   {
     title: 'ReDoS',
-    description: <>DeDoS</>,
+    description: <>ReDoS</>,
     content: ReDoS,
-    page: 26,
-    keyword: ['security', 'Python'],
+    page: 24,
+    keyword: ['Security', 'Python'],
     id: 'サンプルスライド3'
   }
 ]
@@ -50,9 +52,9 @@ class SlideDisplay extends React.Component {
     super(props)
     this.state = {
       page: 1,
-      maxpage: props.Slide.page,
-      id: props.Slide.id
+      maxpage: props.Slide.page
     }
+    this.meta = props.Slide
   }
 
   // キーが押された時のイベント
@@ -79,12 +81,19 @@ class SlideDisplay extends React.Component {
     return (
       <div>
         <Page pageNumber={this.state.page} />
-        <div style={{ 'text-align': 'right' }}>スライド{this.state.page}</div>
+        <button onClick={() => this.setState({ page: Math.max(this.state.page - 1, 1) })}>前のスライド</button>{' '}
+        <button onClick={() => this.setState({ page: Math.min(this.state.page + 1, this.state.maxpage) })}>
+          次のスライド
+        </button>
         <div>
-          <button onClick={() => this.setState({ page: Math.max(this.state.page - 1, 1) })}>前のスライド</button>{' '}
-          <button onClick={() => this.setState({ page: Math.min(this.state.page + 1, this.state.maxpage) })}>
-            次のスライド
-          </button>
+          <p className="slide_title">{this.meta.title}</p>
+          <p className="slide_desc">{this.meta.description}</p>
+          <p>
+            <div className="slide_keyword_list">Keywords :</div>
+            {this.meta.keyword.map((keyword) => (
+              <div className="slide_keyword_list slide_keyword">{keyword}</div>
+            ))}
+          </p>
         </div>
       </div>
     )
@@ -94,7 +103,7 @@ class SlideDisplay extends React.Component {
 class SlidesSwitching extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { display: 'サンプルスライド1' }
+    this.state = { display: 'default' }
     this.Slides = props.Slides
     this.ids = props.ids
   }
