@@ -7,6 +7,7 @@ import Seo from '../../components/seo'
 
 import pythonInput from './pdf/python_input.pdf'
 import PDFCrack from './pdf/PDFCrack.pdf'
+import ReDoS from './pdf/ReDoS.pdf'
 
 const Slides = [
   {
@@ -20,8 +21,8 @@ const Slides = [
     ),
     content: pythonInput,
     page: 16,
-    keyword: ['security', 'python'],
-    id: 'aAAA'
+    keyword: ['security', 'Python'],
+    id: 'サンプルスライド1'
   },
   {
     title: 'PDFのやつ',
@@ -29,20 +30,29 @@ const Slides = [
     content: PDFCrack,
     page: 26,
     keyword: ['security', 'PDF'],
-    id: 'bBBBB'
+    id: 'サンプルスライド2'
+  },
+  {
+    title: 'ReDoS',
+    description: <>DeDoS</>,
+    content: ReDoS,
+    page: 26,
+    keyword: ['security', 'Python'],
+    id: 'サンプルスライド3'
   }
 ]
 
+/*
+ * スライドの表示・ページ切り替えを行う
+ */
 class SlideDisplay extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       page: 1,
-      maxpage: props.Slide.maxpage,
-      id: props.Slide.id,
-      display: 'aAAA'
+      maxpage: props.Slide.page,
+      id: props.Slide.id
     }
-    this.ids = props.ids
   }
 
   // キーが押された時のイベント
@@ -68,16 +78,8 @@ class SlideDisplay extends React.Component {
   render() {
     return (
       <div>
-        {this.ids.map((id) => (
-          <button onClick={() => this.setState({ display: id })}>切り替え{id}</button>
-        ))}
-        <b>
-          テスト: {this.state.display} / {this.state.id}
-        </b>
-        <div style={{ display: this.state.display === this.state.id ? 'inline' : 'none' }}>
-          <Page pageNumber={this.state.page} />
-          <div style={{ 'text-align': 'right' }}>スライド{this.state.page}</div>
-        </div>
+        <Page pageNumber={this.state.page} />
+        <div style={{ 'text-align': 'right' }}>スライド{this.state.page}</div>
         <div>
           <button onClick={() => this.setState({ page: Math.max(this.state.page - 1, 1) })}>前のスライド</button>{' '}
           <button onClick={() => this.setState({ page: Math.min(this.state.page + 1, this.state.maxpage) })}>
@@ -92,17 +94,23 @@ class SlideDisplay extends React.Component {
 class SlidesSwitching extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = { display: 'サンプルスライド1' }
     this.Slides = props.Slides
     this.ids = props.ids
   }
   render() {
     return (
       <div>
+        {this.ids.map((id) => (
+          <button onClick={() => this.setState({ display: id })}>{id}へ切り替え</button>
+        ))}
+        <hr />
         {this.Slides.map((data) => (
-          <Document file={data.content}>
-            <SlideDisplay Slide={data} ids={this.ids} className={`slide ${data.id}`} />
-          </Document>
+          <div style={{ display: this.state.display === data.id ? 'inline' : 'none' }}>
+            <Document file={data.content}>
+              <SlideDisplay Slide={data} ids={this.ids} className={`slide ${data.id}`} />
+            </Document>
+          </div>
         ))}
       </div>
     )
