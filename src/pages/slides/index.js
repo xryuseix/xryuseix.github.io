@@ -76,11 +76,17 @@ class SlideDisplay extends React.Component {
   render() {
     return (
       <div>
-        <Page pageNumber={this.state.page} />
-        <button onClick={() => this.setState({ page: Math.max(this.state.page - 1, 1) })}>前のスライド</button>{' '}
-        <button onClick={() => this.setState({ page: Math.min(this.state.page + 1, this.state.maxpage) })}>
-          次のスライド
-        </button>
+        <div className="slide_pdf_view_op">
+          <div className="slide_pdf_view">
+            <Page pageNumber={this.state.page} scale="0.98" />
+          </div>
+          <div className="slide_pdf_operate">
+            <button onClick={() => this.setState({ page: Math.max(this.state.page - 1, 1) })}>前のスライド</button>{' '}
+            <button onClick={() => this.setState({ page: Math.min(this.state.page + 1, this.state.maxpage) })}>
+              次のスライド
+            </button>
+          </div>
+        </div>
         <div>
           <p className="slide_title">{this.meta.title}</p>
           <p className="slide_desc">{this.meta.description}</p>

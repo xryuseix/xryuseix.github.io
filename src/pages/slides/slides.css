@@ -18,6 +18,26 @@
   height: 1.5em;
 }
 
+/* スライドのPDF表示部分 */
+.slide_pdf_view {
+  /* box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.66); */
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* スライドのページ操作 */
+.slide_pdf_operate {
+  text-align: center;
+}
+
+/* スライドの表示とページ操作 */
+.slide_pdf_view_op {
+  padding: 5px;
+  background-color: gray;
+}
+
 /* スライド一覧 */
 .slides_switch {
   position: absolute;
