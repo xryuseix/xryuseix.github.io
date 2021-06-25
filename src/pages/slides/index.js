@@ -23,24 +23,21 @@ const Slides = [
     ),
     content: pythonInput,
     page: 16,
-    keyword: ['Security', 'Python'],
-    id: 'default'
+    keyword: ['Security', 'Python']
   },
   {
     title: 'PDFのやつ',
     description: <>PDFの説明</>,
     content: PDFCrack,
     page: 26,
-    keyword: ['Security', 'PDF'],
-    id: 'サンプルスライド2'
+    keyword: ['Security', 'PDF']
   },
   {
     title: 'ReDoS',
     description: <>ReDoS</>,
     content: ReDoS,
     page: 24,
-    keyword: ['Security', 'Python'],
-    id: 'サンプルスライド3'
+    keyword: ['Security', 'Python']
   }
 ]
 
@@ -65,11 +62,10 @@ class SlideDisplay extends React.Component {
     } else if (e.keyCode === 37 || e.keyCode === 38) {
       // 左, 上
       this.setState({ page: Math.max(this.state.page - 1, 1) })
-    } else if (49 <= e.keyCode || e.keyCode <= 57) {
+    } else if (49 <= e.keyCode && e.keyCode <= 57) {
       // 数字
       this.setState({ page: Math.min(e.keyCode - 48, this.state.maxpage) })
     }
-    this.setState({ lastkey: e.keyCode })
   }
 
   // イベントハンドラ
@@ -100,24 +96,42 @@ class SlideDisplay extends React.Component {
   }
 }
 
+/*
+ * スライドの切り替えを行う
+ */
 class SlidesSwitching extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { display: 'default' }
+    this.state = { display: props.Slides[0].title }
     this.Slides = props.Slides
-    this.ids = props.ids
+    this.titles = props.titles
   }
   render() {
     return (
-      <div>
-        {this.ids.map((id) => (
-          <button onClick={() => this.setState({ display: id })}>{id}へ切り替え</button>
-        ))}
-        <hr />
+      <div className="slide_detail">
+        <details className="slides_switch">
+          <summary>スライド一覧</summary>
+          <ul className="slide_detail-content">
+            {this.titles.map((title) => (
+              <li>
+                <a
+                  href="#/"
+                  role="button"
+                  tabIndex={0}
+                  className="slides_switch_button"
+                  onClick={() => this.setState({ display: title })}
+                  onKeyDown={() => this.setState({ display: title })}
+                >
+                  {title.length > 20 ? title.slice(0, 20) + '…' : title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
         {this.Slides.map((data) => (
-          <div style={{ display: this.state.display === data.id ? 'inline' : 'none' }}>
+          <div style={{ display: this.state.display === data.title ? 'inline' : 'none' }}>
             <Document file={data.content}>
-              <SlideDisplay Slide={data} ids={this.ids} className={`slide ${data.id}`} />
+              <SlideDisplay Slide={data} titles={this.titles} />
             </Document>
           </div>
         ))}
@@ -130,11 +144,11 @@ const SlideSiteIndex = ({ location }) => {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
   // ここそのうちどうにかする
-  let ids = []
+  let titles = []
   for (const slide of Slides) {
     for (const [key, value] of Object.entries(slide)) {
-      if (key === 'id') {
-        ids.push(value)
+      if (key === 'title') {
+        titles.push(value)
       }
     }
   }
@@ -143,7 +157,7 @@ const SlideSiteIndex = ({ location }) => {
     <Layout location={location}>
       <Seo title="My slides" description="スライド一覧" />
       <Meta title="Slides" />
-      <SlidesSwitching Slides={Slides} ids={ids} />
+      <SlidesSwitching Slides={Slides} titles={titles} />
     </Layout>
   )
 }
