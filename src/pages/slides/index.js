@@ -108,7 +108,8 @@ class SlideDisplay extends React.Component {
 class SlidesSwitching extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { display: props.Slides[0].title }
+    this.default = props.default
+    this.state = { display: props.default ? props.default : props.Slides[0].title }
     this.Slides = props.Slides
     this.titles = props.titles
   }
@@ -158,12 +159,13 @@ const SlideSiteIndex = ({ location }) => {
       }
     }
   }
-
+  const params = new URLSearchParams(location.search)
+  const defaultSlide = params.get('default')
   return (
     <Layout location={location}>
       <Seo title="My slides" description="スライド一覧" />
       <Meta title="Slides" />
-      <SlidesSwitching Slides={Slides} titles={titles} />
+      <SlidesSwitching Slides={Slides} titles={titles} default={defaultSlide} />
     </Layout>
   )
 }
