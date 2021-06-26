@@ -23,23 +23,26 @@ const Slides = [
     ),
     content: pythonInput,
     page: 16,
-    keyword: ['Security', 'Python']
+    keyword: ['Security', 'Python'],
+    update: '2021/4/26'
   },
   {
     title: 'PDFのやつ',
     description: <>PDFの説明</>,
     content: PDFCrack,
     page: 26,
-    keyword: ['Security', 'PDF']
+    keyword: ['Security', 'PDF'],
+    update: '2021/6/28'
   },
   {
     title: 'ReDoS',
     description: <>ReDoS</>,
     content: ReDoS,
     page: 24,
-    keyword: ['Security', 'Python']
+    keyword: ['Security', 'Python'],
+    update: '2021/5/27'
   }
-]
+].sort((a, b) => (new Date(a.update) > new Date(b.update) ? -1 : 1))
 
 /*
  * スライドの表示・ページ切り替えを行う
@@ -49,7 +52,9 @@ class SlideDisplay extends React.Component {
     super(props)
     this.state = {
       page: 1,
-      maxpage: props.Slide.page
+      maxpage: props.Slide.page,
+      windowWidth: this.getWindowWidth(),
+      scale: (this.getWindowWidth() / 1000) * 0.97
     }
     this.meta = props.Slide
   }
@@ -68,17 +73,37 @@ class SlideDisplay extends React.Component {
     }
   }
 
-  // イベントハンドラ
+  // キーボード検知イベントハンドラ
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown.bind(this))
+  }
+
+  // ウィンドウ幅を取得
+  getWindowWidth() {
+    let width = window.innerWidth
+    return Math.min(width, 1000)
+  }
+
+  // windowのwidthの状態を変更
+  changeWindowSize() {
+    this.setState({ windowWidth: this.getWindowWidth() })
+    this.setState({ scale: (this.state.windowWidth / 1000) * 0.97 })
+  }
+
+  // windowサイズの変更検知のイベントハンドラを設定
+  componentWillMount() {
+    window.addEventListener('resize', () => {
+      this.changeWindowSize()
+    })
   }
 
   render() {
     return (
       <div>
-        <div className="slide_pdf_view_op">
+        {/* TODO: widthを動的に変更する */}
+        <div className="slide_pdf_view_op" style={{ width: `${(this.state.windowWidth - 40).toString()}px` }}>
           <div className="slide_pdf_view">
-            <Page pageNumber={this.state.page} scale="0.98" />
+            <Page pageNumber={this.state.page} scale={this.state.scale} />
           </div>
           <div className="slide_pdf_operate">
             <button onClick={() => this.setState({ page: Math.max(this.state.page - 1, 1) })}>前のスライド</button>{' '}
@@ -87,8 +112,9 @@ class SlideDisplay extends React.Component {
             </button>
           </div>
         </div>
-        <div>
+        <div className="slide_meta">
           <p className="slide_title">{this.meta.title}</p>
+          <div className="slide_date">更新日: {this.meta.update}</div>
           <p className="slide_desc">{this.meta.description}</p>
           <p>
             <div className="slide_keyword_list">Keywords :</div>
@@ -116,6 +142,7 @@ class SlidesSwitching extends React.Component {
   render() {
     return (
       <div className="slide_detail">
+        {/* <div className="slide_pdf_view_warn">ページ幅が狭すぎます．横幅1000px以上のPCから閲覧してください．</div> */}
         <details className="slides_switch">
           <summary>スライド一覧</summary>
           <ul className="slide_detail-content">
@@ -150,7 +177,7 @@ class SlidesSwitching extends React.Component {
 const SlideSiteIndex = ({ location }) => {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
-  // ここそのうちどうにかする
+  // TODO: ここそのうちどうにかする
   let titles = []
   for (const slide of Slides) {
     for (const [key, value] of Object.entries(slide)) {

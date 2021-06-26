@@ -1,11 +1,16 @@
+/* スライドのタイトル */
 .slide_title {
   font-size: 2em;
   font-weight: bold;
+  margin-bottom: 0;
 }
+
+/* スライドの説明 */
 .slide_desc {
   color: gray;
 }
 
+/* スライドのキーワード */
 .slide_keyword_list {
   float: left;
   margin-left: 5px;
@@ -18,6 +23,14 @@
   height: 1.5em;
 }
 
+/* スライドの更新日 */
+.slide_date {
+  color: gray;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+}
+
 /* スライドのPDF表示部分 */
 .slide_pdf_view {
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.8);
@@ -26,10 +39,22 @@
   justify-content: center;
   align-items: center;
 }
+/* @media (max-width: 1000px) {
+  .slide_pdf_view_op,
+  .slides_switch {
+    display: none;
+  }
+}
+@media (min-width: 1000px) {
+  .slide_pdf_view_warn {
+    display: none;
+  }
+} */
 
 /* スライドのページ操作 */
 .slide_pdf_operate {
   text-align: center;
+  height: 35px;
 }
 
 /* スライドの表示とページ操作 */
