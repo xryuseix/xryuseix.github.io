@@ -114,10 +114,7 @@ class SlidesSwitching extends React.Component {
   @param text 省略する文字列
   @param len 半角文字数で指定
   */
-  substr(text, len, truncation) {
-    if (truncation === undefined) {
-      truncation = ''
-    }
+  substr(text, len) {
     var text_array = text.split('')
     var count = 0
     var str = ''
@@ -137,7 +134,7 @@ class SlidesSwitching extends React.Component {
     return (
       <div className="slide_detail">
         <details className="slides_switch">
-          <summary>スライド一覧</summary>
+          <summary>スライド一覧{this.state.display}</summary>
           <ul className="slide_detail-content">
             {this.titles.map((title) => (
               <li>
@@ -156,11 +153,14 @@ class SlidesSwitching extends React.Component {
           </ul>
         </details>
         {this.Slides.map((data) => (
-          <div style={{ display: this.state.display === data.title ? 'inline' : 'none' }}>
-            <Document file={data.content}>
-              <SlideDisplay Slide={data} titles={this.titles} />
-            </Document>
-          </div>
+          <>
+            <p>{data.title}</p>
+            <div style={{ display: this.state.display === data.title ? 'inline' : 'none' }}>
+              <Document file={data.content}>
+                <SlideDisplay Slide={data} titles={this.titles} />
+              </Document>
+            </div>
+          </>
         ))}
       </div>
     )
@@ -181,6 +181,10 @@ const SlideSiteIndex = ({ location }) => {
   }
   const params = new URLSearchParams(location.search)
   const defaultSlide = params.get('slide')
+  console.log('パラメータ！！！！！！！！')
+  console.log(location.search)
+  console.log(params)
+  console.log(defaultSlide)
   return (
     <Layout location={location}>
       <Seo title="My slides" description="スライド一覧" />
