@@ -1,12 +1,12 @@
 /* slide PDF */
-import pythonInput from './pdf/python_input.pdf'
-import PDFCrack from './pdf/PDFCrack.pdf'
-import ReDoS from './pdf/ReDoS.pdf'
-import linuxCommand from './pdf/linuxcommand.pdf'
-import cpTools from './pdf/cptools.pdf'
-import modinv from './pdf/modinv.pdf'
-import ripproIntro from './pdf/rippro.pdf'
-import linuxInstall from './pdf/linux_install.pdf'
+import pythonInput from '../pages/slides/pdf/python_input.pdf'
+import PDFCrack from '../pages/slides/pdf/PDFCrack.pdf'
+import ReDoS from '../pages/slides/pdf/ReDoS.pdf'
+import linuxCommand from '../pages/slides/pdf/linuxcommand.pdf'
+import cpTools from '../pages/slides/pdf/cptools.pdf'
+import modinv from '../pages/slides/pdf/modinv.pdf'
+import ripproIntro from '../pages/slides/pdf/rippro.pdf'
+import linuxInstall from '../pages/slides/pdf/linux_install.pdf'
 
 const Slides = [
   {

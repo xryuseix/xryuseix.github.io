@@ -4,7 +4,7 @@ import { pdfjs, Document, Page } from 'react-pdf'
 import Layout from '../../components/layout'
 import Meta from '../../components/meta'
 import Seo from '../../components/seo'
-import Slides from './pdfList.js'
+import Slides from '../../utils/pdfList.js'
 import './slides.css'
 
 /*
