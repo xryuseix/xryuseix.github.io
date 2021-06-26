@@ -104,9 +104,12 @@ class SlidesSwitching extends React.Component {
   constructor(props) {
     super(props)
     this.default = props.default
-    this.state = { display: 'Linuxコマンド入門'}//props.default ? props.default : props.Slides[0].title }
+    this.state = { display: props.default ? props.default : props.Slides[0].title }
     this.Slides = props.Slides
     this.titles = props.titles
+    console.log('props debug')
+    console.log(props.default)
+    console.log(props.default ? 1 : 2)
   }
 
   /**
@@ -133,6 +136,7 @@ class SlidesSwitching extends React.Component {
   changeVisibly() {}
 
   render() {
+    setTimeout(function () {}, 1000)
     return (
       <div className="slide_detail">
         <details className="slides_switch">
