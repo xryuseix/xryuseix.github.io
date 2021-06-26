@@ -40,6 +40,11 @@ const Header = (props) => (
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
+              <Link className="nav-link" to="/slides">
+                Slides
+              </Link>
+            </Nav.Item>
+            <Nav.Item as="li">
               <a
                 className="nav-link"
                 href="https://github.com/xryuseix/xryuseix.github.io"

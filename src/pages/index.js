@@ -37,11 +37,6 @@ const SiteIndex = ({ location }) => {
 
       <ul className="index_footer-menu">
         <li className="index_footer-column index_scale">
-          <Link to="/news">
-            <h3>News</h3>
-          </Link>
-        </li>
-        <li className="index_footer-column index_scale">
           <Link to="/apps">
             <h3>Apps</h3>
           </Link>
@@ -59,6 +54,11 @@ const SiteIndex = ({ location }) => {
         <li className="index_footer-column index_scale">
           <Link to="/ctf">
             <h3>CTF</h3>
+          </Link>
+        </li>
+        <li className="index_footer-column index_scale">
+          <Link to="/news">
+            <h3>Slides</h3>
           </Link>
         </li>
       </ul>
