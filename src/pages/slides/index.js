@@ -35,7 +35,14 @@ class SlideDisplay extends React.Component {
     } else if (49 <= e.keyCode && e.keyCode <= 57) {
       // 数字
       this.setState({ page: Math.min(e.keyCode - 48, this.state.maxpage) })
+    } else if (e.keyCode === 187) {
+      // +
+      this.setState({ scale_expand: this.state.scale_expand + 0.05 })
+    } else if (e.keyCode === 189) {
+      // -
+      this.setState({ scale_expand: this.state.scale_expand - 0.05 })
     }
+    console.log(e.keyCode)
   }
 
   // キーボード検知イベントハンドラ
@@ -71,14 +78,16 @@ class SlideDisplay extends React.Component {
           </div>
           <div className="slide_pdf_operate">
             <div className="slide_turn">
-              <button onClick={() => this.setState({ page: Math.max(this.state.page - 1, 1) })}>前のスライド</button>{' '}
+              <button onClick={() => this.setState({ page: Math.max(this.state.page - 1, 1) })}>
+                (←) 前のスライド
+              </button>{' '}
               <button onClick={() => this.setState({ page: Math.min(this.state.page + 1, this.state.maxpage) })}>
-                次のスライド
+                次のスライド (→)
               </button>
             </div>
             <div className="slide_expand">
-              <button onClick={() => this.setState({ scale_expand: this.state.scale_expand + 0.05 })}>拡大</button>{' '}
-              <button onClick={() => this.setState({ scale_expand: this.state.scale_expand - 0.05 })}>縮小</button>
+              <button onClick={() => this.setState({ scale_expand: this.state.scale_expand + 0.05 })}>拡大 (+)</button>{' '}
+              <button onClick={() => this.setState({ scale_expand: this.state.scale_expand - 0.05 })}>縮小 (-)</button>
             </div>
           </div>
         </div>
@@ -161,12 +170,7 @@ class SlidesSwitching extends React.Component {
                 スライド一覧
               </div>
               <div className="slides_delete_switch">
-                <a
-                  href={'#/'}
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => this.setState({ switchButton: false })}
-                >
+                <a href={'#/'} role="button" tabIndex={0} onClick={() => this.setState({ switchButton: false })}>
                   <MdClose />
                 </a>
               </div>
