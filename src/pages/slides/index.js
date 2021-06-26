@@ -104,7 +104,7 @@ class SlidesSwitching extends React.Component {
   constructor(props) {
     super(props)
     this.default = props.default
-    this.state = { display: props.default ? props.default : props.Slides[0].title }
+    this.state = { display: 'Linuxコマンド入門'}//props.default ? props.default : props.Slides[0].title }
     this.Slides = props.Slides
     this.titles = props.titles
   }
