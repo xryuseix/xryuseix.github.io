@@ -104,12 +104,14 @@ class SlidesSwitching extends React.Component {
   constructor(props) {
     super(props)
     this.default = props.default
-    this.state = { display: props.default ? props.default : props.Slides[0].title }
+    this.state = { display: props.default ? props.default : props.Slides[0].title, render: false }
     this.Slides = props.Slides
     this.titles = props.titles
+    this.test = 'A'
     console.log('props debug')
     console.log(props.default)
     console.log(props.default ? 1 : 2)
+    console.log(this.test)
   }
 
   /**
@@ -133,45 +135,57 @@ class SlidesSwitching extends React.Component {
     return text
   }
 
-  changeVisibly() {}
+  componentDidMount() {
+    setTimeout(
+      function () {
+        //Start the timer
+        this.setState({ render: true }) //After 1 second, set render to true
+      }.bind(this),
+      1000
+    )
+  }
 
   render() {
-    setTimeout(function () {}, 1000)
-    return (
-      <div className="slide_detail">
-        <details className="slides_switch">
-          <summary>スライド一覧{this.state.display}</summary>
-          <ul className="slide_detail-content">
-            {this.titles.map((title) => (
-              <li>
-                <a
-                  href={'#/'}
-                  role="button"
-                  tabIndex={0}
-                  className="slides_switch_button"
-                  onClick={() => this.setState({ display: title })}
-                  onKeyDown={() => this.setState({ display: title })}
-                >
-                  {this.substr(title, 20)}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </details>
-        {this.Slides.map((data) => (
-          <>
-            <p>
-              {this.state.display} === {data.title} = {this.state.display === data.title ? 'block' : 'none'}
-            </p>
-            <div style={{ display: this.state.display === data.title ? 'block' : 'none' }}>
-              <Document file={data.content}>
-                <SlideDisplay Slide={data} titles={this.titles} />
-              </Document>
-            </div>
-          </>
-        ))}
-      </div>
-    )
+    this.test = 'B'
+    if (!this.state.render) {
+      return <h2>Waiting ...</h2>
+    } else {
+      return (
+        <div className="slide_detail">
+          <details className="slides_switch">
+            <summary>スライド一覧{this.state.display}</summary>
+            <ul className="slide_detail-content">
+              {this.titles.map((title) => (
+                <li>
+                  <a
+                    href={'#/'}
+                    role="button"
+                    tabIndex={0}
+                    className="slides_switch_button"
+                    onClick={() => this.setState({ display: title })}
+                    onKeyDown={() => this.setState({ display: title })}
+                  >
+                    {this.substr(title, 20)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
+          {this.Slides.map((data) => (
+            <>
+              <p>
+                {this.state.display} === {data.title} = {this.state.display === data.title ? 'block' : 'none'}
+              </p>
+              <div style={{ display: this.state.display === data.title ? 'block' : 'none' }}>
+                <Document file={data.content}>
+                  <SlideDisplay Slide={data} titles={this.titles} />
+                </Document>
+              </div>
+            </>
+          ))}
+        </div>
+      )
+    }
   }
 }
 
