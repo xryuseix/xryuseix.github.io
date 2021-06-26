@@ -130,6 +130,8 @@ class SlidesSwitching extends React.Component {
     return text
   }
 
+  changeVisibly() {}
+
   render() {
     return (
       <div className="slide_detail">
@@ -154,8 +156,10 @@ class SlidesSwitching extends React.Component {
         </details>
         {this.Slides.map((data) => (
           <>
-            <p>{data.title}</p>
-            <div style={{ display: this.state.display === data.title ? 'inline' : 'none' }}>
+            <p>
+              {this.state.display} === {data.title} = {this.state.display === data.title ? 'block' : 'none'}
+            </p>
+            <div style={{ display: this.state.display === data.title ? 'block' : 'none' }}>
               <Document file={data.content}>
                 <SlideDisplay Slide={data} titles={this.titles} />
               </Document>
