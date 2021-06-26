@@ -1,5 +1,6 @@
 import React from 'react'
 import { pdfjs, Document, Page } from 'react-pdf'
+import { MdClose, MdExpandMore } from 'react-icons/md'
 
 import Layout from '../../components/layout'
 import Meta from '../../components/meta'
@@ -104,16 +105,20 @@ class SlidesSwitching extends React.Component {
   constructor(props) {
     super(props)
     this.default = props.default
-    this.state = { display: props.default ? props.default : props.Slides[0].title, render: false }
+    this.state = {
+      display: props.default ? props.default : props.Slides[0].title,
+      render: false,
+      switchButton: true
+    }
     this.Slides = props.Slides
     this.titles = props.titles
   }
 
   /**
-  文字列を省略する
-  @param text 省略する文字列
-  @param len 半角文字数で指定
-  */
+   * 文字列を省略する
+   * @param text 省略する文字列
+   * @param len 半角文字数で指定
+   */
   substr(text, len) {
     var text_array = text.split('')
     var count = 0
@@ -130,7 +135,10 @@ class SlidesSwitching extends React.Component {
     return text
   }
 
-  // レンダリングを少し遅らせる
+  /**
+   * レンダリングを少し遅らせる
+   * TODO: スライド数が増えれば遅延時間が増えるかもしれないので直す
+   */
   componentDidMount() {
     setTimeout(
       function () {
@@ -146,8 +154,23 @@ class SlidesSwitching extends React.Component {
     } else {
       return (
         <div className="slide_detail">
-          <details className="slides_switch">
-            <summary>スライド一覧</summary>
+          <details className="slides_switch" style={{ display: this.state.switchButton ? 'block' : 'none' }}>
+            <summary className="slides_switch_summary">
+              <div className="slides_switch_text">
+                <MdExpandMore />
+                スライド一覧
+              </div>
+              <div className="slides_delete_switch">
+                <a
+                  href={'#/'}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => this.setState({ switchButton: false })}
+                >
+                  <MdClose />
+                </a>
+              </div>
+            </summary>
             <ul className="slide_detail-content">
               {this.titles.map((title) => (
                 <li>
@@ -157,7 +180,6 @@ class SlidesSwitching extends React.Component {
                     tabIndex={0}
                     className="slides_switch_button"
                     onClick={() => this.setState({ display: title })}
-                    onKeyDown={() => this.setState({ display: title })}
                   >
                     {this.substr(title, 20)}
                   </a>
@@ -181,21 +203,9 @@ class SlidesSwitching extends React.Component {
 const SlideSiteIndex = ({ location }) => {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
-  // TODO: ここそのうちどうにかする
-  let titles = []
-  for (const slide of Slides) {
-    for (const [key, value] of Object.entries(slide)) {
-      if (key === 'title') {
-        titles.push(value)
-      }
-    }
-  }
+  const titles = Slides.map((slide) => slide['title'])
   const params = new URLSearchParams(location.search)
   const defaultSlide = params.get('slide')
-  console.log('パラメータ！！！！！！！！')
-  console.log(location.search)
-  console.log(params)
-  console.log(defaultSlide)
   return (
     <Layout location={location}>
       <Seo title="My slides" description="スライド一覧" />
