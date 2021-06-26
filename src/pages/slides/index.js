@@ -4,45 +4,8 @@ import { pdfjs, Document, Page } from 'react-pdf'
 import Layout from '../../components/layout'
 import Meta from '../../components/meta'
 import Seo from '../../components/seo'
+import Slides from './pdfList.js'
 import './slides.css'
-
-/* slide PDF */
-import pythonInput from './pdf/python_input.pdf'
-import PDFCrack from './pdf/PDFCrack.pdf'
-import ReDoS from './pdf/ReDoS.pdf'
-
-const Slides = [
-  {
-    title: 'Python2.x の input 関数にRCE 脆弱性がある話',
-    description: (
-      <>
-        Python2.x の input 関数にRCE 脆弱性がある話
-        <br />
-        RiST(立命館セキュリティチーム) 5/17 輪講の資料です
-      </>
-    ),
-    content: pythonInput,
-    page: 16,
-    keyword: ['Security', 'Python'],
-    update: '2021/4/26'
-  },
-  {
-    title: 'PDFのやつ',
-    description: <>PDFの説明</>,
-    content: PDFCrack,
-    page: 26,
-    keyword: ['Security', 'PDF'],
-    update: '2021/6/28'
-  },
-  {
-    title: 'ReDoS',
-    description: <>ReDoS</>,
-    content: ReDoS,
-    page: 24,
-    keyword: ['Security', 'Python'],
-    update: '2021/5/27'
-  }
-].sort((a, b) => (new Date(a.update) > new Date(b.update) ? -1 : 1))
 
 /*
  * スライドの表示・ページ切り替えを行う
@@ -100,7 +63,6 @@ class SlideDisplay extends React.Component {
   render() {
     return (
       <div>
-        {/* TODO: widthを動的に変更する */}
         <div className="slide_pdf_view_op" style={{ width: `${(this.state.windowWidth - 40).toString()}px` }}>
           <div className="slide_pdf_view">
             <Page pageNumber={this.state.page} scale={this.state.scale} />
@@ -139,6 +101,31 @@ class SlidesSwitching extends React.Component {
     this.Slides = props.Slides
     this.titles = props.titles
   }
+
+  /**
+  文字列を省略する
+  @param text 省略する文字列
+  @param len 半角文字数で指定
+  */
+  substr(text, len, truncation) {
+    if (truncation === undefined) {
+      truncation = ''
+    }
+    var text_array = text.split('')
+    var count = 0
+    var str = ''
+    for (let i = 0; i < text_array.length; i++) {
+      var n = escape(text_array[i])
+      if (n.length < 4) count++
+      else count += 2
+      if (count > len) {
+        return str + '...'
+      }
+      str += text.charAt(i)
+    }
+    return text
+  }
+
   render() {
     return (
       <div className="slide_detail">
@@ -156,7 +143,7 @@ class SlidesSwitching extends React.Component {
                   onClick={() => this.setState({ display: title })}
                   onKeyDown={() => this.setState({ display: title })}
                 >
-                  {title.length > 20 ? title.slice(0, 20) + '…' : title}
+                  {this.substr(title, 20)}
                 </a>
               </li>
             ))}
