@@ -142,7 +142,7 @@ class SlidesSwitching extends React.Component {
             {this.titles.map((title) => (
               <li>
                 <a
-                  href={`/slides/?slide=${title}`}
+                  href={'#/'}
                   role="button"
                   tabIndex={0}
                   className="slides_switch_button"
