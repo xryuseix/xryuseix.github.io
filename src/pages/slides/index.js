@@ -17,7 +17,8 @@ class SlideDisplay extends React.Component {
       page: 1,
       maxpage: props.Slide.page,
       windowWidth: this.getWindowWidth(),
-      scale: (this.getWindowWidth() / 1000) * 0.97
+      scale: (this.getWindowWidth() / 1000) * 0.97,
+      scale_expand: 0
     }
     this.meta = props.Slide
   }
@@ -65,13 +66,19 @@ class SlideDisplay extends React.Component {
       <div>
         <div className="slide_pdf_view_op" style={{ width: `${(this.state.windowWidth - 40).toString()}px` }}>
           <div className="slide_pdf_view">
-            <Page pageNumber={this.state.page} scale={this.state.scale} />
+            <Page pageNumber={this.state.page} scale={this.state.scale + this.state.scale_expand} />
           </div>
           <div className="slide_pdf_operate">
-            <button onClick={() => this.setState({ page: Math.max(this.state.page - 1, 1) })}>前のスライド</button>{' '}
-            <button onClick={() => this.setState({ page: Math.min(this.state.page + 1, this.state.maxpage) })}>
-              次のスライド
-            </button>
+            <div className="slide_turn">
+              <button onClick={() => this.setState({ page: Math.max(this.state.page - 1, 1) })}>前のスライド</button>{' '}
+              <button onClick={() => this.setState({ page: Math.min(this.state.page + 1, this.state.maxpage) })}>
+                次のスライド
+              </button>
+            </div>
+            <div className="slide_expand">
+              <button onClick={() => this.setState({ scale_expand: this.state.scale_expand + 0.05 })}>拡大</button>{' '}
+              <button onClick={() => this.setState({ scale_expand: this.state.scale_expand - 0.05 })}>縮小</button>
+            </div>
           </div>
         </div>
         <div className="slide_meta">

@@ -39,22 +39,17 @@
   justify-content: center;
   align-items: center;
 }
-/* @media (max-width: 1000px) {
-  .slide_pdf_view_op,
-  .slides_switch {
-    display: none;
-  }
-}
-@media (min-width: 1000px) {
-  .slide_pdf_view_warn {
-    display: none;
-  }
-} */
 
 /* スライドのページ操作 */
 .slide_pdf_operate {
-  text-align: center;
   height: 35px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.slide_expand {
+  position: absolute;
+  right: 0;
 }
 
 /* スライドの表示とページ操作 */
