@@ -136,14 +136,13 @@ class SlidesSwitching extends React.Component {
   render() {
     return (
       <div className="slide_detail">
-        {/* <div className="slide_pdf_view_warn">ページ幅が狭すぎます．横幅1000px以上のPCから閲覧してください．</div> */}
         <details className="slides_switch">
           <summary>スライド一覧</summary>
           <ul className="slide_detail-content">
             {this.titles.map((title) => (
               <li>
                 <a
-                  href="#/"
+                  href={`/slides/?slide=${title}`}
                   role="button"
                   tabIndex={0}
                   className="slides_switch_button"
@@ -181,7 +180,7 @@ const SlideSiteIndex = ({ location }) => {
     }
   }
   const params = new URLSearchParams(location.search)
-  const defaultSlide = params.get('default')
+  const defaultSlide = params.get('slide')
   return (
     <Layout location={location}>
       <Seo title="My slides" description="スライド一覧" />
