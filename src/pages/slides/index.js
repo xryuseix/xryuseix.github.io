@@ -107,11 +107,6 @@ class SlidesSwitching extends React.Component {
     this.state = { display: props.default ? props.default : props.Slides[0].title, render: false }
     this.Slides = props.Slides
     this.titles = props.titles
-    this.test = 'A'
-    console.log('props debug')
-    console.log(props.default)
-    console.log(props.default ? 1 : 2)
-    console.log(this.test)
   }
 
   /**
@@ -135,25 +130,24 @@ class SlidesSwitching extends React.Component {
     return text
   }
 
+  // レンダリングを少し遅らせる
   componentDidMount() {
     setTimeout(
       function () {
-        //Start the timer
-        this.setState({ render: true }) //After 1 second, set render to true
+        this.setState({ render: true })
       }.bind(this),
-      1000
+      500
     )
   }
 
   render() {
-    this.test = 'B'
     if (!this.state.render) {
-      return <h2>Waiting ...</h2>
+      return <h2>PDF loading ...</h2>
     } else {
       return (
         <div className="slide_detail">
           <details className="slides_switch">
-            <summary>スライド一覧{this.state.display}</summary>
+            <summary>スライド一覧</summary>
             <ul className="slide_detail-content">
               {this.titles.map((title) => (
                 <li>
@@ -172,16 +166,11 @@ class SlidesSwitching extends React.Component {
             </ul>
           </details>
           {this.Slides.map((data) => (
-            <>
-              <p>
-                {this.state.display} === {data.title} = {this.state.display === data.title ? 'block' : 'none'}
-              </p>
-              <div style={{ display: this.state.display === data.title ? 'block' : 'none' }}>
-                <Document file={data.content}>
-                  <SlideDisplay Slide={data} titles={this.titles} />
-                </Document>
-              </div>
-            </>
+            <div style={{ display: this.state.display === data.title ? 'block' : 'none' }}>
+              <Document file={data.content}>
+                <SlideDisplay Slide={data} titles={this.titles} />
+              </Document>
+            </div>
           ))}
         </div>
       )
