@@ -39,6 +39,16 @@
   justify-content: center;
   align-items: center;
 }
+.slide_pdf_view_full {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  margin: auto;
+
+  z-index: 1111;
+}
 
 /* スライドのページ操作 */
 .slide_pdf_operate {

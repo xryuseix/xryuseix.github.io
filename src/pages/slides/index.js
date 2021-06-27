@@ -19,7 +19,8 @@ class SlideDisplay extends React.Component {
       maxpage: props.Slide.page,
       windowWidth: this.getWindowWidth(),
       scale: (this.getWindowWidth() / 1000) * 0.97,
-      scale_expand: 0
+      scale_expand: 0,
+      full: false
     }
     this.meta = props.Slide
   }
@@ -27,22 +28,54 @@ class SlideDisplay extends React.Component {
   // キーが押された時のイベント
   handleKeyDown(e) {
     if (e.keyCode === 39 || e.keyCode === 40) {
-      // 右, 下
+      // 右, 下...スライドを進める
       this.setState({ page: Math.min(this.state.page + 1, this.state.maxpage) })
     } else if (e.keyCode === 37 || e.keyCode === 38) {
-      // 左, 上
+      // 左, 上...スライドを戻す
       this.setState({ page: Math.max(this.state.page - 1, 1) })
     } else if (49 <= e.keyCode && e.keyCode <= 57) {
-      // 数字
+      // 数字...特定のスライドまでジャンプ
       this.setState({ page: Math.min(e.keyCode - 48, this.state.maxpage) })
     } else if (e.keyCode === 187) {
-      // +
+      // +...拡大
       this.setState({ scale_expand: this.state.scale_expand + 0.05 })
     } else if (e.keyCode === 189) {
-      // -
+      // -...縮小
       this.setState({ scale_expand: this.state.scale_expand - 0.05 })
+    } else if (e.keyCode === 48) {
+      // 0...拡大・縮小を元に戻す
+      this.setState({ scale_expand: 0 })
+    } else if (e.keyCode === 70) {
+      // f...フルスクリーン
+      if (!this.state.full) {
+        // フルスクリーンにする
+        const elem = document.querySelector('.slide_pdf_view')
+        if (elem.webkitRequestFullscreen) {
+          elem.webkitRequestFullscreen() //Chrome15+, Safari5.1+, Opera15+
+        } else if (elem.mozRequestFullScreen) {
+          elem.mozRequestFullScreen() //FF10+
+        } else if (elem.msRequestFullscreen) {
+          elem.msRequestFullscreen() //IE11+
+        } else if (elem.requestFullscreen) {
+          elem.requestFullscreen() // HTML5 Fullscreen API仕様
+        }
+        this.setState({ full: true })
+      } else {
+        // 元に戻す
+        if (document.webkitCancelFullScreen) {
+          document.webkitCancelFullScreen() //Chrome15+, Safari5.1+, Opera15+
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen() //FF10+
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen() //IE11+
+        } else if (document.cancelFullScreen) {
+          document.cancelFullScreen() //Gecko:FullScreenAPI仕様
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen() // HTML5 Fullscreen API仕様
+        }
+        this.setState({ full: false })
+      }
     }
-    console.log(e.keyCode)
   }
 
   // キーボード検知イベントハンドラ
@@ -73,6 +106,7 @@ class SlideDisplay extends React.Component {
     return (
       <div>
         <div className="slide_pdf_view_op" style={{ width: `${(this.state.windowWidth - 40).toString()}px` }}>
+          {/* <div className={this.state.full ? 'slide_pdf_view_full' : 'slide_pdf_view'}> */}
           <div className="slide_pdf_view">
             <Page pageNumber={this.state.page} scale={this.state.scale + this.state.scale_expand} />
           </div>
@@ -84,10 +118,6 @@ class SlideDisplay extends React.Component {
               <button onClick={() => this.setState({ page: Math.min(this.state.page + 1, this.state.maxpage) })}>
                 次のスライド (→)
               </button>
-            </div>
-            <div className="slide_expand">
-              <button onClick={() => this.setState({ scale_expand: this.state.scale_expand + 0.05 })}>拡大 (+)</button>{' '}
-              <button onClick={() => this.setState({ scale_expand: this.state.scale_expand - 0.05 })}>縮小 (-)</button>
             </div>
           </div>
         </div>
