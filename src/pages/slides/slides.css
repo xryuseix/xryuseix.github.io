@@ -57,9 +57,16 @@
   justify-content: center;
   position: relative;
 }
-.slide_expand {
+.slide_help {
   position: absolute;
-  right: 0;
+  right: 10px;
+}
+.custom-hint__content {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 /* スライドの表示とページ操作 */

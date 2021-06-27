@@ -1,6 +1,9 @@
 import React from 'react'
 import { pdfjs, Document, Page } from 'react-pdf'
 import { MdClose, MdExpandMore } from 'react-icons/md'
+import { GrCircleQuestion } from 'react-icons/gr'
+import ReactHintFactory from 'react-hint'
+import 'react-hint/css/index.css'
 
 import Layout from '../../components/layout'
 import Meta from '../../components/meta'
@@ -101,12 +104,21 @@ class SlideDisplay extends React.Component {
       this.changeWindowSize()
     })
   }
-
+  onRenderContent = (target, content) => {
+    return (
+      <li className="custom-hint__content" style={{ 'background-color': 'white' }}>
+        <ul>→,↓ ... スライドを進める</ul>
+        <ul>←,↑ ... スライドを戻す</ul>
+        <ul>1~9 ... スライド1~9へ移動</ul>
+        <ul>+,-,0 ... スライドのサイズを拡大,縮小,初期化</ul>
+        <ul>F ... フルスクリーンモード</ul>
+      </li>
+    )
+  }
   render() {
     return (
       <div>
         <div className="slide_pdf_view_op" style={{ width: `${(this.state.windowWidth - 40).toString()}px` }}>
-          {/* <div className={this.state.full ? 'slide_pdf_view_full' : 'slide_pdf_view'}> */}
           <div className="slide_pdf_view">
             <Page pageNumber={this.state.page} scale={this.state.scale + this.state.scale_expand} />
           </div>
@@ -118,6 +130,17 @@ class SlideDisplay extends React.Component {
               <button onClick={() => this.setState({ page: Math.min(this.state.page + 1, this.state.maxpage) })}>
                 次のスライド (→)
               </button>
+            </div>
+            <div className="slide_help">
+              <ReactHint
+                persist
+                attribute="data-custom"
+                className="custom-hint"
+                events={{ hover: true }}
+                onRenderContent={this.onRenderContent}
+                ref={(ref) => (this.instance = ref)}
+              />
+              <GrCircleQuestion data-custom size={25} />
             </div>
           </div>
         </div>
@@ -234,6 +257,7 @@ class SlidesSwitching extends React.Component {
   }
 }
 
+const ReactHint = ReactHintFactory(React)
 const SlideSiteIndex = ({ location }) => {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
