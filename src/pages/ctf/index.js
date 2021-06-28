@@ -4,7 +4,7 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import Meta from '../../components/meta'
 import FlagSubmit from '../../components/flagSubmit'
-import sha512 from 'js-sha512';
+import sha512 from 'js-sha512'
 
 import './ctf.css'
 import misc_Test from './content/problem.pdf'
@@ -76,8 +76,8 @@ const ProblemsData = [
  flag ... 答え
 */
 const Problems = ({ title, statement, flag, answer }) => {
-  const label = Math.random().toString(36).slice(-12)
-  const id = Math.random().toString(36).slice(-12)
+  const label = title + '_label'
+  const id = title + '_id'
   return (
     <div className="ctf_hidden-box">
       <label htmlFor={label}>{title}</label>

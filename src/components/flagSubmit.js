@@ -6,18 +6,20 @@ import './flagSubmit.css'
 class ToggleClass extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { flagAcceptState: true }
-    this.isSubmit = false
+    this.state = { flagAcceptState: true, isSubmit: false }
     this.flag = props.flag
     this.id = props.id
-    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick(inputFlag) {
-    this.setState((state) => ({
+    console.log(`id=${this.id}`)
+    console.log(`state=${this.state}`)
+    this.setState({
       flagAcceptState: sha512(inputFlag) === this.flag
-    }))
-    this.isSubmit = true
+    })
+    this.setState({
+      isSubmit: true
+    })
   }
 
   render() {
@@ -28,14 +30,14 @@ class ToggleClass extends React.Component {
         </div>
         <div
           className={
-            this.isSubmit
+            this.state.isSubmit
               ? this.state.flagAcceptState
                 ? 'ctf_submit-column ctf_output ctf_submit-success'
                 : 'ctf_submit-column ctf_output ctf_submit-failure'
               : 'ctf_submit-column ctf_output'
           }
         >
-          {this.isSubmit ? (this.state.flagAcceptState ? 'SUCCESS' : 'FAILURE') : ''}
+          {this.state.isSubmit ? (this.state.flagAcceptState ? 'SUCCESS' : 'FAILURE') : ''}
         </div>
       </div>
     )
