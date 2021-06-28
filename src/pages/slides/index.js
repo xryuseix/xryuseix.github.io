@@ -4,6 +4,7 @@ import { MdClose, MdExpandMore } from 'react-icons/md'
 import { GrCircleQuestion } from 'react-icons/gr'
 import ReactHintFactory from 'react-hint'
 import 'react-hint/css/index.css'
+import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon } from 'react-share'
 
 import Layout from '../../components/layout'
 import Meta from '../../components/meta'
@@ -104,6 +105,8 @@ class SlideDisplay extends React.Component {
       this.changeWindowSize()
     })
   }
+
+  // キーボードショートカットの説明
   onRenderContent = (target, content) => {
     return (
       <li className="custom-hint__content" style={{ 'background-color': 'white' }}>
@@ -153,6 +156,21 @@ class SlideDisplay extends React.Component {
             {this.meta.keyword.map((keyword) => (
               <div className="slide_keyword_list slide_keyword">{keyword}</div>
             ))}
+          </p>
+        </div>
+        <div className="slide_share">
+          <p>
+            Shere :{' '}
+            <TwitterShareButton
+              url={`https://xryuseix.github.io/slides/?slide=${encodeURI(this.meta.title)}`}
+              title={`「${this.meta.title}」`}
+              via="ryusei_ishika"
+            >
+              <TwitterIcon size={25} round />
+            </TwitterShareButton>{' '}
+            <FacebookShareButton url={`https://xryuseix.github.io/slides/?slide=${encodeURI(this.meta.title)}`}>
+              <FacebookIcon size={25} round />
+            </FacebookShareButton>
           </p>
         </div>
       </div>

@@ -31,6 +31,12 @@
   margin: 0;
 }
 
+/* Shere機能 */
+.slide_share {
+  clear:both;
+  margin-left: 5px;
+}
+
 /* スライドのPDF表示部分 */
 .slide_pdf_view {
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.8);
