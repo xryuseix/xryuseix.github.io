@@ -12,8 +12,6 @@ class ToggleClass extends React.Component {
   }
 
   handleClick(inputFlag) {
-    console.log(`id=${this.id}`)
-    console.log(`state=${this.state}`)
     this.setState({
       flagAcceptState: sha512(inputFlag) === this.flag
     })
