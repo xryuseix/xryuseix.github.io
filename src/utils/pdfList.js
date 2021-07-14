@@ -7,6 +7,7 @@ import cpTools from '../pages/slides/pdf/cptools.pdf'
 import modinv from '../pages/slides/pdf/modinv.pdf'
 import ripproIntro from '../pages/slides/pdf/rippro.pdf'
 import linuxInstall from '../pages/slides/pdf/linux_install.pdf'
+import heavyTire from '../pages/slides/pdf/heavy-tire.pdf'
 
 const Slides = [
   {
@@ -77,7 +78,7 @@ const Slides = [
   {
     title: 'フィッシングサイト判定システム Heavy-Tire',
     description: 'セキュアシステム開発実験で作ったやつです',
-    content: heavy_tire,
+    content: heavyTire,
     page: 10,
     keyword: ['phising'],
     update: '2021/7/14'
