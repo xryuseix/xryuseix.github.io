@@ -73,6 +73,14 @@ const Slides = [
     page: 23,
     keyword: ['linux'],
     update: '2020/5/7'
+  },
+  {
+    title: 'フィッシングサイト判定システム Heavy-Tire',
+    description: 'セキュアシステム開発実験で作ったやつです',
+    content: heavy_tire,
+    page: 10,
+    keyword: ['phising'],
+    update: '2021/7/14'
   }
 ].sort((a, b) => (new Date(a.update) > new Date(b.update) ? -1 : 1))
 
