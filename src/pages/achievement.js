@@ -4,8 +4,7 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import Meta from '../components/meta'
 
-import VulnList from '../utils/ipaVulnerability/vulnList'
-import VulnNum from '../utils/ipaVulnerability/vulnNum'
+import IPAVulnList from '../utils/ipaVulnerability/vulnList'
 
 import './achievement.css'
 
@@ -142,10 +141,12 @@ const HackData = [
     year: '2020-',
     detail: (
       <>
-        IPA 脆弱性関連情報届出受理 <VulnNum />件
+        IPA 脆弱性関連情報届出受理 <IPAVulnList type="num" />件
         <details className="achievement_details">
           <summary>取得番号一覧</summary>
-          <VulnList />
+          <div>
+            <IPAVulnList type="list" />
+          </div>
         </details>
       </>
     ),
