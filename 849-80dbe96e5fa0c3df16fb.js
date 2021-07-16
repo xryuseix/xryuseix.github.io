@@ -1,0 +1,2 @@
+(self.webpackChunk=self.webpackChunk||[]).push([[849],{1849:function(e,s,a){"use strict";a.r(s),s.default=a.p+"static/sa-plag_demo-188278cb3d6e7465f1757f6d65108603.png"}}]);
+//# sourceMappingURL=849-80dbe96e5fa0c3df16fb.js.map
