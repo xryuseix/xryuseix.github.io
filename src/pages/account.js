@@ -4,9 +4,82 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import Meta from '../components/meta'
 
-import { StaticImage } from 'gatsby-plugin-image'
-
 import './account.css'
+
+const Account = [
+  {
+    service: 'Twitter',
+    url: 'https://twitter.com/ryusei_ishika',
+    image: require('../../static/icons/twitter.png').default,
+    userId: '@ryusei_ishika'
+  },
+  {
+    service: 'GitHub',
+    url: 'https://github.com/xryuseix',
+    image: require('../../static/icons/GitHub.png').default,
+    userId: 'xryuseix'
+  },
+  {
+    service: 'Facebook',
+    url: 'https://www.facebook.com/profile.php?id=100010586593125',
+    image: require('../../static/icons/facebook.png').default,
+    userId: '100010586593125'
+  },
+  {
+    service: 'Qiita',
+    url: 'https://qiita.com/xryuseix',
+    image: require('../../static/icons/qiita.png').default,
+    userId: 'xryuseix'
+  },
+  {
+    service: 'はてなブログ',
+    url: 'https://xryuseix.hatenablog.com',
+    image: require('../../static/icons/hatena.png').default,
+    userId: 'xryuseix'
+  },
+  {
+    service: 'AtCoder',
+    url: 'https://atcoder.jp/users/xryuseix',
+    image: require('../../static/icons/atcoder.svg').default,
+    userId: 'xryuseix'
+  },
+  {
+    service: 'Codeforces',
+    url: 'https://codeforces.com/profile/xryuseix',
+    image: require('../../static/icons/noimage.png').default,
+    userId: 'xryuseix'
+  },
+  {
+    service: 'LeetCode',
+    url: 'https://leetcode.com/xryuseix',
+    image: require('../../static/icons/noimage.png').default,
+    userId: 'xryuseix'
+  },
+  {
+    service: 'SlideShare',
+    url: 'https://www.slideshare.net/IshikawaRyusei',
+    image: require('../../static/icons/slideshare.png').default,
+    userId: 'xryuseix'
+  },
+  {
+    service: 'connpass',
+    url: 'https://connpass.com/user/xryuseix',
+    image: require('../../static/icons/connpass.png').default,
+    userId: 'xryuseix'
+  },
+  {
+    service: 'Instagram',
+    url: 'https://www.instagram.com/ryusei_ishika',
+    image: require('../../static/icons/instagram.png').default,
+    userId: 'xryuseix'
+  },
+  {
+    service: 'Discord',
+    url: 'https://discord.com',
+    image: require('../../static/icons/discord.png').default,
+    userId: 'xryuseix#9439'
+  }
+]
 
 const AccountSiteIndex = ({ location }) => {
   const siteTitle = 'Account'
@@ -17,120 +90,20 @@ const AccountSiteIndex = ({ location }) => {
       <h1>Account</h1>
       <p>各サービスのアカウントです</p>
       <div className="account_logos">
-        <div className="account_logo">
-          <div className="account_service">Twitter</div>
-          <a href="https://twitter.com/ryusei_ishika" target="_blank" rel="noopener noreferrer">
-            <div className="account_service-logo">
-              <StaticImage src="../../static/icons/twitter.png" alt="logo" style={imageStyle} />
-            </div>
-            <div className="account_userid">@ryusei_ishika</div>
-          </a>
-        </div>
-
-        <div className="account_logo">
-          <div className="account_service">GitHub</div>
-          <a href="https://github.com/xryuseix" target="_blank" rel="noopener noreferrer">
-            <div className="account_service-logo">
-              <StaticImage src="../../static/icons/GitHub.png" alt="logo" style={imageStyle} />
-            </div>
-            <div className="account_userid">xryuseix</div>
-          </a>
-        </div>
-        <div className="account_logo">
-          <div className="account_service">Facebook</div>
-          <a href="https://www.facebook.com/profile.php?id=100010586593125" target="_blank" rel="noopener noreferrer">
-            <div className="account_service-logo">
-              <StaticImage src="../../static/icons/facebook.png" alt="logo" style={imageStyle} />
-            </div>
-            <div className="account_userid">100010586593125</div>
-          </a>
-        </div>
-        <div className="account_logo">
-          <div className="account_service">Qiita</div>
-          <a href="https://qiita.com/xryuseix" target="_blank" rel="noopener noreferrer">
-            <div className="account_service-logo">
-              <StaticImage src="../../static/icons/qiita.png" alt="logo" style={imageStyle} />
-            </div>
-            <div className="account_userid">xryuseix</div>
-          </a>
-        </div>
-        <div className="account_logo">
-          <div className="account_service">はてなブログ</div>
-          <a href="https://xryuseix.hatenablog.com/" target="_blank" rel="noopener noreferrer">
-            <div className="account_service-logo">
-              <StaticImage src="../../static/icons/hatena.png" alt="logo" style={imageStyle} />
-            </div>
-            <div className="account_userid">xryuseix</div>
-          </a>
-        </div>
-        <div className="account_logo">
-          <div className="account_service">AtCoder</div>
-          <a href="https://atcoder.jp/users/xryuseix" target="_blank" rel="noopener noreferrer">
-            <div className="account_service-logo">
-              <StaticImage src="../../static/icons/atcoder.svg" alt="logo" style={imageStyle} />
-            </div>
-            <div className="account_userid">xryuseix</div>
-          </a>
-        </div>
-        <div className="account_logo">
-          <div className="account_service">Codeforces</div>
-          <a href="https://codeforces.com/profile/xryuseix" target="_blank" rel="noopener noreferrer">
-            <div className="account_service-logo">
-              <StaticImage src="../../static/icons/noimage.png" alt="logo" style={imageStyle} />
-            </div>
-            <div className="account_userid">xryuseix</div>
-          </a>
-        </div>
-        <div className="account_logo">
-          <div className="account_service">leetcode</div>
-          <a href="https://leetcode.com/xryuseix/" target="_blank" rel="noopener noreferrer">
-            <div className="account_service-logo">
-              <StaticImage src="../../static/icons/noimage.png" alt="logo" style={imageStyle} />
-            </div>
-            <div className="account_userid">xryuseix</div>
-          </a>
-        </div>
-        <div className="account_logo">
-          <div className="account_service">slideshare</div>
-          <a href="https://www.slideshare.net/IshikawaRyusei" target="_blank" rel="noopener noreferrer">
-            <div className="account_service-logo">
-              <StaticImage src="../../static/icons/slideshare.png" alt="logo" style={imageStyle} />
-            </div>
-            <div className="account_userid">xryuseix</div>
-          </a>
-        </div>
-        <div className="account_logo">
-          <div className="account_service">connpass</div>
-          <a href="https://connpass.com/user/xryuseix/" target="_blank" rel="noopener noreferrer">
-            <div className="account_service-logo">
-              <StaticImage src="../../static/icons/connpass.png" alt="logo" style={imageStyle} />
-            </div>
-            <div className="account_userid">xryuseix</div>
-          </a>
-        </div>
-        <div className="account_logo">
-          <div className="account_service">Instagram</div>
-          <a href="https://www.instagram.com/ryusei_ishika/" target="_blank" rel="noopener noreferrer">
-            <div className="account_service-logo">
-              <StaticImage src="../../static/icons/noimage.png" alt="logo" style={imageStyle} />
-            </div>
-            <div className="account_userid">ryusei_ishika</div>
-          </a>
-        </div>
-        <div className="account_logo">
-          <div className="account_service">Discord</div>
-          <a href="https://discord.com/" target="_blank" rel="noopener noreferrer">
-            <div className="account_service-logo">
-              <StaticImage src="../../static/icons/noimage.png" alt="logo" style={imageStyle} />
-            </div>
-            <div className="account_userid">xryuseix#9439</div>
-          </a>
-        </div>
+        {Account.map((data) => (
+          <div className="account_logo">
+            <div className="account_service">{data.service}</div>
+            <a href={data.url} target="_blank" rel="noopener noreferrer">
+              <div className="account_service-logo">
+                <img src={data.image} alt="" style={{ 'max-width': '80px', 'max-height': '80px' }} />
+              </div>
+              <div className="account_userid">{data.userId}</div>
+            </a>
+          </div>
+        ))}
       </div>
     </Layout>
   )
 }
 
 export default AccountSiteIndex
-
-const imageStyle = { 'max-width': '80px', 'max-height': '80px' }
