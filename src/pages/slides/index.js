@@ -186,11 +186,10 @@ class SlidesSwitching extends React.Component {
     super(props)
     this.default = props.default
     this.state = {
-      display: props.default ? props.default : props.Slides[0].title,
-      render: false,
-      switchButton: true
+      switchButton: true,
+      data: props.default ? this.findSlide(props.slides, props.default) : props.slides[0]
     }
-    this.Slides = props.Slides
+    this.slides = props.slides
     this.titles = props.titles
   }
 
@@ -216,62 +215,52 @@ class SlidesSwitching extends React.Component {
   }
 
   /**
-   * レンダリングを少し遅らせる
-   * TODO: スライド数が増えれば遅延時間が増えるかもしれないので直す
+   * スライド一覧から特定のタイトルのスライドを探す
+   * @param slides スライド一覧
+   * @param targetSlide 探すスライド
    */
-  componentDidMount() {
-    setTimeout(
-      function () {
-        this.setState({ render: true })
-      }.bind(this),
-      500
-    )
+  findSlide(slides, targetSlide) {
+    return slides.find((content) => {
+      return content.title === targetSlide
+    })
   }
 
   render() {
-    if (!this.state.render) {
-      return <h2>PDF loading ...</h2>
-    } else {
-      return (
-        <div className="slide_detail">
-          <details className="slides_switch" style={{ display: this.state.switchButton ? 'block' : 'none' }}>
-            <summary className="slides_switch_summary">
-              <div className="slides_switch_text">
-                <MdExpandMore />
-                スライド一覧
-              </div>
-              <div className="slides_delete_switch">
-                <a href={'#/'} role="button" tabIndex={0} onClick={() => this.setState({ switchButton: false })}>
-                  <MdClose />
-                </a>
-              </div>
-            </summary>
-            <ul className="slide_detail-content">
-              {this.titles.map((title) => (
-                <li>
-                  <a
-                    href={'#/'}
-                    role="button"
-                    tabIndex={0}
-                    className="slides_switch_button"
-                    onClick={() => this.setState({ display: title })}
-                  >
-                    {this.substr(title, 20)}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </details>
-          {this.Slides.map((data) => (
-            <div style={{ display: this.state.display === data.title ? 'block' : 'none' }}>
-              <Document file={data.content}>
-                <SlideDisplay Slide={data} titles={this.titles} />
-              </Document>
+    return (
+      <div className="slide_detail">
+        <details className="slides_switch" style={{ display: this.state.switchButton ? 'block' : 'none' }}>
+          <summary className="slides_switch_summary">
+            <div className="slides_switch_text">
+              <MdExpandMore />
+              スライド一覧
             </div>
-          ))}
-        </div>
-      )
-    }
+            <div className="slides_delete_switch">
+              <a href={'#/'} role="button" tabIndex={0} onClick={() => this.setState({ switchButton: false })}>
+                <MdClose />
+              </a>
+            </div>
+          </summary>
+          <ul className="slide_detail-content">
+            {this.titles.map((title) => (
+              <li>
+                <a
+                  href={'#/'}
+                  role="button"
+                  tabIndex={0}
+                  className="slides_switch_button"
+                  onClick={() => this.setState({ data: this.findSlide(this.slides, title) })}
+                >
+                  {this.substr(title, 20)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
+        <Document file={this.state.data.content}>
+          <SlideDisplay Slide={this.state.data} titles={this.titles} />
+        </Document>
+      </div>
+    )
   }
 }
 
@@ -286,7 +275,7 @@ const SlideSiteIndex = ({ location }) => {
     <Layout location={location}>
       <Seo title="My slides" description="スライド一覧" />
       <Meta title="Slides" />
-      <SlidesSwitching Slides={Slides} titles={titles} default={defaultSlide} />
+      <SlidesSwitching slides={Slides} titles={titles} default={defaultSlide} />
     </Layout>
   )
 }
