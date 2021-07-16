@@ -106,7 +106,11 @@ const AccountSiteIndex = ({ location }) => {
             <div className="account_service">{data.service}</div>
             <a href={data.url} target="_blank" rel="noopener noreferrer">
               <div className="account_service-logo">
-                <img src={images[data.image].default} alt="" style={{ 'max-width': '80px', 'max-height': '80px' }} />
+                <img
+                  src={images[data.image].default || images[data.image]}
+                  alt=""
+                  style={{ 'max-width': '80px', 'max-height': '80px' }}
+                />
               </div>
               <div className="account_userid">{data.userId}</div>
             </a>
