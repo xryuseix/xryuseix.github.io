@@ -1,2 +1,0 @@
-(self.webpackChunk=self.webpackChunk||[]).push([[267],{8267:function(a,t,e){"use strict";e.r(t),t.default=e.p+"static/python_input-667477814c880727d48bea265d1daafa.pdf"}}]);
-//# sourceMappingURL=267-1cc6aa3549f05d5867ee.js.map

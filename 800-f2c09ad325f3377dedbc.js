@@ -1,2 +1,0 @@
-(self.webpackChunk=self.webpackChunk||[]).push([[800],{2800:function(c,e,p){"use strict";p.r(e),e.default=p.p+"static/rippro-fd2291b434aa128be0ec2c7c92b09cc5.pdf"}}]);
-//# sourceMappingURL=800-f2c09ad325f3377dedbc.js.map

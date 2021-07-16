@@ -1,2 +1,0 @@
-(self.webpackChunk=self.webpackChunk||[]).push([[24],{3024:function(c,e,f){"use strict";f.r(e),e.default=f.p+"static/heavy-tire-1c0f8a1b269530334ebdc7ccb9d8f4d6.pdf"}}]);
-//# sourceMappingURL=24-cd39e2d3af9e13c988a5.js.map
