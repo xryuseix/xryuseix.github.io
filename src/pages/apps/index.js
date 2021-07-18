@@ -1,20 +1,20 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import Layout from '../components/layout'
-import Seo from '../components/seo'
-import Meta from '../components/meta'
+import Layout from '../../components/layout'
+import Seo from '../../components/seo'
+import Meta from '../../components/meta'
 import { StaticImage } from 'gatsby-plugin-image'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import './apps.css'
 
 /* 挿入する画像一覧 */
-import sa_plagImage from '../images/saplag/sa-plag_demo.png'
-import xryuseix_judgeImage from '../images/xryuseix_judge.png'
-import zoomgImage from '../images/zoomg/zoomg.png'
-import cpsttImage from '../images/cpstt/cpstt_logo.png'
-import proofLeaderImage from '../images/proofLeader.png'
+import sa_plagImage from '../../images/saplag/sa-plag_demo.png'
+import xryuseix_judgeImage from '../../images/xryuseix_judge.png'
+import zoomgImage from '../../images/zoomg/zoomg.png'
+import cpsttImage from '../../images/cpstt/cpstt_logo.png'
+import proofLeaderImage from '../../images/proofLeader.png'
 
 /* 配列をシャッフル */
 const shuffle = ([...array]) => {
@@ -29,7 +29,7 @@ const shuffle = ([...array]) => {
 const AppData = shuffle([
   {
     appId: 'sa_plag',
-    appLink: '/apps/sa-plag',
+    appLink: '/sa-plag',
     imageSrc: sa_plagImage,
     imageAlt: 'SA-Plag Demo',
     appTitle: 'SA-Plag',
@@ -39,7 +39,7 @@ const AppData = shuffle([
   },
   {
     appId: 'xryuseix_judge',
-    appLink: '/apps/contest_judge',
+    appLink: '/contest_judge',
     imageSrc: xryuseix_judgeImage,
     imageAlt: 'xryuseix judge',
     appTitle: 'xryuseix judge',
