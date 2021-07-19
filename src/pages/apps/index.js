@@ -86,16 +86,12 @@ const AppData = shuffle([
 /* Webサイトリンク生成コンポーネント */
 const WebSite = (webPageLink) => {
   if (Object.values(webPageLink).join('') === '') {
-    return <td style={{ width: '50%' }}></td>
+    return <td className="apps_desc_link"></td>
   } else {
     return (
-      <td style={{ width: '50%' }}>
+      <td className="apps_desc_link">
         <a href={Object.values(webPageLink).join('')}>
-          <StaticImage
-            src="../../static/favicons/icon-32x32.png"
-            alt="favicon"
-            style={{ width: '1em', margin: '0px 0.3em 0px 0px' }}
-          />
+          <StaticImage src="../../../static/favicons/icon-32x32.png" alt="favicon" className="apps_desc_link_col" />
           Webサイト
         </a>
       </td>
@@ -104,18 +100,14 @@ const WebSite = (webPageLink) => {
 }
 
 /* GitHubリンク生成コンポーネント */
-const GitHub = (githubLink) => {
-  if (Object.values(githubLink).join('') === '') {
-    return <td style={{ width: '50%' }}></td>
+const GitHub = (link, logo) => {
+  if (Object.values(link).join('') === '') {
+    return <td className="apps_desc_link"></td>
   } else {
     return (
-      <td style={{ width: '50%' }}>
-        <a href={Object.values(githubLink).join('')} target="_blank" rel="noopener noreferrer">
-          <StaticImage
-            src="../../static/icons/GitHub.png"
-            alt="GitHub logo"
-            style={{ width: '1em', margin: '0px 0.3em 0px 0px' }}
-          />
+      <td className="apps_desc_link">
+        <a href={Object.values(link).join('')} target="_blank" rel="noopener noreferrer">
+          <StaticImage src={`../../../static/icons/${logo}.png`} alt="GitHub logo" className="apps_desc_link_col" />
           GitHub
         </a>
       </td>
@@ -138,38 +130,22 @@ const GitHub = (githubLink) => {
 const Apps = ({ appId, appLink, imageSrc, imageAlt, appTitle, appDesc, webPageLink, githubLink }) => {
   return (
     <div id={appId}>
-      <table style={{ margin: '30px 0px' }}>
+      <table className="apps_table">
         <tr>
-          <td
-            style={{
-              width: '50%',
-              'margin-left': 'auto',
-              'text-align': 'center'
-            }}
-          >
+          <td className="apps_image_col">
             <Link to={appLink}>
-              <img
-                src={images[imageSrc].default}
-                alt={imageAlt}
-                style={{ 'max-width': '100%', 'max-height': '250px' }}
-              />
+              <img src={images[imageSrc].default} alt={imageAlt} className="apps_image" />
             </Link>
           </td>{' '}
           <td valign="top">
-            <table
-              style={{
-                margin: '0px 0px 0px 10px',
-                'border-collapse': 'separate',
-                'border-spacing': '0px 10px'
-              }}
-            >
+            <table className="apps_title_desc">
               <tr align="center">
-                <th colspan="2" style={{ 'font-size': '2em' }}>
+                <th colspan="2" className="apps_title">
                   {appTitle}
                 </th>
               </tr>
               <tr>
-                <td colspan="2" style={{ 'white-space': 'pre-wrap' }}>
+                <td colspan="2" className="apps_desc">
                   {appDesc}
                 </td>
               </tr>
