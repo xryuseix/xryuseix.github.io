@@ -1,19 +1,7 @@
-/* slide PDF */
-import pythonInput from '../pages/slides/pdf/python_input.pdf'
-import PDFCrack from '../pages/slides/pdf/PDFCrack.pdf'
-import ReDoS from '../pages/slides/pdf/ReDoS.pdf'
-import linuxCommand from '../pages/slides/pdf/linuxcommand.pdf'
-import cpTools from '../pages/slides/pdf/cptools.pdf'
-import modinv from '../pages/slides/pdf/modinv.pdf'
-import rippro from '../pages/slides/pdf/rippro.pdf'
-import linuxInstall from '../pages/slides/pdf/linux_install.pdf'
-import heavyTire from '../pages/slides/pdf/heavy-tire.pdf'
-
 const Slides = [
   {
     title: 'Python2.x の input 関数にRCE 脆弱性がある話',
     description: 'RiST(立命館セキュリティチーム) 5/17 輪講の資料です',
-    content: pythonInput,
     id: 'python_input',
     page: 16,
     keyword: ['Security', 'Python'],
@@ -22,7 +10,6 @@ const Slides = [
   {
     title: 'PDFパスワードクラック',
     description: 'RiST 6/28の資料です．',
-    content: PDFCrack,
     id: 'PDFCrack',
     page: 26,
     keyword: ['Security', 'PDF'],
@@ -31,7 +18,6 @@ const Slides = [
   {
     title: '正規表現の脆弱性 ReDoS を簡単に説明する回',
     description: 'Ritsumeikan Security Teamで使用します',
-    content: ReDoS,
     id: 'ReDoS',
     page: 24,
     keyword: ['Security', 'Python'],
@@ -40,7 +26,6 @@ const Slides = [
   {
     title: 'Linuxコマンド入門',
     description: 'CTFで使うLinuxコマンド入門資料です．RiST 5/21の活動で使用予定です．',
-    content: linuxCommand,
     id: 'linuxcommand',
     page: 27,
     keyword: ['linux'],
@@ -49,7 +34,6 @@ const Slides = [
   {
     title: '競技プログラミングで便利な外部ツールを大量紹介',
     description: 'RiPPro 2021/6/18の資料です．',
-    content: cpTools,
     id: 'cptools',
     page: 20,
     keyword: ['competitive-programming', 'tool'],
@@ -58,7 +42,6 @@ const Slides = [
   {
     title: 'Modinv - 逆元の計算 -',
     description: 'RiPProで使用するスライドです．逆元を計算します．',
-    content: modinv,
     id: 'modinv',
     page: 15,
     keyword: ['competitive-programming', 'math'],
@@ -68,7 +51,6 @@ const Slides = [
     title: 'RiPPro団体紹介スライド',
     description:
       '立命館大学競技プログラミングサークルRiPProの情報理工学部向け団体紹介で使用するはずだったスライドです．本スライドはmanaba+Rでも掲載される予定です．',
-    content: rippro,
     id: 'rippro',
     page: 19,
     keyword: ['competitive-programming', 'college'],
@@ -77,7 +59,6 @@ const Slides = [
   {
     title: 'Linux(Ubuntu20.04)インストール',
     description: 'RiST活動第一回で使用予定のスライドです．',
-    content: linuxInstall,
     id: 'linux_install',
     page: 23,
     keyword: ['linux'],
@@ -86,7 +67,6 @@ const Slides = [
   {
     title: 'フィッシングサイト判定システム Heavy-Tire',
     description: 'セキュアシステム開発実験で作ったやつです',
-    content: heavyTire,
     id: 'heavy-tire',
     page: 10,
     keyword: ['phising'],

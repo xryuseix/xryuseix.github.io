@@ -15,8 +15,7 @@ import Meta from '../../components/meta'
 import Seo from '../../components/seo'
 import Slides from '../../utils/pdfList.js'
 import './slides.css'
-// import testPDF from './pdf/cptools.pdf'
-const testPDF = require('./pdf/cptools.pdf')
+
 /**
  * iconを一括importして動的に呼び出せるようにする
  * @param reqContent require.contextの返り値
@@ -28,8 +27,7 @@ function importAll(reqContent) {
 }
 const images = importAll(require.context('./pdf', false, /\.(png|jpe?g|svg)$/))
 const pdfs = importAll(require.context('./pdf', false, /\.pdf$/))
-console.log(images)
-console.log(pdfs)
+
 /*
  * スライドの表示・ページ切り替えを行う
  */
@@ -274,9 +272,7 @@ class SlidesSwitching extends React.Component {
             ))}
           </ul>
         </details>
-        <Document file={this.state.data.content}>
-          {/* <Document file={pdfs['rippro.pdf']}> */}
-          {/* <Document file="pdf/rippro.pdf"> */}
+        <Document file={`https://xryuseix.github.io${pdfs[`${this.state.data.id}.pdf`].default}`}>
           <SlideDisplay Slide={this.state.data} titles={this.titles} />
         </Document>
       </div>
