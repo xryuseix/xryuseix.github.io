@@ -9,7 +9,7 @@ import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon } fr
 import Layout from '../../components/layout'
 import Meta from '../../components/meta'
 import Seo from '../../components/seo'
-import Slides from '../../utils/pdfList.js'
+import Slides from './pdfList.js'
 import importAll from '../../components/importAll'
 
 import './slides.css'
@@ -295,6 +295,7 @@ const SlideSiteIndex = ({ location }) => {
       <Meta title="Slides" />
       <SlidesSwitching slides={Slides} titles={titles} default={defaultSlide} displaySwitchButton={displaySwitch} />
       <ul className="slider">
+        {/* TODO: Window幅を狭めると画像が上下中央になっていないことがわかる */}
         <Slider {...settings}>
           {Slides.map((slide) => (
             <div className="slides_slider_content">
