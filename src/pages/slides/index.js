@@ -15,20 +15,21 @@ import Meta from '../../components/meta'
 import Seo from '../../components/seo'
 import Slides from '../../utils/pdfList.js'
 import './slides.css'
-
+// import testPDF from './pdf/cptools.pdf'
+const testPDF = require('./pdf/cptools.pdf')
 /**
  * iconを一括importして動的に呼び出せるようにする
  * @param reqContent require.contextの返り値
  */
 function importAll(reqContent) {
-  let images = {}
-  reqContent.keys().map((item) => (images[item.replace('./', '')] = reqContent(item)))
-  return images
+  let items = {}
+  reqContent.keys().map((item) => (items[item.replace('./', '')] = reqContent(item)))
+  return items
 }
 const images = importAll(require.context('./pdf', false, /\.(png|jpe?g|svg)$/))
-// TODO:使う
-// const pdfs = importAll(require.context('./pdf', false, /\.(pdf)$/))
-
+const pdfs = importAll(require.context('./pdf', false, /\.pdf$/))
+console.log(images)
+console.log(pdfs)
 /*
  * スライドの表示・ページ切り替えを行う
  */
@@ -203,7 +204,7 @@ class SlidesSwitching extends React.Component {
     super(props)
     this.default = props.default
     this.state = {
-      switchButton: true,
+      switchButton: props.displaySwitchButton ? true : false,
       data: props.default ? this.findSlide(props.slides, props.default) : props.slides[0]
     }
     this.slides = props.slides
@@ -273,7 +274,9 @@ class SlidesSwitching extends React.Component {
             ))}
           </ul>
         </details>
-        <Document file={this.state.data.content}>
+        {/* <Document file={this.state.data.content}> */}
+        {/* <Document file={pdfs['rippro.pdf']}> */}
+        <Document file="pdf/rippro.pdf">
           <SlideDisplay Slide={this.state.data} titles={this.titles} />
         </Document>
       </div>
@@ -288,6 +291,7 @@ const SlideSiteIndex = ({ location }) => {
   const titles = Slides.map((slide) => slide['title'])
   const params = new URLSearchParams(location.search)
   const defaultSlide = params.get('slide')
+  const displaySwitch = params.get('switch') === null || params.get('switch') === 'true'
   const settings = {
     dots: true,
     infinite: true,
@@ -303,7 +307,7 @@ const SlideSiteIndex = ({ location }) => {
     <Layout location={location}>
       <Seo title="My slides" description="スライド一覧" />
       <Meta title="Slides" />
-      <SlidesSwitching slides={Slides} titles={titles} default={defaultSlide} />
+      <SlidesSwitching slides={Slides} titles={titles} default={defaultSlide} displaySwitchButton={displaySwitch} />
       <ul className="slider">
         <Slider {...settings}>
           {Slides.map((slide) => (
