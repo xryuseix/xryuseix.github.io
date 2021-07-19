@@ -164,9 +164,12 @@
 .slides_slider_content {
   text-align: center;
   border: #505050 solid 1px;
-  height: 6em;
+  height: 6.5em;
   padding: 3px 3px;
 }
 .slides_slider_image {
   max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
 }

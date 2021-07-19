@@ -27,7 +27,7 @@ function importAll(reqContent) {
 }
 const images = importAll(require.context('./pdf', false, /\.(png|jpe?g|svg)$/))
 // TODO:使う
-const pdfs = importAll(require.context('./pdf', false, /\.(pdf)$/))
+// const pdfs = importAll(require.context('./pdf', false, /\.(pdf)$/))
 
 /*
  * スライドの表示・ページ切り替えを行う
