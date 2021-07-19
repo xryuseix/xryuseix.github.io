@@ -75,12 +75,9 @@ const ReferenceLink = (props) => {
   if (Object.values(props.link).join('') === '') {
     return <td className="apps_desc_link"></td>
   } else {
-    console.log(props)
     return (
       <td className="apps_desc_link">
         <a href={Object.values(props.link).join('')} target="_blank" rel="noopener noreferrer">
-          {console.log(icons)}
-          {console.log(`${props.logo}.png`)}
           <img src={icons[`${props.logo}.png`]?.default} alt={props.logo} className="apps_desc_link_col" />
           {props.title}
         </a>

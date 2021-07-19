@@ -9,7 +9,7 @@ import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon } fr
 import Layout from '../../components/layout'
 import Meta from '../../components/meta'
 import Seo from '../../components/seo'
-import Slides from './pdfList.js'
+import slidesList from '../../components/pdfList'
 import importAll from '../../components/importAll'
 
 import './slides.css'
@@ -274,6 +274,7 @@ class SlidesSwitching extends React.Component {
 
 const ReactHint = ReactHintFactory(React)
 const SlideSiteIndex = ({ location }) => {
+  const Slides = slidesList()
   const titles = Slides.map((slide) => slide['title'])
   const params = new URLSearchParams(location.search)
   const defaultSlide = params.get('slide')
