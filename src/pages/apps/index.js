@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import Meta from '../../components/meta'
-import { StaticImage } from 'gatsby-plugin-image'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import './apps.css'
@@ -19,6 +18,7 @@ function importAll(reqContent) {
   return items
 }
 const images = importAll(require.context('./images', true, /\.(png|jpe?g|svg)$/))
+const icons = importAll(require.context('../../../static/icons', false, /(icon-32x32|github)\.png$/))
 
 /* 配列をシャッフル */
 const shuffle = ([...array]) => {
@@ -35,7 +35,6 @@ const AppData = shuffle([
     appId: 'sa_plag',
     appLink: '/sa-plag',
     imageSrc: 'saplag/sa-plag_demo.png',
-    imageAlt: 'SA-Plag Demo',
     appTitle: 'SA-Plag',
     appDesc: `ソースコードの盗作を判定するWeb APIです．\nAIが競技プログラミングのソースコードを学習しました．`,
     webPageLink: '/apps/sa-plag',
@@ -45,7 +44,6 @@ const AppData = shuffle([
     appId: 'xryuseix_judge',
     appLink: '/contest_judge',
     imageSrc: 'xryuseix_judge.png',
-    imageAlt: 'xryuseix judge',
     appTitle: 'xryuseix judge',
     appDesc: '簡易的なクイズの成績判定システムです． 立命館大学プロジェクト連合合同イベントなどで使用しました．',
     webPageLink: '/apps/contest_judge',
@@ -55,7 +53,6 @@ const AppData = shuffle([
     appId: 'zoomg',
     appLink: 'https://github.com/Tsuku43/zoomg',
     imageSrc: 'zoomg/zoomg.png',
-    imageAlt: 'zoomg',
     appTitle: 'zoomg',
     appDesc: 'バーチャル背景適用済み動画から部屋の画像を復元するライブラリ',
     webPageLink: '',
@@ -65,7 +62,6 @@ const AppData = shuffle([
     appId: 'cpstt',
     appLink: 'https://github.com/Tsuku43/zoomg',
     imageSrc: 'cpstt/cpstt_logo.png',
-    imageAlt: 'Competitive Programming Stress Test Tools',
     appTitle: 'Competitive Programming Stress Test Tools',
     appDesc: '競技プログラミング用 ストレステストツール',
     webPageLink: '',
@@ -75,7 +71,6 @@ const AppData = shuffle([
     appId: 'ProofLeader',
     appLink: 'https://github.com/xryuseix/ProofLeader',
     imageSrc: 'proofLeader.png',
-    imageAlt: 'ProofLeader',
     appTitle: 'ProofLeader',
     appDesc: 'markdownファイルの句読点や整数表記を修正',
     webPageLink: '',
@@ -83,31 +78,18 @@ const AppData = shuffle([
   }
 ])
 
-/* Webサイトリンク生成コンポーネント */
-const WebSite = (webPageLink) => {
-  if (Object.values(webPageLink).join('') === '') {
+/* Webページ・GitHubリンク生成コンポーネント */
+const ReferenceLink = (props) => {
+  if (Object.values(props.link).join('') === '') {
     return <td className="apps_desc_link"></td>
   } else {
+    console.log(props)
     return (
       <td className="apps_desc_link">
-        <a href={Object.values(webPageLink).join('')}>
-          <StaticImage src="../../../static/favicons/icon-32x32.png" alt="favicon" className="apps_desc_link_col" />
-          Webサイト
-        </a>
-      </td>
-    )
-  }
-}
-
-/* GitHubリンク生成コンポーネント */
-const GitHub = (link, logo) => {
-  if (Object.values(link).join('') === '') {
-    return <td className="apps_desc_link"></td>
-  } else {
-    return (
-      <td className="apps_desc_link">
-        <a href={Object.values(link).join('')} target="_blank" rel="noopener noreferrer">
-          <StaticImage src={`../../../static/icons/${logo}.png`} alt="GitHub logo" className="apps_desc_link_col" />
+        <a href={Object.values(props.link).join('')} target="_blank" rel="noopener noreferrer">
+          {console.log(icons)}
+          {console.log(`${props.logo}.png`)}
+          <img src={icons[`${props.logo}.png`]?.default} alt={props.logo} className="apps_desc_link_col" />
           GitHub
         </a>
       </td>
@@ -127,14 +109,14 @@ const GitHub = (link, logo) => {
  githubLink ... GitHubのリンク
 */
 
-const Apps = ({ appId, appLink, imageSrc, imageAlt, appTitle, appDesc, webPageLink, githubLink }) => {
+const Apps = ({ appId, appLink, imageSrc, appTitle, appDesc, webPageLink, githubLink }) => {
   return (
     <div id={appId}>
       <table className="apps_table">
         <tr>
           <td className="apps_image_col">
             <Link to={appLink}>
-              <img src={images[imageSrc].default} alt={imageAlt} className="apps_image" />
+              <img src={images[imageSrc]?.default} alt={appTitle} className="apps_image" />
             </Link>
           </td>{' '}
           <td valign="top">
@@ -150,8 +132,8 @@ const Apps = ({ appId, appLink, imageSrc, imageAlt, appTitle, appDesc, webPageLi
                 </td>
               </tr>
               <tr align="center">
-                <WebSite {...webPageLink} />
-                <GitHub {...githubLink} />
+                <ReferenceLink link={webPageLink} logo="icon-32x32" />
+                <ReferenceLink link={githubLink} logo="github" />
               </tr>
             </table>
           </td>
