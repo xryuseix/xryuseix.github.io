@@ -1,3 +1,4 @@
+/* アプリの説明 */
 .sa-plag_whats {
   position: relative;
   margin: 2em 0;
@@ -20,4 +21,35 @@
 .sa-plag_whats p {
   margin: 0;
   padding: 0;
+}
+
+/* 色々中央揃え */
+.sa-plag_center {
+  text-align: center;
+}
+
+/* タイトル */
+.sa-plag_title_logo {
+  width: 20%;
+  height: auto;
+}
+.sa-plag_title {
+  width: 70%;
+  height: auto;
+  text-align: left;
+}
+.sa-plag_title_font {
+  font-size: 4em;
+}
+
+/* デモ画像 */
+.sa-plag_demo {
+  width: 100%;
+  height: auto;
+}
+
+/* SHロゴ画像 */
+.sa-plag_sh {
+  width: 40%;
+  height: auto;
 }
