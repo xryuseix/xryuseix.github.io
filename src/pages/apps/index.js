@@ -9,12 +9,16 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import './apps.css'
 
-/* 挿入する画像一覧 */
-import sa_plagImage from '../../images/saplag/sa-plag_demo.png'
-import xryuseix_judgeImage from '../../images/xryuseix_judge.png'
-import zoomgImage from '../../images/zoomg/zoomg.png'
-import cpsttImage from '../../images/cpstt/cpstt_logo.png'
-import proofLeaderImage from '../../images/proofLeader.png'
+/**
+ * コンテンツを一括importして動的に呼び出せるようにする
+ * @param reqContent require.contextの返り値
+ */
+function importAll(reqContent) {
+  let items = {}
+  reqContent.keys().map((item) => (items[item.replace('./', '')] = reqContent(item)))
+  return items
+}
+const images = importAll(require.context('./images', true, /\.(png|jpe?g|svg)$/))
 
 /* 配列をシャッフル */
 const shuffle = ([...array]) => {
@@ -30,7 +34,7 @@ const AppData = shuffle([
   {
     appId: 'sa_plag',
     appLink: '/sa-plag',
-    imageSrc: sa_plagImage,
+    imageSrc: 'saplag/sa-plag_demo.png',
     imageAlt: 'SA-Plag Demo',
     appTitle: 'SA-Plag',
     appDesc: `ソースコードの盗作を判定するWeb APIです．\nAIが競技プログラミングのソースコードを学習しました．`,
@@ -40,7 +44,7 @@ const AppData = shuffle([
   {
     appId: 'xryuseix_judge',
     appLink: '/contest_judge',
-    imageSrc: xryuseix_judgeImage,
+    imageSrc: 'xryuseix_judge.png',
     imageAlt: 'xryuseix judge',
     appTitle: 'xryuseix judge',
     appDesc: '簡易的なクイズの成績判定システムです． 立命館大学プロジェクト連合合同イベントなどで使用しました．',
@@ -50,7 +54,7 @@ const AppData = shuffle([
   {
     appId: 'zoomg',
     appLink: 'https://github.com/Tsuku43/zoomg',
-    imageSrc: zoomgImage,
+    imageSrc: 'zoomg/zoomg.png',
     imageAlt: 'zoomg',
     appTitle: 'zoomg',
     appDesc: 'バーチャル背景適用済み動画から部屋の画像を復元するライブラリ',
@@ -60,7 +64,7 @@ const AppData = shuffle([
   {
     appId: 'cpstt',
     appLink: 'https://github.com/Tsuku43/zoomg',
-    imageSrc: cpsttImage,
+    imageSrc: 'cpstt/cpstt_logo.png',
     imageAlt: 'Competitive Programming Stress Test Tools',
     appTitle: 'Competitive Programming Stress Test Tools',
     appDesc: '競技プログラミング用 ストレステストツール',
@@ -70,7 +74,7 @@ const AppData = shuffle([
   {
     appId: 'ProofLeader',
     appLink: 'https://github.com/xryuseix/ProofLeader',
-    imageSrc: proofLeaderImage,
+    imageSrc: 'proofLeader.png',
     imageAlt: 'ProofLeader',
     appTitle: 'ProofLeader',
     appDesc: 'markdownファイルの句読点や整数表記を修正',
@@ -144,7 +148,11 @@ const Apps = ({ appId, appLink, imageSrc, imageAlt, appTitle, appDesc, webPageLi
             }}
           >
             <Link to={appLink}>
-              <img src={imageSrc} alt={imageAlt} style={{ 'max-width': '100%', 'max-height': '250px' }} />
+              <img
+                src={images[imageSrc].default}
+                alt={imageAlt}
+                style={{ 'max-width': '100%', 'max-height': '250px' }}
+              />
             </Link>
           </td>{' '}
           <td valign="top">

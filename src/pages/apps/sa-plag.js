@@ -3,9 +3,10 @@ import React from 'react'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import Meta from '../../components/meta'
-import { StaticImage } from 'gatsby-plugin-image'
-import saplagDemo from '../../images/saplag/sa-plag_demo.gif'
+// import { StaticImage } from 'gatsby-plugin-image'
 import './sa-plag.css'
+
+// import saplagDemo from '../../images/saplag/sa-plag_demo.gif'
 
 const SiteIndex = ({ location }) => {
   return (
@@ -16,7 +17,7 @@ const SiteIndex = ({ location }) => {
       />
       <Meta title="SA-Plag" />
 
-      <table style={{ 'text-align': 'center' }}>
+      {/* <table style={{ 'text-align': 'center' }}>
         <tr>
           <th style={{ width: '20%', height: 'auto' }}>
             <StaticImage src="../../images/saplag/sa-plag_logo.png" alt="SA-Plag logo" />
@@ -50,7 +51,7 @@ const SiteIndex = ({ location }) => {
             style={{ width: '40%', height: 'auto' }}
           />
         </a>
-      </div>
+      </div> */}
     </Layout>
   )
 }
