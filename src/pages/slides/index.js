@@ -1,5 +1,5 @@
 import React from 'react'
-import { pdfjs, Document, Page } from 'react-pdf'
+import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
 import { MdClose, MdExpandMore } from 'react-icons/md'
 import { GrCircleQuestion } from 'react-icons/gr'
 import ReactHintFactory from 'react-hint'
@@ -274,9 +274,9 @@ class SlidesSwitching extends React.Component {
             ))}
           </ul>
         </details>
-        {/* <Document file={this.state.data.content}> */}
-        {/* <Document file={pdfs['rippro.pdf']}> */}
-        <Document file="pdf/rippro.pdf">
+        <Document file={this.state.data.content}>
+          {/* <Document file={pdfs['rippro.pdf']}> */}
+          {/* <Document file="pdf/rippro.pdf"> */}
           <SlideDisplay Slide={this.state.data} titles={this.titles} />
         </Document>
       </div>
@@ -286,8 +286,6 @@ class SlidesSwitching extends React.Component {
 
 const ReactHint = ReactHintFactory(React)
 const SlideSiteIndex = ({ location }) => {
-  pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
-
   const titles = Slides.map((slide) => slide['title'])
   const params = new URLSearchParams(location.search)
   const defaultSlide = params.get('slide')
