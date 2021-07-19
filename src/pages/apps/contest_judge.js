@@ -5,6 +5,9 @@ import Seo from '../../components/seo'
 import Meta from '../../components/meta'
 
 const SiteIndex = ({ location }) => {
+  const docsURL =
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vS2YeEfXDZ-ANvSbNufYhQFFmzMEV6m9T97RMXMuVQ1qUae4FQoxyvvYlkyy938UVyfC8Ygx2pR9iBw'
+  const docsParam = 'chrome=false&amp;headers=false&amp'
   return (
     <Layout location={location}>
       <Seo title="All posts" />
@@ -19,7 +22,7 @@ const SiteIndex = ({ location }) => {
         (googleが5分おきに更新すると言ってますが，5分以上待たされることは普通にあります)
         <br />
         <iframe
-          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS2YeEfXDZ-ANvSbNufYhQFFmzMEV6m9T97RMXMuVQ1qUae4FQoxyvvYlkyy938UVyfC8Ygx2pR9iBw/pubhtml?gid=1333289856&amp;single=true&amp;chrome=false&amp;headers=false&amp;range=I1:I2"
+          src={`${docsURL}/pubhtml?gid=1333289856&amp;single=true&amp;${docsParam};range=I1:I2`}
           width="147"
           height="57"
           frameborder="0"
@@ -32,7 +35,7 @@ const SiteIndex = ({ location }) => {
         <div class="Submissions">
           <h2>Submissions</h2>
           <iframe
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS2YeEfXDZ-ANvSbNufYhQFFmzMEV6m9T97RMXMuVQ1qUae4FQoxyvvYlkyy938UVyfC8Ygx2pR9iBw/pubhtml?gid=1877264206&amp;single=true&amp;chrome=false&amp;headers=false&amp;range=A1:E10000"
+            src={`${docsURL}/pubhtml?gid=1877264206&amp;single=true&amp;${docsParam};range=A1:E10000`}
             width="450"
             height="360"
             frameborder="0"
@@ -46,7 +49,7 @@ const SiteIndex = ({ location }) => {
         <div class="Ranking">
           <h2>Ranking</h2>
           <iframe
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS2YeEfXDZ-ANvSbNufYhQFFmzMEV6m9T97RMXMuVQ1qUae4FQoxyvvYlkyy938UVyfC8Ygx2pR9iBw/pubhtml?gid=1333289856&amp;single=true&amp;chrome=false&amp;headers=false&amp;range=A1:G10000"
+            src={`${docsURL}/pubhtml?gid=1333289856&amp;single=true&amp;${docsParam};range=A1:G10000`}
             width="470"
             height="360"
             frameborder="0"
@@ -62,7 +65,7 @@ const SiteIndex = ({ location }) => {
             seamless
             frameborder="1"
             scrolling="no"
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS2YeEfXDZ-ANvSbNufYhQFFmzMEV6m9T97RMXMuVQ1qUae4FQoxyvvYlkyy938UVyfC8Ygx2pR9iBw/pubchart?oid=1265597912&amp;format=interactive"
+            src={`${docsURL}/pubchart?oid=1265597912&amp;format=interactive`}
             title="ranking2"
           >
             読み込んでいます…
