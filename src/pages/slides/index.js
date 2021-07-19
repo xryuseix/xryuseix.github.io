@@ -294,7 +294,7 @@ const SlideSiteIndex = ({ location }) => {
     autoplay: true,
     pauseOnHover: true,
     speed: 500,
-    slidesToShow: 5, // TODO:ここいい感じにする
+    slidesToShow: Math.min(titles.length, 5),
     slidesToScroll: 1,
     autoplaySpeed: 5000,
     lazyLoad: 'ondemand'
