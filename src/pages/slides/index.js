@@ -3,8 +3,12 @@ import { pdfjs, Document, Page } from 'react-pdf'
 import { MdClose, MdExpandMore } from 'react-icons/md'
 import { GrCircleQuestion } from 'react-icons/gr'
 import ReactHintFactory from 'react-hint'
-import 'react-hint/css/index.css'
+import Slider from 'react-slick'
 import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon } from 'react-share'
+
+import 'react-hint/css/index.css'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 import Layout from '../../components/layout'
 import Meta from '../../components/meta'
@@ -271,11 +275,44 @@ const SlideSiteIndex = ({ location }) => {
   const titles = Slides.map((slide) => slide['title'])
   const params = new URLSearchParams(location.search)
   const defaultSlide = params.get('slide')
+  const settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    pauseOnHover: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplaySpeed: 5000,
+    lazyLoad: 'ondemand'
+  }
+  /**
+   * iconを一括importして動的に呼び出せるようにする
+   * @param reqContent require.contextの返り値
+   */
+  function importAll(reqContent) {
+    let images = {}
+    reqContent.keys().map((item) => (images[item.replace('./', '')] = reqContent(item)))
+    return images
+  }
+  const images = importAll(require.context('./pdf', false, /\.(png|jpe?g|svg)$/))
   return (
     <Layout location={location}>
       <Seo title="My slides" description="スライド一覧" />
       <Meta title="Slides" />
       <SlidesSwitching slides={Slides} titles={titles} default={defaultSlide} />
+      {console.log(images)}
+      <ul className="slider">
+        <Slider {...settings}>
+          {Slides.map((slide) => (
+            <div className="slides_slider_content">
+              <a href={`/slides/?slide=${encodeURI(slide.title)}`}>
+                <img src={images[`ReDoS.png`]?.default} alt={slide.title} className="slides_slider_image"/>
+              </a>
+            </div>
+          ))}
+        </Slider>
+      </ul>
     </Layout>
   )
 }

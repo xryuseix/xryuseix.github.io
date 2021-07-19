@@ -33,7 +33,7 @@
 
 /* Shere機能 */
 .slide_share {
-  clear:both;
+  clear: both;
   margin-left: 5px;
 }
 
@@ -144,4 +144,29 @@
 .slides_switch_summary {
   display: flex;
   justify-content: space-between;
+}
+
+/* スライダーの設定 */
+.slider .slick-prev {
+  left: 10px;
+}
+.slider .slick-next {
+  right: 10px;
+}
+.slider .slick-prev,
+.slider .slick-next {
+  z-index: 100;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: #303030;
+}
+.slides_slider_content {
+  text-align: center;
+  border: #505050 solid 1px;
+  height: 6em;
+  padding: 10px 10px;
+}
+.slides_slider_image {
+  max-width: 100%;
 }
