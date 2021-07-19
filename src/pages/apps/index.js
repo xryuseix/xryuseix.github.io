@@ -82,7 +82,7 @@ const ReferenceLink = (props) => {
           {console.log(icons)}
           {console.log(`${props.logo}.png`)}
           <img src={icons[`${props.logo}.png`]?.default} alt={props.logo} className="apps_desc_link_col" />
-          GitHub
+          {props.title}
         </a>
       </td>
     )
@@ -124,8 +124,8 @@ const Apps = ({ appId, appLink, imageSrc, appTitle, appDesc, webPageLink, github
                 </td>
               </tr>
               <tr align="center">
-                <ReferenceLink link={webPageLink} logo="icon-32x32" />
-                <ReferenceLink link={githubLink} logo="github" />
+                <ReferenceLink link={webPageLink} title="Webサイト" logo="icon-32x32" />
+                <ReferenceLink link={githubLink} title="GitHub" logo="github" />
               </tr>
             </table>
           </td>
