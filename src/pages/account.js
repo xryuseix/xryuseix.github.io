@@ -3,6 +3,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import Meta from '../components/meta'
+import importAll from '../components/importAll'
 
 import './account.css'
 
@@ -80,16 +81,6 @@ const Account = [
     userId: 'xryuseix#9439'
   }
 ]
-
-/**
- * iconを一括importして動的に呼び出せるようにする
- * @param reqContent require.contextの返り値
- */
-function importAll(reqContent) {
-  let images = {}
-  reqContent.keys().map((item) => (images[item.replace('./', '')] = reqContent(item)))
-  return images
-}
 
 const AccountSiteIndex = ({ location }) => {
   const siteTitle = 'Account'

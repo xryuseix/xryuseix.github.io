@@ -4,19 +4,11 @@ import { Link } from 'gatsby'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import Meta from '../../components/meta'
+import importAll from '../../components/importAll'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import './apps.css'
 
-/**
- * コンテンツを一括importして動的に呼び出せるようにする
- * @param reqContent require.contextの返り値
- */
-function importAll(reqContent) {
-  let items = {}
-  reqContent.keys().map((item) => (items[item.replace('./', '')] = reqContent(item)))
-  return items
-}
 const images = importAll(require.context('./images', true, /\.(png|jpe?g|svg)$/))
 const icons = importAll(require.context('../../../static/icons', false, /(icon-32x32|github)\.png$/))
 

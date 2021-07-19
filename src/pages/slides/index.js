@@ -6,25 +6,17 @@ import ReactHintFactory from 'react-hint'
 import Slider from 'react-slick'
 import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon } from 'react-share'
 
-import 'react-hint/css/index.css'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-
 import Layout from '../../components/layout'
 import Meta from '../../components/meta'
 import Seo from '../../components/seo'
 import Slides from '../../utils/pdfList.js'
-import './slides.css'
+import importAll from '../../components/importAll'
 
-/**
- * コンテンツを一括importして動的に呼び出せるようにする
- * @param reqContent require.contextの返り値
- */
-function importAll(reqContent) {
-  let items = {}
-  reqContent.keys().map((item) => (items[item.replace('./', '')] = reqContent(item)))
-  return items
-}
+import './slides.css'
+import 'react-hint/css/index.css'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+
 const images = importAll(require.context('./pdf', false, /\.(png|jpe?g|svg)$/))
 const pdfs = importAll(require.context('./pdf', false, /\.pdf$/))
 
