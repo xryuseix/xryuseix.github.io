@@ -16,6 +16,19 @@ import Seo from '../../components/seo'
 import Slides from '../../utils/pdfList.js'
 import './slides.css'
 
+/**
+ * iconを一括importして動的に呼び出せるようにする
+ * @param reqContent require.contextの返り値
+ */
+function importAll(reqContent) {
+  let images = {}
+  reqContent.keys().map((item) => (images[item.replace('./', '')] = reqContent(item)))
+  return images
+}
+const images = importAll(require.context('./pdf', false, /\.(png|jpe?g|svg)$/))
+// TODO:使う
+const pdfs = importAll(require.context('./pdf', false, /\.(pdf)$/))
+
 /*
  * スライドの表示・ページ切り替えを行う
  */
@@ -281,33 +294,22 @@ const SlideSiteIndex = ({ location }) => {
     autoplay: true,
     pauseOnHover: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 5, // TODO:ここいい感じにする
     slidesToScroll: 1,
     autoplaySpeed: 5000,
     lazyLoad: 'ondemand'
   }
-  /**
-   * iconを一括importして動的に呼び出せるようにする
-   * @param reqContent require.contextの返り値
-   */
-  function importAll(reqContent) {
-    let images = {}
-    reqContent.keys().map((item) => (images[item.replace('./', '')] = reqContent(item)))
-    return images
-  }
-  const images = importAll(require.context('./pdf', false, /\.(png|jpe?g|svg)$/))
   return (
     <Layout location={location}>
       <Seo title="My slides" description="スライド一覧" />
       <Meta title="Slides" />
       <SlidesSwitching slides={Slides} titles={titles} default={defaultSlide} />
-      {console.log(images)}
       <ul className="slider">
         <Slider {...settings}>
           {Slides.map((slide) => (
             <div className="slides_slider_content">
               <a href={`/slides/?slide=${encodeURI(slide.title)}`}>
-                <img src={images[`ReDoS.png`]?.default} alt={slide.title} className="slides_slider_image"/>
+                <img src={images[`${slide.id}.png`]?.default} alt={slide.title} className="slides_slider_image" />
               </a>
             </div>
           ))}
