@@ -264,7 +264,8 @@ class SlidesSwitching extends React.Component {
             ))}
           </ul>
         </details>
-        <Document file={`https://xryuseix.github.io${pdfs[`${this.state.data.id}.pdf`].default}`}>
+        {console.log(pdfs[`${this.state.data.id}.pdf`].default)}
+        <Document file={`${pdfs[`${this.state.data.id}.pdf`].default}`}>
           <SlideDisplay Slide={this.state.data} titles={this.titles} />
         </Document>
       </div>
