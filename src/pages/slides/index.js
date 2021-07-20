@@ -1,5 +1,5 @@
 import React from 'react'
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
+import { pdfjs, Document, Page } from 'react-pdf'
 import { MdClose, MdExpandMore } from 'react-icons/md'
 import { GrCircleQuestion } from 'react-icons/gr'
 import ReactHintFactory from 'react-hint'
@@ -17,6 +17,7 @@ import 'react-hint/css/index.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 const images = importAll(require.context('./pdf', false, /\.(png|jpe?g|svg)$/))
 const pdfs = importAll(require.context('./pdf', false, /\.pdf$/))
 
@@ -265,7 +266,7 @@ class SlidesSwitching extends React.Component {
           </ul>
         </details>
         {console.log(pdfs[`${this.state.data.id}.pdf`].default)}
-        <Document file={`${pdfs[`${this.state.data.id}.pdf`].default}`}>
+        <Document file={pdfs[`${this.state.data.id}.pdf`].default}>
           <SlideDisplay Slide={this.state.data} titles={this.titles} />
         </Document>
       </div>
