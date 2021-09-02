@@ -124,7 +124,7 @@ const EventData = [
   {
     year: '2021',
     detail: 'ICPC アジア地区横浜大会',
-    url: 'https://icpc.iisf.or.jp/2020-yokohama/domestic/'
+    url: 'https://icpc.iisf.or.jp/2020-yokohama/domestic'
   }
 ]
 
@@ -150,7 +150,7 @@ const HackData = [
         </details>
       </>
     ),
-    url: 'https://www.ipa.go.jp/security/vuln/report/'
+    url: 'https://www.ipa.go.jp/security/vuln/report'
   }
 ]
 
@@ -174,6 +174,11 @@ const QualificationData = [
     year: '2020',
     detail: 'TOEIC 610点',
     url: 'https://www.iibc-global.org/toeic.html'
+  },
+  {
+    year: '2021',
+    detail: '2級鍵師技能検定',
+    url: 'https://www.kagishi.com/examination/kagishi2'
   }
 ]
 
