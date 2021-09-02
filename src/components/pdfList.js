@@ -72,6 +72,14 @@ const SlidesList = () => {
       page: 10,
       keyword: ['phising'],
       update: '2021/7/14'
+    },
+    {
+      title: 'CTFサーバを立てる',
+      description: 'ctfdを起動するだけです',
+      id: 'ctfd',
+      page: 15,
+      keyword: ['ctf', 'web'],
+      update: '2020/12/13'
     }
   ].sort((a, b) => (new Date(a.update) > new Date(b.update) ? -1 : 1))
 }
