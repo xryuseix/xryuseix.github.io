@@ -5,8 +5,9 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import Meta from '../../components/meta'
 import importAll from '../../components/importAll'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import { MdOpenInNew } from 'react-icons/md'
 import './apps.css'
 
 const images = importAll(require.context('./images', true, /\.(png|jpe?g|svg)$/))
@@ -80,6 +81,7 @@ const ReferenceLink = (props) => {
         <a href={Object.values(props.link).join('')} target="_blank" rel="noopener noreferrer">
           <img src={icons[`${props.logo}.png`]?.default} alt={props.logo} className="apps_desc_link_col" />
           {props.title}
+          {props.title == 'GitHub' ? <MdOpenInNew /> : ''}
         </a>
       </td>
     )

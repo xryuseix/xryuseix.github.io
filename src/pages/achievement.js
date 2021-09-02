@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import Meta from '../components/meta'
 
+import { MdOpenInNew } from 'react-icons/md'
 import IPAVulnList from '../utils/ipaVulnerability/vulnList'
 
 import './achievement.css'
@@ -195,7 +196,7 @@ const AchievesContent = ({ year, detail, url }) => {
       <td class="achievement_detail">{detail}</td>
       <td class="achievement_url">
         <a href={url} target="_blank" rel="noopener noreferrer">
-          Link
+          Link<MdOpenInNew />
         </a>
       </td>
     </tr>
