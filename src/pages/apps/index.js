@@ -26,7 +26,7 @@ const shuffle = ([...array]) => {
 const AppData = shuffle([
   {
     appId: 'sa_plag',
-    appLink: '/sa-plag',
+    appLink: '/apps/sa-plag',
     imageSrc: 'saplag/sa-plag_demo.png',
     appTitle: 'SA-Plag',
     appDesc: `ソースコードの盗作を判定するWeb APIです．\nAIが競技プログラミングのソースコードを学習しました．`,
@@ -35,7 +35,7 @@ const AppData = shuffle([
   },
   {
     appId: 'xryuseix_judge',
-    appLink: '/contest_judge',
+    appLink: '/apps/contest_judge',
     imageSrc: 'xryuseix_judge.png',
     appTitle: 'xryuseix judge',
     appDesc: '簡易的なクイズの成績判定システムです． 立命館大学プロジェクト連合合同イベントなどで使用しました．',
