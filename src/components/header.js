@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Navbar, Nav } from 'react-bootstrap'
+import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { MdOpenInNew } from 'react-icons/md'
 
 const Header = (props) => (
   <header className="bg-dark">
     <Container>
-      <Navbar expand="md" variant="dark">
+      <Navbar expand="md" bg="dark" variant="dark">
         <Link to="/" className="navbar-brand">
           Home
         </Link>
@@ -45,6 +45,10 @@ const Header = (props) => (
                 News
               </Link>
             </Nav.Item>
+            <NavDropdown title="Slides" id="basic-nav-dropdown" bg="dark" renderMenuOnMount={true}>
+              <NavDropdown.Item href="/slides">PDF Viewer</NavDropdown.Item>
+              <NavDropdown.Item href="/lt">Single-Page App</NavDropdown.Item>
+            </NavDropdown>
             <Nav.Item as="li">
               <a
                 className="nav-link"
@@ -55,12 +59,6 @@ const Header = (props) => (
                 Repository
                 <MdOpenInNew />
               </a>
-            </Nav.Item>
-            <Nav.Item as="li">
-              <form id="form1" action="/search" method="get">
-                <input id="s" name="s" type="text" placeholder="xryuseix CTF!" style={{ display: 'none' }} />
-                <input type="submit" value="search" style={{ display: 'none' }} />
-              </form>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
