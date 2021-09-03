@@ -57,7 +57,7 @@ const SiteIndex = ({ location }) => {
           </Link>
         </li>
         <li className="index_footer-column index_scale">
-          <Link to="/news">
+          <Link to="/lt">
             <h3>Slides</h3>
           </Link>
         </li>
