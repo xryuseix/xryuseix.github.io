@@ -21,12 +21,6 @@ const ProblemsData = [
     answer: 'xryuseixCTF{flag}'
   },
   {
-    title: '[Web](100) Wandering',
-    statement: 'このサイトの内容が多すぎて困ってます．検索ページを付けようか迷ってます...',
-    flag: 'xryuseixCTF{XSS_51y0ut051t3t3_ku54}',
-    answer: 'https://xryuseix.github.io/search/'
-  },
-  {
     title: '[misc](200) Time measurement',
     statement: (
       <>

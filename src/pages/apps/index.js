@@ -81,7 +81,7 @@ const ReferenceLink = (props) => {
         <a href={Object.values(props.link).join('')} target="_blank" rel="noopener noreferrer">
           <img src={icons[`${props.logo}.png`]?.default} alt={props.logo} className="apps_desc_link_col" />
           {props.title}
-          {props.title == 'GitHub' ? <MdOpenInNew /> : ''}
+          {props.title === 'GitHub' ? <MdOpenInNew /> : ''}
         </a>
       </td>
     )
