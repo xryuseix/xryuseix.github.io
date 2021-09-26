@@ -32,7 +32,12 @@ const SchoolData = [
                   <ul>
                     <li>暗号化ソフトウェア</li>
                     <li>
-                      シーザー暗号，ADFGVX暗号，ワンタイムパッド，自作暗号であるcubing暗号を暗号化・復号できるソフトウェア(現在の仕様と大幅に異なる)
+                      シーザー暗号，ADFGVX暗号，ワンタイムパッド，自作暗号である
+                      <a href="https://github.com/xryuseix/cubing_cipher" target="_blank" rel="noopener noreferrer">
+                        cubing暗号
+                        <MdOpenInNew />
+                      </a>
+                      を暗号化・復号できるソフトウェア(現在の仕様と大幅に異なる)
                     </li>
                   </ul>
                 </details>
@@ -63,8 +68,18 @@ const WorkData = [
   },
   {
     year: '2020-',
-    detail: 'paiza株式会社 学習事業部 業務委託契約',
+    detail: 'paiza株式会社 学習事業部 学生スタッフ',
     url: 'https://www.paiza.co.jp/'
+  },
+  {
+    year: '2021',
+    detail: 'デロイト トーマツ サイバー合同会社 3daysインターンシップ',
+    url: 'https://www.onecareer.jp/events/23881'
+  },
+  {
+    year: '2021',
+    detail: 'ＮＴＴ東日本 夏季DS/DX/セキュリティ 5daysインターンシップ',
+    url: 'https://www.ntt-east.co.jp/recruit/internship-tech/'
   }
 ]
 
@@ -196,7 +211,8 @@ const AchievesContent = ({ year, detail, url }) => {
       <td class="achievement_detail">{detail}</td>
       <td class="achievement_url">
         <a href={url} target="_blank" rel="noopener noreferrer">
-          Link<MdOpenInNew />
+          Link
+          <MdOpenInNew />
         </a>
       </td>
     </tr>
