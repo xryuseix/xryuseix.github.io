@@ -36,11 +36,6 @@ const Header = (props) => (
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link className="nav-link" to="/slides">
-                Slides
-              </Link>
-            </Nav.Item>
-            <Nav.Item as="li">
               <Link className="nav-link" to="/news">
                 News
               </Link>
