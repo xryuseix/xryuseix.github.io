@@ -4,9 +4,13 @@ import Layout from '../../components/layout'
 import Meta from '../../components/meta'
 import Seo from '../../components/seo'
 
+import './color.css'
+
 const Colors = [
-  { name: '赤', code: 'red' },
-  { name: '黒', code: 'black' }
+    { name: '黒', code: 'black' },
+    { name: '白', code: 'white' },
+    { name: '赤', code: 'red' },
+    { name: '黄', code: 'yellow' }
 ]
 
 /*
@@ -25,17 +29,17 @@ class ColorsSwitching extends React.Component {
   /*
    * キーが押された時の処理
    */
-  handleKeyDown(e) {
+  exitFullscreen() {
     if (this.state.full) {
-      // 元に戻す
+      // フルスクリーン元に戻す
       if (document.webkitCancelFullScreen) {
-        document.webkitCancelFullScreen() //Chrome15+, Safari5.1+, Opera15+
+        document.webkitCancelFullScreen() // Chrome15+, Safari5.1+, Opera15+
       } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen() //FF10+
+        document.mozCancelFullScreen() // FF10+
       } else if (document.msExitFullscreen) {
-        document.msExitFullscreen() //IE11+
+        document.msExitFullscreen() // IE11+
       } else if (document.cancelFullScreen) {
-        document.cancelFullScreen() //Gecko:FullScreenAPI仕様
+        document.cancelFullScreen() // Gecko:FullScreenAPI仕様
       } else if (document.exitFullscreen) {
         document.exitFullscreen() // HTML5 Fullscreen API仕様
       }
@@ -48,6 +52,9 @@ class ColorsSwitching extends React.Component {
   /*
    * キーが押された時のイベントハンドラ
    */
+  handleKeyDown() {
+    this.exitFullscreen()
+  }
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown.bind(this))
   }
@@ -62,11 +69,11 @@ class ColorsSwitching extends React.Component {
     // フルスクリーンにする
     const elem = document.querySelector('.color_body')
     if (elem.webkitRequestFullscreen) {
-      elem.webkitRequestFullscreen() //Chrome15+, Safari5.1+, Opera15+
+      elem.webkitRequestFullscreen() // Chrome15+, Safari5.1+, Opera15+
     } else if (elem.mozRequestFullScreen) {
-      elem.mozRequestFullScreen() //FF10+
+      elem.mozRequestFullScreen() // FF10+
     } else if (elem.msRequestFullscreen) {
-      elem.msRequestFullscreen() //IE11+
+      elem.msRequestFullscreen() // IE11+
     } else if (elem.requestFullscreen) {
       elem.requestFullscreen() // HTML5 Fullscreen API仕様
     }
@@ -78,7 +85,12 @@ class ColorsSwitching extends React.Component {
       <div className="color_body">
         <div style={{ display: this.state.display }}>
           {Colors.map((colorData) => (
-            <button onClick={() => this.changeBackGrountColor(colorData.code)}>{colorData.name}</button>
+            <button
+              style={{ backgroundColor: colorData.code }}
+              onClick={() => this.changeBackGrountColor(colorData.code)}
+            >
+              {colorData.name}
+            </button>
           ))}
         </div>
       </div>
