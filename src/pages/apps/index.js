@@ -26,7 +26,6 @@ const shuffle = ([...array]) => {
 const AppData = shuffle([
   {
     appId: 'sa_plag',
-    appLink: '/apps/sa-plag',
     imageSrc: 'saplag/sa-plag_demo.png',
     appTitle: 'SA-Plag',
     appDesc: `ソースコードの盗作を判定するWeb APIです．\nAIが競技プログラミングのソースコードを学習しました．`,
@@ -35,7 +34,6 @@ const AppData = shuffle([
   },
   {
     appId: 'xryuseix_judge',
-    appLink: '/apps/contest_judge',
     imageSrc: 'xryuseix_judge.png',
     appTitle: 'xryuseix judge',
     appDesc: '簡易的なクイズの成績判定システムです． 立命館大学プロジェクト連合合同イベントなどで使用しました．',
@@ -44,7 +42,6 @@ const AppData = shuffle([
   },
   {
     appId: 'zoomg',
-    appLink: 'https://github.com/Tsuku43/zoomg',
     imageSrc: 'zoomg/zoomg.png',
     appTitle: 'zoomg',
     appDesc: 'バーチャル背景適用済み動画から部屋の画像を復元するライブラリ',
@@ -53,7 +50,6 @@ const AppData = shuffle([
   },
   {
     appId: 'cpstt',
-    appLink: 'https://github.com/Tsuku43/zoomg',
     imageSrc: 'cpstt/cpstt_logo.png',
     appTitle: 'Competitive Programming Stress Test Tools',
     appDesc: '競技プログラミング用 ストレステストツール',
@@ -62,12 +58,19 @@ const AppData = shuffle([
   },
   {
     appId: 'ProofLeader',
-    appLink: 'https://github.com/xryuseix/ProofLeader',
     imageSrc: 'proofLeader.png',
     appTitle: 'ProofLeader',
     appDesc: 'markdownファイルの句読点や整数表記を修正',
     webPageLink: '',
     githubLink: 'https://github.com/xryuseix/ProofLeader'
+  },
+  {
+    appId: 'Color',
+    imageSrc: 'color.png',
+    appTitle: 'Color',
+    appDesc: '画面全体と特定の色にする',
+    webPageLink: '/apps/color',
+    githubLink: ''
   }
 ])
 
@@ -100,13 +103,13 @@ const ReferenceLink = (props) => {
  githubLink ... GitHubのリンク
 */
 
-const Apps = ({ appId, appLink, imageSrc, appTitle, appDesc, webPageLink, githubLink }) => {
+const Apps = ({ appId, imageSrc, appTitle, appDesc, webPageLink, githubLink }) => {
   return (
     <div id={appId}>
       <table className="apps_table">
         <tr>
           <td className="apps_image_col">
-            <Link to={appLink}>
+            <Link to={webPageLink}>
               <img src={images[imageSrc]?.default} alt={appTitle} className="apps_image" />
             </Link>
           </td>{' '}
