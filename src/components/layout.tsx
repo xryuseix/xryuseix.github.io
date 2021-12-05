@@ -11,7 +11,7 @@ interface LayoutProps {
   children: React.ReactNode
 }
 
-const Layout = ({ location, children }: LayoutProps) => {
+const Layout: React.FC<LayoutProps> = ({ location, children }: LayoutProps) => {
   const rootPath: string = `${__PATH_PREFIX__}/`
   const isRootPath: boolean = location.pathname === rootPath
   const center: React.CSSProperties = {

@@ -5,7 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { MdOpenInNew } from 'react-icons/md'
 
-const Header = (props) => (
+interface HeaderProps {
+  className?: string
+}
+
+const Header: React.VFC<HeaderProps> = (_Props: HeaderProps) => (
   <header className="bg-dark">
     <Container>
       <Navbar expand="md" bg="dark" variant="dark">
@@ -40,7 +44,7 @@ const Header = (props) => (
                 News
               </Link>
             </Nav.Item>
-            <NavDropdown title="Slides" id="basic-nav-dropdown" bg="dark" renderMenuOnMount={true}>
+            <NavDropdown title="Slides" id="basic-nav-dropdown" renderMenuOnMount={true}>
               <NavDropdown.Item href="/slides">PDF Viewer</NavDropdown.Item>
               <NavDropdown.Item href="/lt">Single-Page App</NavDropdown.Item>
             </NavDropdown>
