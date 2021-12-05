@@ -1,4 +1,13 @@
 {
+    "scripts": {
+        "dev": "gatsby develop",
+        "build": "gatsby build",
+        "serve": "gatsby serve",
+        "test:coverage": "jest --coverage --passWithNoTests -u",
+        "format": "prettier --write 'src/**/*.js'",
+        "clean": "rm -rf public .cache/",
+        "typecheck": "tsc"
+    },
     "dependencies": {
         "babel-jest": "^27.0.5",
         "bootstrap": "^5.0.2",
@@ -30,7 +39,6 @@
         "react-anchor-link-smooth-scroll": "^1.0.12",
         "react-bootstrap": "^1.6.1",
         "react-dom": "^17.0.2",
-        "react-helmet": "^6.1.0",
         "react-hint": "^3.2.1",
         "react-icons": "^4.2.0",
         "react-pdf": "^5.3.0",
@@ -41,16 +49,9 @@
         "typeface-merriweather": "^1.1.13",
         "typeface-montserrat": "^1.1.13"
     },
-    "scripts": {
-        "dev": "gatsby develop",
-        "build": "gatsby build",
-        "serve": "gatsby serve",
-        "test:coverage": "jest --coverage --passWithNoTests -u",
-        "format": "prettier --write 'src/**/*.js'",
-        "clean": "rm -rf public .cache/",
-        "typecheck": "tsc"
-    },
     "devDependencies": {
+        "react-helmet": "^6.1.0",
+        "@types/react-helmet": "^6.1.4",
         "typescript": "^4.5.2"
     }
 }
