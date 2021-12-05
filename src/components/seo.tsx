@@ -4,14 +4,15 @@ import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
 interface SEOProps {
-  description: string
-  lang: string
-  meta: object[]
-  title: string
-  image: string
+  title?: string
+  description?: string
+  lang?: string
+  image?: string
 }
 
-const SEO: React.VFC<SEOProps> = ({ description = '', lang = 'en', meta = [], title, image }: SEOProps) => {
+const defaultImage = 'https://raw.githubusercontent.com/xryuseix/xryuseix.github.io/master/images/toppage.png'
+
+const SEO: React.VFC<SEOProps> = ({ title = '', description = '', lang = 'ja', image = defaultImage }: SEOProps) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -30,7 +31,6 @@ const SEO: React.VFC<SEOProps> = ({ description = '', lang = 'en', meta = [], ti
 
   const metaDescription: string = description || site.siteMetadata.description
   const defaultTitle: string = site.siteMetadata?.title
-  const defaultImage: string = 'https://raw.githubusercontent.com/xryuseix/xryuseix.github.io/master/images/toppage.png'
 
   return (
     <Helmet
@@ -74,7 +74,7 @@ const SEO: React.VFC<SEOProps> = ({ description = '', lang = 'en', meta = [], ti
         },
         {
           property: 'og:image',
-          content: image || defaultImage
+          content: image
         }
       ]}
     />
