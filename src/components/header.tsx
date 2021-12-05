@@ -9,7 +9,7 @@ interface HeaderProps {
   className?: string
 }
 
-const Header: React.VFC<HeaderProps> = (_Props: HeaderProps) => (
+const Header: React.VFC<HeaderProps> = (props: HeaderProps) => (
   <header className="bg-dark">
     <Container>
       <Navbar expand="md" bg="dark" variant="dark">

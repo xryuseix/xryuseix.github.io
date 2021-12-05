@@ -21,10 +21,10 @@ interface AccountData {
 
 const imageStyle: React.CSSProperties = { maxWidth: '80px', maxHeight: '80px' }
 
-const AccountPageIndex: React.VFC<AccountPageProps> = (Props: AccountPageProps) => {
+const AccountPageIndex: React.VFC<AccountPageProps> = (props: AccountPageProps) => {
   const images = importAll(require.context('../../static/icons', false, /\.(png|jpe?g|svg)$/))
   return (
-    <Layout location={Props.location}>
+    <Layout location={props.location}>
       <Seo title="All posts" description="各Webページのアカウントについて記載します．" />
       <Meta title="Account" />
       <h1>Account</h1>

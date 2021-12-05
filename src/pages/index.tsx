@@ -74,9 +74,9 @@ interface IndexPageProps {
   location: Location
 }
 
-const SiteIndex: React.VFC<IndexPageProps> = (Props: IndexPageProps) => {
+const SiteIndex: React.VFC<IndexPageProps> = (props: IndexPageProps) => {
   return (
-    <Layout location={Props.location}>
+    <Layout location={props.location}>
       <Seo title="xryuseix" description="ここがトップページや！！！！！！！！！" />
       <Meta title="Home" />
       <Profile />
