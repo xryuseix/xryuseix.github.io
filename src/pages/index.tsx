@@ -9,10 +9,6 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 import './index.css'
 
-interface IndexPageProps {
-  location: Location
-}
-
 const faviconStyle: React.CSSProperties = {
   borderRadius: '50%'
 }
@@ -72,6 +68,10 @@ const BottomButtons: React.VFC = () => {
       </li>
     </ul>
   )
+}
+
+interface IndexPageProps {
+  location: Location
 }
 
 const SiteIndex: React.VFC<IndexPageProps> = (Props: IndexPageProps) => {

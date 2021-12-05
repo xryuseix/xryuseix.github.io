@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import Seo from '../components/seo'
+import SEO from '../components/seo'
 import Meta from '../components/meta'
 import importAll from '../components/importAll'
 
@@ -76,18 +76,23 @@ const Account = [
   },
   {
     service: 'Discord',
-    url: 'https://discord.com',
+    url: 'https://discordapp.com/users/425905959723073536',
     image: 'discord.png',
     userId: 'xryuseix#9439'
   }
 ]
 
-const AccountSiteIndex = ({ location }) => {
-  const siteTitle = 'Account'
+interface AccountPageProps {
+  location: Location
+}
+
+const imageStyle: React.CSSProperties = { maxWidth: '80px', maxHeight: '80px' }
+
+const AccountPageIndex: React.VFC<AccountPageProps> = (Props: AccountPageProps) => {
   const images = importAll(require.context('../../static/icons', false, /\.(png|jpe?g|svg)$/))
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" description="各Webページのアカウントについて記載します．" />
+    <Layout location={Props.location}>
+      <SEO title="All posts" description="各Webページのアカウントについて記載します．" />
       <Meta title="Account" />
       <h1>Account</h1>
       <p>各サービスのアカウントです</p>
@@ -97,7 +102,7 @@ const AccountSiteIndex = ({ location }) => {
             <div className="account_service">{data.service}</div>
             <a href={data.url} target="_blank" rel="noopener noreferrer">
               <div className="account_service-logo">
-                <img src={images[data.image]?.default} alt="" style={{ 'max-width': '80px', 'max-height': '80px' }} />
+                <img src={images[data.image]?.default} alt={data.service} style={imageStyle} />
               </div>
               <div className="account_userid">{data.userId}</div>
             </a>
@@ -108,4 +113,4 @@ const AccountSiteIndex = ({ location }) => {
   )
 }
 
-export default AccountSiteIndex
+export default AccountPageIndex
