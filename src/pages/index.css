@@ -1,5 +1,7 @@
 /* ホバーしたとき名前を変える処理 */
-
+.index_rotate {
+  font-size: 3em;
+}
 .index_rotate .index_front {
   animation: 3s fadeIn forwards;
 }

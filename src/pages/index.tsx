@@ -2,24 +2,32 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
-import Seo from '../components/seo'
+import SEO from '../components/seo'
 import Meta from '../components/meta'
 
 import { StaticImage } from 'gatsby-plugin-image'
 
 import './index.css'
 
-const SiteIndex = ({ location }) => {
+interface IndexPageProps {
+  location: Location
+}
+
+const faviconStyle: React.CSSProperties = {
+  borderRadius: '50%'
+}
+
+const SiteIndex: React.VFC<IndexPageProps> = (Props: IndexPageProps) => {
   return (
-    <Layout location={location}>
-      <Seo title="xryuseix" description="ここがトップページや！！！！！！！！！" />
+    <Layout location={Props.location}>
+      <SEO title="xryuseix" description="ここがトップページや！！！！！！！！！" />
       <Meta title="Home" />
       <div className="index_flexbox">
         <div className="index_icon">
-          <StaticImage src="../../static/favicons/icon-256x256.png" alt="icon" style={{ 'border-radius': '50%' }} />
+          <StaticImage src="../../static/favicons/icon-256x256.png" alt="icon" style={faviconStyle} />
         </div>
         <section style={{ padding: '20px' }}>
-          <div className="index_rotate" style={{ 'font-size': '3em' }}>
+          <div className="index_rotate">
             <h3 style={{ margin: '0px' }}>Programmer</h3>
             <span className="index_front">xryuseix</span>
             <span className="index_back">Ryusei&nbsp;Ishikawa</span>
