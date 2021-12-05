@@ -10,6 +10,7 @@
         "gatsby-plugin-manifest": "^3.8.0",
         "gatsby-plugin-react-helmet": "^4.8.0",
         "gatsby-plugin-sharp": "^3.8.0",
+        "gatsby-plugin-typegen": "^2.2.4",
         "gatsby-remark-copy-linked-files": "^4.5.0",
         "gatsby-remark-external-links": "^0.0.4",
         "gatsby-remark-images": "^5.5.0",
@@ -41,12 +42,15 @@
         "typeface-montserrat": "^1.1.13"
     },
     "scripts": {
-        "develop": "gatsby develop",
+        "dev": "gatsby develop",
         "build": "gatsby build",
         "serve": "gatsby serve",
         "test:coverage": "jest --coverage --passWithNoTests -u",
         "format": "prettier --write 'src/**/*.js'",
-        "clean": "rm -rf public .cache/"
+        "clean": "rm -rf public .cache/",
+        "typecheck": "tsc"
     },
-    "devDependencies": {}
+    "devDependencies": {
+        "typescript": "^4.5.2"
+    }
 }

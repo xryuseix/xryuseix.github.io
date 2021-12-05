@@ -11,6 +11,12 @@ module.exports = {
     }
   },
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-feed`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-typegen`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,9 +31,6 @@ module.exports = {
         path: `${__dirname}/src/images/`
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-image`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -56,7 +59,6 @@ module.exports = {
         ]
       }
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -69,7 +71,6 @@ module.exports = {
         icon: `static/favicons/icon-32x32.png`
       }
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
