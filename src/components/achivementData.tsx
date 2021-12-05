@@ -3,7 +3,15 @@ import { MdOpenInNew } from 'react-icons/md'
 
 import IPAVulnList from '../utils/ipaVulnerability/vulnList'
 
-export const SchoolData = [
+export interface ContentProp {
+  year: string | number
+  detail: string | JSX.Element
+  url: string
+}
+
+export type ContentProps = ContentProp[]
+
+export const SchoolData: ContentProps = [
   {
     year: '2013-2019',
     detail: '神奈川県立平塚中等教育学校',
@@ -54,7 +62,7 @@ export const SchoolData = [
   }
 ]
 
-const WorkData = [
+const WorkData: ContentProps = [
   {
     year: '2018',
     detail: '総務省 地域におけるIoTの学び推進事業地域実証事業 メンター',
@@ -77,7 +85,7 @@ const WorkData = [
   }
 ]
 
-const EventData = [
+const EventData: ContentProps = [
   {
     year: '2019',
     detail: 'セキュリティ・キャンプ全国大会2019 集中開発コース 暗号化通信ゼミ',
@@ -138,7 +146,7 @@ const EventData = [
   }
 ]
 
-const MediaData = [
+const MediaData: ContentProps = [
   {
     year: '2021',
     detail: 'サイバーセキュリティⅡ 第２回 情報セキュリティ教育と人材育成 BS231ch',
@@ -146,7 +154,7 @@ const MediaData = [
   }
 ]
 
-const HackData = [
+const HackData: ContentProps = [
   {
     year: '2020-',
     detail: (
@@ -164,7 +172,7 @@ const HackData = [
   }
 ]
 
-const QualificationData = [
+const QualificationData: ContentProps = [
   {
     year: '2017',
     detail: 'ITパスポート',
@@ -192,13 +200,18 @@ const QualificationData = [
   }
 ]
 
-const AchievementData = [
-  { title: 'School', Content: SchoolData },
-  { title: 'Work', Content: WorkData },
-  { title: 'Event', Content: EventData },
-  { title: 'Media', Content: MediaData },
-  { title: 'Hack', Content: HackData },
-  { title: 'Qualification', Content: QualificationData }
+export interface ContentsProps {
+  title: string
+  content: ContentProps
+}
+
+const AchievementData: ContentsProps[] = [
+  { title: 'School', content: SchoolData },
+  { title: 'Work', content: WorkData },
+  { title: 'Event', content: EventData },
+  { title: 'Media', content: MediaData },
+  { title: 'Hack', content: HackData },
+  { title: 'Qualification', content: QualificationData }
 ]
 
 export default AchievementData
