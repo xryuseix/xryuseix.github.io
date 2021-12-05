@@ -5,9 +5,14 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import Meta from '../components/meta'
 
-const NotFoundPage = ({ location }) => {
+interface NotFoundProps {
+  location: Location
+}
+
+const NotFoundPage: React.VFC<NotFoundProps> = (props: NotFoundProps) => {
+  const centerStyles: React.CSSProperties = { textAlign: 'center' }
   return (
-    <Layout location={location}>
+    <Layout location={props.location}>
       <Seo title="404: Not Found" description="404 Not Foundページにゃん" />
       <Meta title="404" />
       <h1>
@@ -46,7 +51,7 @@ const NotFoundPage = ({ location }) => {
           />
         </svg>
       </h1>
-      <div style={{ 'text-align': 'center' }}>
+      <div style={centerStyles}>
         <StaticImage src="../images/404cat.png" alt="nuko" />
       </div>
     </Layout>
