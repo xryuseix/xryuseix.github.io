@@ -7,10 +7,10 @@ import Seo from '../../components/seo'
 import './color.css'
 
 const Colors = [
-    { name: '黒', code: 'black' },
-    { name: '白', code: 'white' },
-    { name: '赤', code: 'red' },
-    { name: '黄', code: 'yellow' }
+  { name: '黒', code: 'black' },
+  { name: '白', code: 'white' },
+  { name: '赤', code: 'red' },
+  { name: '黄', code: 'yellow' }
 ]
 
 /*
