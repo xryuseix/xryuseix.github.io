@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import Meta from '../components/meta'
 import AchievementData from '../components/achivementData'
-import { ContentProp, ContentProps, ContentsProps } from '../components/achivementData'
+import { ContentProp, ContentsProps } from '../components/achivementData'
 
 import { MdOpenInNew } from 'react-icons/md'
 
