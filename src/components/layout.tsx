@@ -2,12 +2,21 @@ import React from 'react'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { StaticImage } from 'gatsby-plugin-image'
+
 import '../utils/global.css'
 import './layout.css'
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  const isRootPath = location.pathname === rootPath
+interface LayoutProps {
+  location: Location
+  children: React.ReactNode
+}
+
+const Layout = ({ location, children }: LayoutProps) => {
+  const rootPath: string = `${__PATH_PREFIX__}/`
+  const isRootPath: boolean = location.pathname === rootPath
+  const center: React.CSSProperties = {
+    textAlign: 'center'
+  }
 
   return (
     <div>
@@ -22,7 +31,7 @@ const Layout = ({ location, title, children }) => {
       <div className="global-wrapper" data-is-root-path={isRootPath}>
         <main>{children}</main>
       </div>
-      <div style={{ 'text-align': 'center' }}>
+      <div style={center}>
         <Footer />
       </div>
     </div>
