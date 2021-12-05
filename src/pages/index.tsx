@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Meta from '../components/meta'
 
 import { StaticImage } from 'gatsby-plugin-image'
@@ -77,7 +77,7 @@ interface IndexPageProps {
 const SiteIndex: React.VFC<IndexPageProps> = (Props: IndexPageProps) => {
   return (
     <Layout location={Props.location}>
-      <SEO title="xryuseix" description="ここがトップページや！！！！！！！！！" />
+      <Seo title="xryuseix" description="ここがトップページや！！！！！！！！！" />
       <Meta title="Home" />
       <Profile />
       <BottomButtons />
