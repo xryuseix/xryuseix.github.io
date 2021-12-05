@@ -4,7 +4,7 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import Meta from '../../components/meta'
 import FlagSubmit from '../../components/flagSubmit'
-import sha512 from 'js-sha512'
+import sha256 from "fast-sha256";
 
 import './ctf.css'
 import misc_Test from './content/problem.pdf'
@@ -81,7 +81,7 @@ const Problems = ({ title, statement, flag, answer }) => {
         <div className="ctf_submit-column input">
           <input type="text" id={id} />
         </div>
-        <FlagSubmit flag={sha512(flag)} id={id} />
+        <FlagSubmit flag={sha256(new TextEncoder().encode(flag))} id={id} />
         <details style={{ display: 'none' }}>
           <summary>答え</summary>
           {answer}
