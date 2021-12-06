@@ -9,11 +9,11 @@ import './sa-plag.css'
 
 import saplagDemo from './images/saplag/sa-plag_demo.gif'
 
-interface AppPageProps {
+interface SaPlagPageProps {
   location: Location
 }
 
-const AppPageIndex: React.VFC<AppPageProps> = (props: AppPageProps) => {
+const SaPlagPageIndex: React.VFC<SaPlagPageProps> = (props: SaPlagPageProps) => {
   return (
     <Layout location={props.location}>
       <Seo
@@ -57,4 +57,4 @@ const AppPageIndex: React.VFC<AppPageProps> = (props: AppPageProps) => {
   )
 }
 
-export default AppPageIndex
+export default SaPlagPageIndex

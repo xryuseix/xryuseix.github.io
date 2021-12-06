@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "gatsby build",
-    "check": "yarn typecheck && yarn format && yarn test:coverage && yarn build",
+    "allCheck": "yarn typecheck && yarn format && yarn test:coverage && yarn build",
     "clean": "rm -rf public .cache/",
     "dev": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
@@ -19,6 +19,7 @@
     ]
   },
   "dependencies": {
+    "@types/react-anchor-link-smooth-scroll": "^1.0.2",
     "@types/react-helmet": "^6.1.4",
     "@types/webpack-env": "^1.16.3",
     "babel-jest": "^27.0.5",
