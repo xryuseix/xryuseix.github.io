@@ -7,7 +7,8 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "clean": "rm -rf public .cache/",
     "typecheck": "tsc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "check": "yarn typecheck && yarn format && yarn test:coverage && yarn build"
   },
   "dependencies": {
     "babel-jest": "^27.0.5",
