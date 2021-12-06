@@ -4,7 +4,7 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import Meta from '../../components/meta'
 import FlagSubmit from '../../components/flagSubmit'
-import sha256 from "fast-sha256";
+import sha256 from 'fast-sha256'
 
 import './ctf.css'
 import misc_Test from './content/problem.pdf'
