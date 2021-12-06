@@ -108,7 +108,7 @@ interface AppPageProps {
 
 const AppPageIndex: React.VFC<AppPageProps> = (props: AppPageProps) => {
   return (
-    <Layout location={location}>
+    <Layout location={props.location}>
       <Seo title="Applications" description="過去に作ったアプリケーションのまとめです．" />
       <Meta title="Applications" />
       <h1>Applications</h1>
