@@ -37,7 +37,7 @@ const AppData = shuffle([
     imageSrc: 'xryuseix_judge.png',
     appTitle: 'xryuseix judge',
     appDesc: '簡易的なクイズの成績判定システムです． 立命館大学プロジェクト連合合同イベントなどで使用しました．',
-    webPageLink: '/apps/contest_judge',
+    webPageLink: '/apps/contestJudge',
     githubLink: ''
   },
   {
