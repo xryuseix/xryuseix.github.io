@@ -1,7 +1,16 @@
-const SlidesList = () => {
+export interface PDFObject {
+  title: string
+  description: string
+  id: string
+  page: number
+  keyword: string[]
+  update: string
+}
+
+const SlidesList: Function = (): PDFObject[] => {
   return [
     {
-      title: 'Python2.x の input 関数にRCE 脆弱性がある話',
+      title: 'Python2.x の input 関数に RCE 脆弱性がある話',
       description: 'RiST(立命館セキュリティチーム) 5/17 輪講の資料です',
       id: 'python_input',
       page: 16,

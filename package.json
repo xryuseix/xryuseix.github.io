@@ -4,9 +4,10 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "test:coverage": "jest --coverage --passWithNoTests -u",
-    "format": "prettier --write 'src/**/*.(js|ts|jsx|tsx)'",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "clean": "rm -rf public .cache/",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "prepare": "husky install"
   },
   "dependencies": {
     "babel-jest": "^27.0.5",
@@ -52,23 +53,17 @@
   "devDependencies": {
     "@types/react-helmet": "^6.1.4",
     "@types/webpack-env": "^1.16.3",
-    "husky": "4",
+    "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
     "react-helmet": "^6.1.0",
     "typescript": "^4.5.2"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    },
-    "lint-staged": {
-      "src/**/*.{js,jsx,ts,tsx}": [
-        "yarn typecheck",
-        "yarn format"
-      ],
-      "src/**/*.{gql,graphql,json}": [
-        "yarn format"
-      ]
-    }
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "yarn format"
+    ],
+    "*.{css,less,sass,scss,md}": [
+      "yarn format"
+    ]
   }
 }
