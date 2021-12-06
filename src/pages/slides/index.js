@@ -9,7 +9,7 @@ import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon } fr
 import Layout from '../../components/layout'
 import Meta from '../../components/meta'
 import Seo from '../../components/seo'
-import slidesList from '../../components/pdfList'
+import slidesList from '../../components/data/pdfList'
 import importAll from '../../components/importAll'
 
 import './slides.css'

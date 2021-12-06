@@ -3385,6 +3385,20 @@ declare namespace GatsbyTypes {
     }>
   }
 
+  type BlogIndexQueryVariables = Exact<{ [key: string]: never }>
+
+  type BlogIndexQuery = {
+    readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>
+    readonly allMarkdownRemark: {
+      readonly nodes: ReadonlyArray<
+        Pick<MarkdownRemark, 'excerpt'> & {
+          readonly fields: Maybe<Pick<Fields, 'slug'>>
+          readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'title' | 'description'>>
+        }
+      >
+    }
+  }
+
   type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>
 
   type GatsbyImageSharpFixed_tracedSVGFragment = Pick<
@@ -3437,18 +3451,4 @@ declare namespace GatsbyTypes {
     ImageSharpFluid,
     'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
   >
-
-  type BlogIndexQueryVariables = Exact<{ [key: string]: never }>
-
-  type BlogIndexQuery = {
-    readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>
-    readonly allMarkdownRemark: {
-      readonly nodes: ReadonlyArray<
-        Pick<MarkdownRemark, 'excerpt'> & {
-          readonly fields: Maybe<Pick<Fields, 'slug'>>
-          readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'title' | 'description'>>
-        }
-      >
-    }
-  }
 }

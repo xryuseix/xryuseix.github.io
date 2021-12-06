@@ -3,8 +3,8 @@ import React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import Meta from '../components/meta'
-import AchievementData from '../components/achivementData'
-import { ContentProp, ContentsProps } from '../components/achivementData'
+import AchievementData from '../components/data/achivementData'
+import { ContentProp, ContentsProps } from '../components/data/achivementData'
 
 import { MdOpenInNew } from 'react-icons/md'
 
