@@ -9,9 +9,8 @@ interface FlagProps {
 }
 
 class ToggleClass extends React.Component<FlagProps, {}> {
-  // TODO: 下の型名を上のFlagPropsから引用したい
-  flag: Uint8Array
-  id: string
+  flag: FlagProps['flag']
+  id: FlagProps['id']
   state: { flagAcceptState: boolean; isSubmit: boolean }
   constructor(props: FlagProps) {
     super(props)
