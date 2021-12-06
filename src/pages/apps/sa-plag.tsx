@@ -9,9 +9,13 @@ import './sa-plag.css'
 
 import saplagDemo from './images/saplag/sa-plag_demo.gif'
 
-const SiteIndex = ({ location }) => {
+interface AppPageProps {
+  location: Location
+}
+
+const AppPageIndex: React.VFC<AppPageProps> = (props: AppPageProps) => {
   return (
-    <Layout location={location}>
+    <Layout location={props.location}>
       <Seo
         title="All posts"
         description="ソースコードの盗作を判定するWeb APIです．AIが競技プログラミングのソースコードを学習しました．"
@@ -28,8 +32,8 @@ const SiteIndex = ({ location }) => {
           </th>
         </tr>
       </table>
-      <div class="sa-plag_whats">
-        <span class="box-title">What's SA-Plag ?</span>
+      <div className="sa-plag_whats">
+        <span className="box-title">What's SA-Plag ?</span>
         <p>ソースコードの盗作を判定するWeb APIです．</p>
         <p>AIが競技プログラミングのソースコードを学習しました．</p>
       </div>
@@ -53,4 +57,4 @@ const SiteIndex = ({ location }) => {
   )
 }
 
-export default SiteIndex
+export default AppPageIndex
