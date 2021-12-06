@@ -1,16 +1,26 @@
 {
   "scripts": {
-    "dev": "gatsby develop",
     "build": "gatsby build",
+    "check": "yarn typecheck && yarn format && yarn test:coverage && yarn build",
+    "clean": "rm -rf public .cache/",
+    "dev": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "prepare": "husky install",
     "serve": "gatsby serve",
     "test:coverage": "jest --coverage --passWithNoTests -u",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "clean": "rm -rf public .cache/",
-    "typecheck": "tsc",
-    "prepare": "husky install",
-    "check": "yarn typecheck && yarn format && yarn test:coverage && yarn build"
+    "typecheck": "tsc"
+  },
+  "lint-staged": {
+    "*.{css,less,sass,scss,md}": [
+      "yarn format"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "yarn format"
+    ]
   },
   "dependencies": {
+    "@types/react-helmet": "^6.1.4",
+    "@types/webpack-env": "^1.16.3",
     "babel-jest": "^27.0.5",
     "bootstrap": "^5.0.2",
     "canvas": "^2.8.0",
@@ -33,14 +43,17 @@
     "gatsby-transformer-remark": "^4.5.0",
     "gatsby-transformer-sharp": "^3.8.0",
     "gh-pages": "^3.2.3",
+    "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.5",
+    "lint-staged": "^12.1.2",
     "prettier": "^2.3.1",
     "prismjs": "^1.23.0",
     "react": "^17.0.2",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
     "react-hint": "^3.2.1",
     "react-icons": "^4.2.0",
     "react-pdf": "^5.3.0",
@@ -50,21 +63,5 @@
     "slick-carousel": "^1.8.1",
     "typeface-merriweather": "^1.1.13",
     "typeface-montserrat": "^1.1.13"
-  },
-  "devDependencies": {
-    "@types/react-helmet": "^6.1.4",
-    "@types/webpack-env": "^1.16.3",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.1.2",
-    "react-helmet": "^6.1.0",
-    "typescript": "^4.5.2"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "yarn format"
-    ],
-    "*.{css,less,sass,scss,md}": [
-      "yarn format"
-    ]
   }
 }
