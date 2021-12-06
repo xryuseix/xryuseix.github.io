@@ -7,9 +7,16 @@ import FlagSubmit from '../../components/flagSubmit'
 import sha256 from 'fast-sha256'
 
 import './ctf.css'
-import misc_Test from './content/problem.pdf'
+import miscTestPDF from './content/problem.pdf'
 
-const ProblemsData = [
+interface ProblemsProps {
+  title: string
+  statement: string | JSX.Element
+  flag: string
+  answer: string | JSX.Element
+}
+
+const ProblemsData: ProblemsProps[] = [
   {
     title: '[Welcome](100) Welcome Problem',
     statement: (
@@ -48,7 +55,7 @@ const ProblemsData = [
       <>
         オンラインテストに向けてテスト用紙が配られました．あなたは試験開始前に問題を閲覧し，解きたいと思っています．頑張って解いてみてください！
         <br />
-        <a href={misc_Test} download>
+        <a href={miscTestPDF} download>
           [PDFファイル]
         </a>
       </>
@@ -69,31 +76,35 @@ const ProblemsData = [
  statement ... 問題文
  flag ... 答え
 */
-const Problems = ({ title, statement, flag, answer }) => {
-  const label = title + '_label'
-  const id = title + '_id'
+const Problems: React.VFC<ProblemsProps> = (props: ProblemsProps) => {
+  const label = `${props.title}_label`
+  const id = `${props.title}_id`
   return (
     <div className="ctf_hidden-box">
-      <label htmlFor={label}>{title}</label>
+      <label htmlFor={label}>{props.title}</label>
       <input type="checkbox" id={label} />
       <div className="ctf_hidden-show">
-        <p>{statement}</p>
+        <p>{props.statement}</p>
         <div className="ctf_submit-column input">
           <input type="text" id={id} />
         </div>
-        <FlagSubmit flag={sha256(new TextEncoder().encode(flag))} id={id} />
+        <FlagSubmit flag={sha256(new TextEncoder().encode(props.flag))} id={id} />
         <details style={{ display: 'none' }}>
           <summary>答え</summary>
-          {answer}
+          {props.answer}
         </details>
       </div>
     </div>
   )
 }
 
-const CtfSiteIndex = ({ location }) => {
+interface CTFPageProps {
+  location: Location
+}
+
+const CtfPageIndex: React.VFC<CTFPageProps> = (props: CTFPageProps) => {
   return (
-    <Layout location={location}>
+    <Layout location={props.location}>
       <Seo title="CTF" description="CTF問題をここにおきます．基本的に簡単です．" />
       <Meta title="CTF" />
       <h1>CTF</h1>
@@ -106,4 +117,8 @@ const CtfSiteIndex = ({ location }) => {
   )
 }
 
-export default CtfSiteIndex
+export default CtfPageIndex
+;('IntrinsicAttributes')
+;('IntrinsicClassAttributes<ToggleClass>')
+;('Readonly<{}>')
+;('Readonly<{ children?: ReactNode; }>')

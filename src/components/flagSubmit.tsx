@@ -8,7 +8,7 @@ interface FlagProps {
   id: string
 }
 
-class ToggleClass extends React.Component {
+class ToggleClass extends React.Component<FlagProps, {}> {
   // TODO: 下の型名を上のFlagPropsから引用したい
   flag: Uint8Array
   id: string
