@@ -52,12 +52,23 @@
   "devDependencies": {
     "@types/react-helmet": "^6.1.4",
     "@types/webpack-env": "^1.16.3",
+    "husky": "4",
+    "lint-staged": "^12.1.2",
     "react-helmet": "^6.1.0",
     "typescript": "^4.5.2"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "precommit"
+      "pre-commit": "lint-staged"
+    },
+    "lint-staged": {
+      "src/**/*.{js,jsx,ts,tsx}": [
+        "yarn typecheck",
+        "yarn format"
+      ],
+      "src/**/*.{gql,graphql,json}": [
+        "yarn format"
+      ]
     }
   }
 }
