@@ -3606,6 +3606,30 @@ declare namespace GatsbyTypes {
     readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>
   }
 
+  type Unnamed_1_QueryVariables = Exact<{ [key: string]: never }>
+
+  type Unnamed_1_Query = {
+    readonly site: Maybe<{
+      readonly siteMetadata: Maybe<
+        Pick<SiteSiteMetadata, 'title' | 'description'> & { readonly social: Maybe<Pick<Social, 'twitter'>> }
+      >
+    }>
+  }
+
+  type BlogIndexQueryVariables = Exact<{ [key: string]: never }>
+
+  type BlogIndexQuery = {
+    readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>
+    readonly allMarkdownRemark: {
+      readonly nodes: ReadonlyArray<
+        Pick<MarkdownRemark, 'excerpt'> & {
+          readonly fields: Maybe<Pick<Fields, 'slug'>>
+          readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'title' | 'description'>>
+        }
+      >
+    }
+  }
+
   type BlogPostBySlugQueryVariables = Exact<{
     id: Scalars['String']
     previousPostId: Maybe<Scalars['String']>
@@ -3626,16 +3650,6 @@ declare namespace GatsbyTypes {
     readonly next: Maybe<{
       readonly fields: Maybe<Pick<Fields, 'slug'>>
       readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>>
-    }>
-  }
-
-  type Unnamed_1_QueryVariables = Exact<{ [key: string]: never }>
-
-  type Unnamed_1_Query = {
-    readonly site: Maybe<{
-      readonly siteMetadata: Maybe<
-        Pick<SiteSiteMetadata, 'title' | 'description'> & { readonly social: Maybe<Pick<Social, 'twitter'>> }
-      >
     }>
   }
 
@@ -3691,18 +3705,4 @@ declare namespace GatsbyTypes {
     ImageSharpFluid,
     'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
   >
-
-  type BlogIndexQueryVariables = Exact<{ [key: string]: never }>
-
-  type BlogIndexQuery = {
-    readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>
-    readonly allMarkdownRemark: {
-      readonly nodes: ReadonlyArray<
-        Pick<MarkdownRemark, 'excerpt'> & {
-          readonly fields: Maybe<Pick<Fields, 'slug'>>
-          readonly frontmatter: Maybe<Pick<Frontmatter, 'date' | 'title' | 'description'>>
-        }
-      >
-    }
-  }
 }

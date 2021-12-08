@@ -64,5 +64,9 @@
     "slick-carousel": "^1.8.1",
     "typeface-merriweather": "^1.1.13",
     "typeface-montserrat": "^1.1.13"
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
   }
 }
