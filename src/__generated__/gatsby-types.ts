@@ -237,6 +237,8 @@ declare namespace GatsbyTypes {
   type Site = Node & {
     readonly buildTime: Maybe<Scalars['Date']>
     readonly siteMetadata: Maybe<SiteSiteMetadata>
+    readonly port: Maybe<Scalars['Int']>
+    readonly host: Maybe<Scalars['String']>
     readonly polyfill: Maybe<Scalars['Boolean']>
     readonly pathPrefix: Maybe<Scalars['String']>
     readonly id: Scalars['ID']
@@ -851,6 +853,8 @@ declare namespace GatsbyTypes {
   type Query_siteArgs = {
     buildTime: Maybe<DateQueryOperatorInput>
     siteMetadata: Maybe<SiteSiteMetadataFilterInput>
+    port: Maybe<IntQueryOperatorInput>
+    host: Maybe<StringQueryOperatorInput>
     polyfill: Maybe<BooleanQueryOperatorInput>
     pathPrefix: Maybe<StringQueryOperatorInput>
     id: Maybe<StringQueryOperatorInput>
@@ -2005,6 +2009,8 @@ declare namespace GatsbyTypes {
     | 'siteMetadata.author.summary'
     | 'siteMetadata.siteUrl'
     | 'siteMetadata.social.twitter'
+    | 'port'
+    | 'host'
     | 'polyfill'
     | 'pathPrefix'
     | 'id'
@@ -2133,6 +2139,8 @@ declare namespace GatsbyTypes {
   type SiteFilterInput = {
     readonly buildTime: Maybe<DateQueryOperatorInput>
     readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>
+    readonly port: Maybe<IntQueryOperatorInput>
+    readonly host: Maybe<StringQueryOperatorInput>
     readonly polyfill: Maybe<BooleanQueryOperatorInput>
     readonly pathPrefix: Maybe<StringQueryOperatorInput>
     readonly id: Maybe<StringQueryOperatorInput>
@@ -3705,4 +3713,11 @@ declare namespace GatsbyTypes {
     ImageSharpFluid,
     'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
   >
+
+  type PagesQueryQueryVariables = Exact<{ [key: string]: never }>
+
+  type PagesQueryQuery = {
+    readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }
+    readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> }
+  }
 }
