@@ -1,21 +1,20 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { Link, graphql, PageProps } from 'gatsby'
 
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import Meta from '../components/meta'
 
-const BlogPostTemplate = ({ data, location }) => {
+const BlogPostTemplate: React.FC<PageProps<GatsbyTypes.BlogPostBySlugQuery>> = ({ data, location }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title={post.frontmatter.title} />
+    <Layout location={location}>
+      <Seo title={post?.frontmatter?.title} />
       <Meta title="news" />
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
-        <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
+        <section dangerouslySetInnerHTML={{ __html: post?.html || '' }} itemProp="articleBody" />
       </article>
       <nav className="blog-post-nav">
         <ul
@@ -29,15 +28,15 @@ const BlogPostTemplate = ({ data, location }) => {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+              <Link to={previous.fields?.slug || '/'} rel="prev">
+                ← {previous.frontmatter?.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+              <Link to={next.fields?.slug || '/'} rel="next">
+                {next.frontmatter?.title} →
               </Link>
             )}
           </li>
