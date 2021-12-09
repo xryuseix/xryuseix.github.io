@@ -1,14 +1,15 @@
 {
   "scripts": {
-    "build": "gatsby build",
     "allCheck": "yarn typecheck && yarn format && yarn test:coverage && yarn build",
+    "build": "gatsby build",
     "clean": "rm -rf public .cache/",
     "dev": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "prepare": "husky install",
     "serve": "gatsby serve",
     "test:coverage": "jest --coverage --passWithNoTests -u",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "vuln": "py src/utils/ipaVulnerability/vuln.py"
   },
   "lint-staged": {
     "*.{css,less,sass,scss,md}": [

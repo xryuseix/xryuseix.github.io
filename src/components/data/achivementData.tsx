@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdOpenInNew } from 'react-icons/md'
 
-import IPAVulnList from '../../utils/ipaVulnerability/vulnList'
+import IPAVulnList from './vulnList'
 
 export interface ContentProp {
   year: string | number
