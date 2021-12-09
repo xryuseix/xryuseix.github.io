@@ -3606,29 +3606,6 @@ declare namespace GatsbyTypes {
     readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>
   }
 
-  type BlogPostBySlugQueryVariables = Exact<{
-    id: Scalars['String']
-    previousPostId: Maybe<Scalars['String']>
-    nextPostId: Maybe<Scalars['String']>
-  }>
-
-  type BlogPostBySlugQuery = {
-    readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>
-    readonly markdownRemark: Maybe<
-      Pick<MarkdownRemark, 'id' | 'excerpt' | 'html'> & {
-        readonly frontmatter: Maybe<Pick<Frontmatter, 'title' | 'date' | 'description'>>
-      }
-    >
-    readonly previous: Maybe<{
-      readonly fields: Maybe<Pick<Fields, 'slug'>>
-      readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>>
-    }>
-    readonly next: Maybe<{
-      readonly fields: Maybe<Pick<Fields, 'slug'>>
-      readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>>
-    }>
-  }
-
   type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>
 
   type GatsbyImageSharpFixed_tracedSVGFragment = Pick<
@@ -3682,6 +3659,39 @@ declare namespace GatsbyTypes {
     'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
   >
 
+  type BlogPostBySlugQueryVariables = Exact<{
+    id: Scalars['String']
+    previousPostId: Maybe<Scalars['String']>
+    nextPostId: Maybe<Scalars['String']>
+  }>
+
+  type BlogPostBySlugQuery = {
+    readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>
+    readonly markdownRemark: Maybe<
+      Pick<MarkdownRemark, 'id' | 'excerpt' | 'html'> & {
+        readonly frontmatter: Maybe<Pick<Frontmatter, 'title' | 'date' | 'description'>>
+      }
+    >
+    readonly previous: Maybe<{
+      readonly fields: Maybe<Pick<Fields, 'slug'>>
+      readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>>
+    }>
+    readonly next: Maybe<{
+      readonly fields: Maybe<Pick<Fields, 'slug'>>
+      readonly frontmatter: Maybe<Pick<Frontmatter, 'title'>>
+    }>
+  }
+
+  type Unnamed_1_QueryVariables = Exact<{ [key: string]: never }>
+
+  type Unnamed_1_Query = {
+    readonly site: Maybe<{
+      readonly siteMetadata: Maybe<
+        Pick<SiteSiteMetadata, 'title' | 'description'> & { readonly social: Maybe<Pick<Social, 'twitter'>> }
+      >
+    }>
+  }
+
   type BlogIndexQueryVariables = Exact<{ [key: string]: never }>
 
   type BlogIndexQuery = {
@@ -3694,15 +3704,5 @@ declare namespace GatsbyTypes {
         }
       >
     }
-  }
-
-  type Unnamed_1_QueryVariables = Exact<{ [key: string]: never }>
-
-  type Unnamed_1_Query = {
-    readonly site: Maybe<{
-      readonly siteMetadata: Maybe<
-        Pick<SiteSiteMetadata, 'title' | 'description'> & { readonly social: Maybe<Pick<Social, 'twitter'>> }
-      >
-    }>
   }
 }
