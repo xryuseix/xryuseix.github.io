@@ -22,6 +22,9 @@
   "dependencies": {
     "@types/react-anchor-link-smooth-scroll": "^1.0.2",
     "@types/react-helmet": "^6.1.4",
+    "@types/react-hint": "^3.2.0",
+    "@types/react-pdf": "^5.0.9",
+    "@types/react-slick": "^0.23.7",
     "@types/webpack-env": "^1.16.3",
     "babel-jest": "^27.0.5",
     "bootstrap": "^5.0.2",

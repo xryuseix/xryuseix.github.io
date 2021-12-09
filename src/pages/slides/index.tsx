@@ -3,19 +3,20 @@ import { pdfjs, Document, Page } from 'react-pdf'
 import { MdClose, MdExpandMore } from 'react-icons/md'
 import { GrCircleQuestion } from 'react-icons/gr'
 import ReactHintFactory from 'react-hint'
-import Slider from 'react-slick'
+import Slider, { Settings } from 'react-slick'
 import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon } from 'react-share'
 
 import Layout from '../../components/layout'
 import Meta from '../../components/meta'
 import Seo from '../../components/seo'
-import slidesList from '../../components/data/pdfList'
+import slidesList, { PDFObject } from '../../components/data/pdfList'
 import importAll from '../../components/importAll'
 
 import './slides.css'
 import 'react-hint/css/index.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import Switch from 'react-bootstrap/esm/Switch'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 const images = importAll(require.context('./pdf', false, /\.(png|jpe?g|svg)$/))
@@ -24,67 +25,67 @@ const pdfs = importAll(require.context('./pdf', false, /\.pdf$/))
 /*
  * スライドの表示・ページ切り替えを行う
  */
-class SlideDisplay extends React.Component {
-  constructor(props) {
+interface SlideProps {
+  Slide: PDFObject
+}
+
+interface SlideState {
+  page: number
+  maxPage: number
+  windowWidth: number
+  scale: number
+  scaleExpand: number
+  full: boolean
+}
+
+class SlideDisplay extends React.Component<SlideProps | {}, SlideState> {
+  meta: PDFObject
+  constructor(props: SlideProps) {
     super(props)
     this.state = {
       page: 1,
-      maxpage: props.Slide.page,
+      maxPage: props.Slide.page,
       windowWidth: this.getWindowWidth(),
       scale: (this.getWindowWidth() / 1000) * 0.97,
-      scale_expand: 0,
+      scaleExpand: 0,
       full: false
     }
     this.meta = props.Slide
   }
 
   // キーが押された時のイベント
-  handleKeyDown(e) {
-    if (e.keyCode === 39 || e.keyCode === 40) {
+  handleKeyDown(key: string) {
+    if (key === 'ArrowRight' || key === 'ArrowDown') {
       // 右, 下...スライドを進める
-      this.setState({ page: Math.min(this.state.page + 1, this.state.maxpage) })
-    } else if (e.keyCode === 37 || e.keyCode === 38) {
+      this.setState({ page: Math.min(this.state.page + 1, this.state.maxPage) })
+    } else if (key === 'ArrowLeft' || key === 'ArrowUp') {
       // 左, 上...スライドを戻す
       this.setState({ page: Math.max(this.state.page - 1, 1) })
-    } else if (49 <= e.keyCode && e.keyCode <= 57) {
+    } else if (Array.from({ length: 9 }, (_, i) => String(i + 1)).includes(key)) {
       // 数字...特定のスライドまでジャンプ
-      this.setState({ page: Math.min(e.keyCode - 48, this.state.maxpage) })
-    } else if (e.keyCode === 187) {
+      this.setState({ page: Math.min(+key, this.state.maxPage) })
+    } else if (key === '+') {
       // +...拡大
-      this.setState({ scale_expand: this.state.scale_expand + 0.05 })
-    } else if (e.keyCode === 189) {
+      this.setState({ scaleExpand: this.state.scaleExpand + 0.05 })
+    } else if (key === '-') {
       // -...縮小
-      this.setState({ scale_expand: this.state.scale_expand - 0.05 })
-    } else if (e.keyCode === 48) {
+      this.setState({ scaleExpand: this.state.scaleExpand - 0.05 })
+    } else if (key === '0') {
       // 0...拡大・縮小を元に戻す
-      this.setState({ scale_expand: 0 })
-    } else if (e.keyCode === 70) {
+      this.setState({ scaleExpand: 0 })
+    } else if (key === 'f') {
       // f...フルスクリーン
       if (!this.state.full) {
         // フルスクリーンにする
-        const elem = document.querySelector('.slide_pdf_view')
-        if (elem.webkitRequestFullscreen) {
-          elem.webkitRequestFullscreen() //Chrome15+, Safari5.1+, Opera15+
-        } else if (elem.mozRequestFullScreen) {
-          elem.mozRequestFullScreen() //FF10+
-        } else if (elem.msRequestFullscreen) {
-          elem.msRequestFullscreen() //IE11+
-        } else if (elem.requestFullscreen) {
-          elem.requestFullscreen() // HTML5 Fullscreen API仕様
+        const elem: HTMLElement | null = document.querySelector('.slide_pdf_view')
+        if (elem != null && elem.requestFullscreen) {
+          elem.requestFullscreen()
         }
         this.setState({ full: true })
       } else {
         // 元に戻す
-        if (document.webkitCancelFullScreen) {
-          document.webkitCancelFullScreen() //Chrome15+, Safari5.1+, Opera15+
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen() //FF10+
-        } else if (document.msExitFullscreen) {
-          document.msExitFullscreen() //IE11+
-        } else if (document.cancelFullScreen) {
-          document.cancelFullScreen() //Gecko:FullScreenAPI仕様
-        } else if (document.exitFullscreen) {
-          document.exitFullscreen() // HTML5 Fullscreen API仕様
+        if (document.exitFullscreen) {
+          document.exitFullscreen()
         }
         this.setState({ full: false })
       }
@@ -92,8 +93,8 @@ class SlideDisplay extends React.Component {
   }
 
   // キーボード検知イベントハンドラ
-  componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyDown.bind(this))
+  componentDidMount(): void {
+    window.addEventListener('keydown', (event) => this.handleKeyDown(event.key))
   }
 
   // ウィンドウ幅を取得
@@ -116,9 +117,9 @@ class SlideDisplay extends React.Component {
   }
 
   // キーボードショートカットの説明
-  onRenderContent = (target, content) => {
+  onRenderContent = () => {
     return (
-      <li className="custom-hint__content" style={{ 'background-color': 'white' }}>
+      <li className="custom-hint__content" style={{ backgroundColor: 'white' }}>
         <ul>→,↓ ... スライドを進める</ul>
         <ul>←,↑ ... スライドを戻す</ul>
         <ul>1~9 ... スライド1~9へ移動</ul>
@@ -132,14 +133,14 @@ class SlideDisplay extends React.Component {
       <div>
         <div className="slide_pdf_view_op" style={{ width: `${(this.state.windowWidth - 40).toString()}px` }}>
           <div className="slide_pdf_view">
-            <Page pageNumber={this.state.page} scale={this.state.scale + this.state.scale_expand} />
+            <Page pageNumber={this.state.page} scale={this.state.scale + this.state.scaleExpand} />
           </div>
           <div className="slide_pdf_operate">
             <div className="slide_turn">
               <button onClick={() => this.setState({ page: Math.max(this.state.page - 1, 1) })}>
                 (←) 前のスライド
               </button>{' '}
-              <button onClick={() => this.setState({ page: Math.min(this.state.page + 1, this.state.maxpage) })}>
+              <button onClick={() => this.setState({ page: Math.min(this.state.page + 1, this.state.maxPage) })}>
                 次のスライド (→)
               </button>
             </div>
@@ -148,9 +149,8 @@ class SlideDisplay extends React.Component {
                 persist
                 attribute="data-custom"
                 className="custom-hint"
-                events={{ hover: true }}
+                events={{ hover: true, click: true, focus: true }} // TODO: 後半は適当
                 onRenderContent={this.onRenderContent}
-                ref={(ref) => (this.instance = ref)}
               />
               <GrCircleQuestion data-custom size={25} />
             </div>
@@ -190,8 +190,22 @@ class SlideDisplay extends React.Component {
 /*
  * スライドの切り替えを行う
  */
-class SlidesSwitching extends React.Component {
-  constructor(props) {
+interface SwitchProps {
+  default: string | null
+  displaySwitchButton: boolean
+  slides: PDFObject[]
+  titles: string[]
+}
+interface SwitchState {
+  switchButton: boolean
+  data: any
+}
+
+class SlidesSwitching extends React.Component<SwitchProps | {}, SwitchState> {
+  default: string | null
+  slides: PDFObject[]
+  titles: string[]
+  constructor(props: SwitchProps) {
     super(props)
     this.default = props.default
     this.state = {
@@ -207,7 +221,7 @@ class SlidesSwitching extends React.Component {
    * @param text 省略する文字列
    * @param len 半角文字数で指定
    */
-  substr(text, len) {
+  substr(text: string, len: number) {
     var text_array = text.split('')
     var count = 0
     var str = ''
@@ -228,7 +242,7 @@ class SlidesSwitching extends React.Component {
    * @param slides スライド一覧
    * @param targetSlide 探すスライド
    */
-  findSlide(slides, targetSlide) {
+  findSlide(slides: PDFObject[], targetSlide: string) {
     return slides.find((content) => {
       return content.title === targetSlide
     })
@@ -267,7 +281,7 @@ class SlidesSwitching extends React.Component {
         </details>
         {console.log(pdfs[`${this.state.data.id}.pdf`].default)}
         <Document file={pdfs[`${this.state.data.id}.pdf`].default}>
-          <SlideDisplay Slide={this.state.data} titles={this.titles} />
+          <SlideDisplay Slide={this.state.data} />
         </Document>
       </div>
     )
@@ -275,13 +289,18 @@ class SlidesSwitching extends React.Component {
 }
 
 const ReactHint = ReactHintFactory(React)
-const SlideSiteIndex = ({ location }) => {
-  const Slides = slidesList()
+
+interface SlidePageProps {
+  location: Location
+}
+
+const SlidePageIndex: React.VFC<SlidePageProps> = (props: SlidePageProps) => {
+  const Slides: PDFObject[] = slidesList()
   const titles = Slides.map((slide) => slide['title'])
   const params = new URLSearchParams(location.search)
   const defaultSlide = params.get('slide')
   const displaySwitch = params.get('switch') === null || params.get('switch') === 'true'
-  const settings = {
+  const settings: Settings = {
     dots: true,
     infinite: true,
     autoplay: true,
@@ -293,7 +312,7 @@ const SlideSiteIndex = ({ location }) => {
     lazyLoad: 'ondemand'
   }
   return (
-    <Layout location={location}>
+    <Layout location={props.location}>
       <Seo title="My slides" description="スライド一覧" />
       <Meta title="Slides" />
       <SlidesSwitching slides={Slides} titles={titles} default={defaultSlide} displaySwitchButton={displaySwitch} />
@@ -312,4 +331,4 @@ const SlideSiteIndex = ({ location }) => {
     </Layout>
   )
 }
-export default SlideSiteIndex
+export default SlidePageIndex
