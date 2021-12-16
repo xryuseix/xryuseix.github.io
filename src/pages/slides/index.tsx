@@ -297,7 +297,7 @@ interface SlidePageProps {
 const SlidePageIndex: React.VFC<SlidePageProps> = (props: SlidePageProps) => {
   const Slides: PDFObject[] = slidesList()
   const titles = Slides.map((slide) => slide['title'])
-  const params = new URLSearchParams(location.search)
+  const params = new URLSearchParams(props.location.search)
   const defaultSlide = params.get('slide')
   const displaySwitch = params.get('switch') === null || params.get('switch') === 'true'
   const settings: Settings = {
