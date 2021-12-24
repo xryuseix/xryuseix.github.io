@@ -80,8 +80,13 @@ const WorkData: ContentProps = [
   },
   {
     year: '2021',
-    detail: 'ＮＴＴ東日本 夏季DS/DX/セキュリティ 5daysインターンシップ',
+    detail: 'NTT東日本 夏季DS/DX/セキュリティ 5daysインターンシップ',
     url: 'https://www.ntt-east.co.jp/recruit/internship-tech/'
+  },
+  {
+    year: '2021-',
+    detail: '株式会社リチェルカセキュリティ 学生アルバイト',
+    url: 'https://ricsec.co.jp/'
   }
 ]
 
