@@ -1,4 +1,4 @@
-export interface PDFObject {
+export type PDFObject = {
   title: string
   description: string
   id: string

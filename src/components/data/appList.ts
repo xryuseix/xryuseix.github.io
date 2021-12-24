@@ -1,4 +1,4 @@
-export interface AppsProps {
+export type AppsProps = {
   appId: string
   imageSrc: string
   appTitle: string

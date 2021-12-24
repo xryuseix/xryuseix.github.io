@@ -8,11 +8,11 @@ import importAll from '../components/importAll'
 import Account from '../../static/json/account.json'
 import './account.css'
 
-interface AccountPageProps {
+type AccountPageProps = {
   location: Location
 }
 
-interface AccountData {
+type AccountData = {
   service: string
   url: string
   image: string

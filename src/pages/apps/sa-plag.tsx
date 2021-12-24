@@ -9,7 +9,7 @@ import './sa-plag.css'
 
 import saplagDemo from './images/saplag/sa-plag_demo.gif'
 
-interface SaPlagPageProps {
+type SaPlagPageProps = {
   location: Location
 }
 

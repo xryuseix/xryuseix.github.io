@@ -54,7 +54,7 @@ const Achieves: React.VFC<ContentsProps> = (props: ContentsProps) => {
   )
 }
 
-interface AchievetPageProps {
+type AchievetPageProps = {
   location: Location
 }
 

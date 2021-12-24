@@ -6,7 +6,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import '../utils/global.css'
 import './layout.css'
 
-interface LayoutProps {
+type LayoutProps = {
   location: Location
   children: React.ReactNode
 }

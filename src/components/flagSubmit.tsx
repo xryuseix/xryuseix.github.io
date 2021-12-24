@@ -3,7 +3,7 @@ import sha256 from 'fast-sha256'
 
 import './flagSubmit.css'
 
-interface FlagProps {
+type FlagProps = {
   flag: Uint8Array
   id: string
 }

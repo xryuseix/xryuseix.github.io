@@ -3,7 +3,7 @@ import { MdOpenInNew } from 'react-icons/md'
 
 import IPAVulnList from './vulnList'
 
-export interface ContentProp {
+export type ContentProp = {
   year: string | number
   detail: string | JSX.Element
   url: string
@@ -205,7 +205,7 @@ const QualificationData: ContentProps = [
   }
 ]
 
-export interface ContentsProps {
+export type ContentsProps = {
   title: string
   content: ContentProps
 }

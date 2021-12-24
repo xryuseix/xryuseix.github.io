@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-interface MetaProps {
+type MetaProps = {
   title: string
   className?: string
   description?: string | undefined

@@ -14,7 +14,7 @@ import './apps.css'
 const images = importAll(require.context('./images', true, /\.(png|jpe?g|svg)$/))
 const icons = importAll(require.context('../../../static/icons', false, /(icon-32x32|github)\.png$/))
 
-interface ReferenceProps {
+type ReferenceProps = {
   title: string
   link: string
   logo: string
@@ -102,7 +102,7 @@ const Summary: React.VFC = (): JSX.Element => {
   )
 }
 
-interface AppPageProps {
+type AppPageProps = {
   location: Location
 }
 

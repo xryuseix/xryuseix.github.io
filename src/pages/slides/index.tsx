@@ -25,11 +25,11 @@ const pdfs = importAll(require.context('./pdf', false, /\.pdf$/))
 /*
  * スライドの表示・ページ切り替えを行う
  */
-interface SlideProps {
+type SlideProps = {
   Slide: PDFObject
 }
 
-interface SlideState {
+type SlideState = {
   page: number
   maxPage: number
   windowWidth: number
@@ -190,13 +190,13 @@ class SlideDisplay extends React.Component<SlideProps | {}, SlideState> {
 /*
  * スライドの切り替えを行う
  */
-interface SwitchProps {
+type SwitchProps = {
   default: string | null
   displaySwitchButton: boolean
   slides: PDFObject[]
   titles: string[]
 }
-interface SwitchState {
+type SwitchState = {
   switchButton: boolean
   data: any
 }
@@ -290,7 +290,7 @@ class SlidesSwitching extends React.Component<SwitchProps | {}, SwitchState> {
 
 const ReactHint = ReactHintFactory(React)
 
-interface SlidePageProps {
+type SlidePageProps = {
   location: Location
 }
 

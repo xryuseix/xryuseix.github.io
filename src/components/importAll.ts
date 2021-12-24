@@ -3,7 +3,7 @@
  * @param reqContent require.contextの返り値
  */
 
-interface Items {
+type Items = {
   [k: string]: string
 }
 

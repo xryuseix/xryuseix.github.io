@@ -4,7 +4,7 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import Meta from '../../components/meta'
 
-interface ContestJudgeProps {
+type ContestJudgeProps = {
   location: Location
 }
 

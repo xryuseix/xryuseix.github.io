@@ -70,7 +70,7 @@ const BottomButtons: React.VFC = () => {
   )
 }
 
-interface IndexPageProps {
+type IndexPageProps = {
   location: Location
 }
 

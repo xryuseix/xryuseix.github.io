@@ -6,7 +6,7 @@ import Seo from '../../components/seo'
 
 import './color.css'
 
-interface ColorType {
+type ColorType = {
   name: string
   code: string
 }
@@ -23,17 +23,17 @@ const Colors: ColorsType = [
 /*
  * 背景色の切り替えを行う
  */
-interface StateProps {
+type StateProps = {
   full: boolean
   display: 'block' | 'none'
 }
 
-interface Document {
+type Document = {
   exitFullscreen?: () => void
   querySelector: (selector: string) => HTMLElement | null
 }
 
-interface HTMLElement {
+type HTMLElement = {
   style: React.CSSProperties
   requestFullscreen?: () => void
   querySelector: (selector: string) => HTMLElement | null
@@ -109,7 +109,7 @@ class ColorsSwitching extends React.Component<StateProps | {}, StateProps> {
   }
 }
 
-interface ColorPageProps {
+type ColorPageProps = {
   location: Location
 }
 

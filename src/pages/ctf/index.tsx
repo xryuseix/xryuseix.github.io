@@ -37,7 +37,7 @@ const Problems: React.VFC<ProblemsProps> = (props: ProblemsProps) => {
   )
 }
 
-interface CTFPageProps {
+type CTFPageProps = {
   location: Location
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import vulnList from '../../../static/json/vulnList.json'
 
-interface VulnProps {
+type VulnProps = {
   type: 'list' | 'num'
 }
 

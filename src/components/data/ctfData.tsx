@@ -1,7 +1,7 @@
 import React from 'react'
 import miscTestPDF from '../../pages/ctf/content/problem.pdf'
 
-export interface ProblemsProps {
+export type ProblemsProps = {
   title: string
   statement: string | JSX.Element
   flag: string

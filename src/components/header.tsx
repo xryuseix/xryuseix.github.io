@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { MdOpenInNew } from 'react-icons/md'
 
-interface HeaderProps {
+type HeaderProps = {
   className?: string
 }
 
