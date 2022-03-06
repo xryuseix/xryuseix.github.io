@@ -5,7 +5,7 @@ import importAll from "../../utils/importAll";
 import { AppData, AppsProps } from "../../components/data/appList";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { MdOpenInNew } from "react-icons/md";
-import styles from "../../styles/apps/Apps.module.css";
+import styles from "../../styles/apps/apps.module.css";
 
 const images = importAll(
   require.context("../../public/apps-images/", true, /\.(png|jpe?g|svg)$/)

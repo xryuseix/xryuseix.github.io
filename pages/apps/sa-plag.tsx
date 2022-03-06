@@ -2,7 +2,7 @@
 
 import { NextPage } from "next";
 import { Layout } from "../../components/Layout";
-import styles from "../../styles/apps/SaPlag.module.css";
+import styles from "../../styles/apps/sa-plag.module.css";
 
 const SaPlagPageIndex: NextPage = () => {
   return (

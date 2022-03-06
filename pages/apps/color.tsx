@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import React from "react";
 import { Layout } from "../../components/Layout";
-import styles from "../../styles/apps/Color.module.css";
+import styles from "../../styles/apps/color.module.css";
 
 type ColorType = {
   name: string;

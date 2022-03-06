@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import { Layout } from "../../components/Layout";
-import styles from "../../styles/apps/SaPlag.module.css";
 
 const ContestJudgePageIndex: NextPage = () => {
   const docsURL: string =
