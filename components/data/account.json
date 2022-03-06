@@ -70,5 +70,11 @@
     "url": "https://discordapp.com/users/425905959723073536",
     "image": "discord.png",
     "userId": "xryuseix#9439"
+  },
+  {
+    "service": "CTFtime",
+    "url": "https://ctftime.org/user/78678",
+    "image": "noimage.png",
+    "userId": "xryuseix"
   }
 ]
