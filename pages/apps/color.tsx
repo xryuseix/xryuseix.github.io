@@ -49,18 +49,18 @@ class ColorsSwitching extends React.Component<StateProps | {}, StateProps> {
    * キーが押された時の処理
    */
   exitFullscreen(): void {
+    const document: Document = window.document;
     if (this.state.full) {
-      const document: Document = window.document;
-      // フルスクリーン元に戻す
+      // フルスクリーンを元に戻す
       if (document.exitFullscreen) {
         document.exitFullscreen();
       }
-      this.setState({ full: false, display: "block" });
-      const elem: HTMLElement | null = document.querySelector(".color_body");
-      if (elem != null) {
-        elem.style.backgroundColor = "white";
-      }
     }
+    const elem: HTMLElement | null = document.querySelector(`.${styles.body}`);
+    if (elem != null) {
+      elem.style.backgroundColor = "white";
+    }
+    this.setState({ full: false, display: "block" });
   }
   /*
    * キーが押された時のイベントハンドラ
@@ -77,15 +77,15 @@ class ColorsSwitching extends React.Component<StateProps | {}, StateProps> {
    */
   changeBackGrountColor(colorCode: string): void {
     const document: Document = window.document;
-    const elem: HTMLElement | null = document.querySelector(".color_body");
+    const elem: HTMLElement | null = document.querySelector(`.${styles.body}`);
     if (elem != null) {
       elem.style.backgroundColor = colorCode;
       // フルスクリーンにする
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
       }
+      this.setState({ full: true, display: "none" });
     }
-    this.setState({ full: true, display: "none" });
   }
 
   render() {

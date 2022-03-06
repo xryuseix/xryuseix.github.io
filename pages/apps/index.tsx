@@ -23,10 +23,10 @@ type ReferenceProps = {
 /* Webページ・GitHubリンク生成コンポーネント */
 const ReferenceLink: React.VFC<ReferenceProps> = (props: ReferenceProps) => {
   if (Object.values(props.link).join("") === "") {
-    return <td className={styles.desc_link}></td>;
+    return <td className={styles.descLink}></td>;
   } else {
     return (
-      <td className={styles.desc_link}>
+      <td className={styles.descLink}>
         <a
           href={Object.values(props.link).join("")}
           target="_blank"
@@ -35,7 +35,7 @@ const ReferenceLink: React.VFC<ReferenceProps> = (props: ReferenceProps) => {
           <img
             src={icons[`${props.logo}.png`]?.default.src}
             alt={props.logo}
-            className={styles.desc_link_col}
+            className={styles.descLinkCol}
           />
           {props.title}
           {props.title === "GitHub" ? <MdOpenInNew /> : ""}
@@ -62,7 +62,7 @@ const Apps: React.VFC<AppsProps> = (props: AppsProps): JSX.Element => {
     <div id={props.appId}>
       <table className={styles.table}>
         <tr>
-          <td className={styles.image_col}>
+          <td className={styles.imageCol}>
             <Link href={props.webPageLink}>
               <a>
                 <img
@@ -73,8 +73,8 @@ const Apps: React.VFC<AppsProps> = (props: AppsProps): JSX.Element => {
               </a>
             </Link>
           </td>{" "}
-          <td valign="top" style={{ textAlign: "center" }}>
-            <table className={styles.title_desc}>
+          <td className={styles.descCol}>
+            <table className={styles.titleDesc}>
               <tr>
                 <th colSpan={2} className={styles.title}>
                   {props.appTitle}

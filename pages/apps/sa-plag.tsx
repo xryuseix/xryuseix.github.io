@@ -1,61 +1,51 @@
-import React from "react";
+/** @format */
 
-import Layout from "../../components/layout";
-import Seo from "../../components/seo";
-import Meta from "../../components/meta";
-import { StaticImage } from "gatsby-plugin-image";
+import { NextPage } from "next";
+import { Layout } from "../../components/Layout";
+import styles from "../../styles/apps/SaPlag.module.css";
 
-import "./sa-plag.css";
-
-import saplagDemo from "./images/saplag/sa-plag_demo.gif";
-
-type SaPlagPageProps = {
-  location: Location;
-};
-
-const SaPlagPageIndex: React.VFC<SaPlagPageProps> = (
-  props: SaPlagPageProps
-) => {
+const SaPlagPageIndex: NextPage = () => {
   return (
-    <Layout location={props.location}>
-      <Seo
-        title="All posts"
-        description="ソースコードの盗作を判定するWeb APIです.AIが競技プログラミングのソースコードを学習しました."
-      />
-      <Meta title="SA-Plag" />
-
-      <table className="sa-plag_center">
+    <Layout
+      title="SA-Plag"
+      description="ソースコードの盗作を判定するWeb APIです. AIが競技プログラミングのソースコードを学習しました."
+    >
+      <table className={styles.center}>
         <tr>
-          <th className="sa-plag_title_logo">
-            <StaticImage
-              src="./images/saplag/sa-plag_logo.png"
+          <th className={styles.titleLogo}>
+            <img
+              src="/apps-images/saplag/sa-plag_logo.png"
               alt="SA-Plag logo"
             />
           </th>
-          <th className="sa-plag_title">
-            <div className="sa-plag_title_font">SA-Plag</div>
+          <th className={styles.title}>
+            <div className={styles.titleFont}>SA-Plag</div>
           </th>
         </tr>
       </table>
-      <div className="sa-plag_whats">
-        <span className="box-title">What&apos;s SA-Plag ?</span>
+      <div className={styles.whats}>
+        <span className={styles.boxTitle}>What&apos;s SA-Plag ?</span>
         <p>ソースコードの盗作を判定するWeb APIです.</p>
         <p>AIが競技プログラミングのソースコードを学習しました.</p>
       </div>
-      <div className="sa-plag_center">
+      <div className={styles.center}>
         <a
           href="https://sa-plag.herokuapp.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={saplagDemo} alt="SA-Plag Demo" className="sa-plag_demo" />
+          <img
+            src="/apps-images/saplag/sa-plag_demo.gif"
+            alt="SA-Plag Demo"
+            className={styles.demo}
+          />
         </a>
         <h3>使用するには画像をクリックしてください</h3>
       </div>
       <br />
       <hr />
       <br />
-      <div className="sa-plag_center">
+      <div className={styles.center}>
         この成果物はSecHack365内で作成されました.
         <br />
         <a
@@ -63,10 +53,10 @@ const SaPlagPageIndex: React.VFC<SaPlagPageProps> = (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <StaticImage
-            src="./images/saplag/SecHack365.png"
+          <img
+            src="/apps-images/saplag/SecHack365.png"
             alt="SecHack365 logo"
-            className="sa-plag_sh"
+            className={styles.sh}
           />
         </a>
       </div>

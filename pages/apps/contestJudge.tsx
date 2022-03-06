@@ -1,31 +1,22 @@
-import React from "react";
+import { NextPage } from "next";
+import { Layout } from "../../components/Layout";
+import styles from "../../styles/apps/SaPlag.module.css";
 
-import Layout from "../../components/layout";
-import Seo from "../../components/seo";
-import Meta from "../../components/meta";
-
-type ContestJudgeProps = {
-  location: Location;
-};
-
-const ContestJudgePageIndex: React.VFC<ContestJudgeProps> = (
-  props: ContestJudgeProps
-) => {
+const ContestJudgePageIndex: NextPage = () => {
   const docsURL: string =
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vS2YeEfXDZ-ANvSbNufYhQFFmzMEV6m9T97RMXMuVQ1qUae4FQoxyvvYlkyy938UVyfC8Ygx2pR9iBw";
   const docsParam: string = "chrome=false&amp;headers=false&amp";
   return (
-    <Layout location={props.location}>
-      <Seo title="All posts" />
-      <Meta
-        title="xryuseix judge"
-        description="簡易的なクイズの成績判定システムです． 立命館大学プロジェクト連合合同イベントなどで使用しました．"
-      />
+    <Layout
+      title="xryuseix judge"
+      description="簡易的なクイズの成績判定システムです.  立命館大学プロジェクト連合合同イベントなどで使用しました. "
+    >
       <h1>xryuseix judge</h1>
       <div className="spreadsheets">
         <h1>RiPProコンテストサイト</h1>
-        <h2>注 : 更新は5分おきです．chrome以外は動かないかもしれません．</h2>
-        (googleが5分おきに更新すると言ってますが，5分以上待たされることは普通にあります)
+        <h2>注 : 更新は5分おきです. chrome以外は動かないかもしれません. </h2>
+        (googleが5分おきに更新すると言ってますが,
+        5分以上待たされることは普通にあります)
         <br />
         {/* TODO: 最終更新時間をgoogle スプレッドシートのGASのAPIで提供する */}
         <div className="Submissions">

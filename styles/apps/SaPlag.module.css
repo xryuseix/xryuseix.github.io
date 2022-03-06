@@ -1,12 +1,12 @@
 /* アプリの説明 */
-.sa-plag_whats {
+.whats {
   position: relative;
   margin: 2em 0;
   padding: 0.5em 1em;
   border: solid 3px #000000;
   border-radius: 8px;
 }
-.sa-plag_whats .box-title {
+.whats .boxTitle {
   position: absolute;
   display: inline-block;
   top: -13px;
@@ -18,38 +18,38 @@
   color: #000000;
   font-weight: bold;
 }
-.sa-plag_whats p {
+.whats p {
   margin: 0;
   padding: 0;
 }
 
 /* 色々中央揃え */
-.sa-plag_center {
+.center {
   text-align: center;
 }
 
 /* タイトル */
-.sa-plag_title_logo {
-  width: 20%;
+.titleLogo img {
+  width: 40%;
   height: auto;
 }
-.sa-plag_title {
+.title {
   width: 70%;
   height: auto;
   text-align: left;
 }
-.sa-plag_title_font {
+.titleFont {
   font-size: 4em;
 }
 
 /* デモ画像 */
-.sa-plag_demo {
+.demo {
   width: 100%;
   height: auto;
 }
 
 /* SHロゴ画像 */
-.sa-plag_sh {
+.sh {
   width: 40%;
   height: auto;
 }
