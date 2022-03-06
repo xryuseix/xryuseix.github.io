@@ -2,8 +2,8 @@
 
 import { FC } from "react";
 import Navigator from "./Navigator";
+import Header from "./Head";
 import Footer from "./Footer";
-
 import styles from "../../styles/Layout.module.css";
 
 export const Layout: FC<{
@@ -12,6 +12,7 @@ export const Layout: FC<{
   description?: string;
 }> = ({ children, title, description }) => (
   <div>
+    <Header title={title} description={description} />
     <div className={styles.header}>
       <Navigator />
     </div>
