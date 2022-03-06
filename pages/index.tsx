@@ -40,43 +40,39 @@ const Profile: React.VFC = () => {
 };
 
 const BottomButtons: React.VFC = () => {
+  const buttons = [
+    {
+      title: "Apps",
+      href: "apps",
+    },
+    {
+      title: "Achieves",
+      href: "achievement",
+    },
+    {
+      title: "Account",
+      href: "account",
+    },
+    {
+      title: "CTF",
+      href: "ctf",
+    },
+    {
+      title: "Slides",
+      href: "lt",
+    },
+  ];
   return (
     <ul className={styles.footerMenu}>
-      <li className={`${styles.footerColumn} ${styles.scale}`}>
-        <Link href="/apps">
-          <a>
-            <h3>Apps</h3>
-          </a>
-        </Link>
-      </li>
-      <li className={`${styles.footerColumn} ${styles.scale}`}>
-        <Link href="/achievement">
-          <a>
-            <h3>Achieve</h3>
-          </a>
-        </Link>
-      </li>
-      <li className={`${styles.footerColumn} ${styles.scale}`}>
-        <Link href="/account">
-          <a>
-            <h3>Account</h3>
-          </a>
-        </Link>
-      </li>
-      <li className={`${styles.footerColumn} ${styles.scale}`}>
-        <Link href="/ctf">
-          <a>
-            <h3>CTF</h3>
-          </a>
-        </Link>
-      </li>
-      <li className={`${styles.footerColumn} ${styles.scale}`}>
-        <Link href="/lt">
-          <a>
-            <h3>Slides</h3>
-          </a>
-        </Link>
-      </li>
+      {buttons.map(({ title, href }) => (
+        <li className={`${styles.footerColumn} ${styles.scale}`} key={href}>
+          <Link href={`/${href}`}>
+            <a>
+              <h3>{title}</h3>
+            </a>
+          </Link>
+        </li>
+      ))}
     </ul>
   );
 };
