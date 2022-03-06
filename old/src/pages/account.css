@@ -1,0 +1,47 @@
+.account_logos {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  -webkit-flex-wrap: wrap;
+}
+.account_logo {
+  width: 155px;
+  height: 140px;
+  text-align: center;
+  border: 2px solid #eee;
+  box-sizing: border-box;
+  margin: 2px 2px;
+  position: relative;
+}
+.account_service {
+  background: #353a40;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1em;
+  height: 18%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.account_service-logo {
+  height: 64%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.account_userid {
+  height: 18%;
+  color: #353a40;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}

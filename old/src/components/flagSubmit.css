@@ -1,0 +1,49 @@
+.ctf_submitForm {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+
+.ctf_submit-column {
+  box-sizing: border-box;
+  margin: 2px 2px;
+}
+
+.ctf_submit-success {
+  background-color: #5cb85c;
+}
+
+.ctf_submit-failure {
+  background-color: #f0ad4e;
+}
+
+.ctf_output {
+  width: 6em;
+  font-size: 75%;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5em;
+}
+
+.ctf_submitForm .ctf_button button {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  font-weight: bold;
+  font-size: 75%;
+  width: 6em;
+  height: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

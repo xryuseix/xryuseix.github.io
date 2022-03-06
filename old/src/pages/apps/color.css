@@ -1,0 +1,7 @@
+.color_body  button {
+  text-shadow: 2px 2px 1px #ffffff, -2px 2px 1px #ffffff, 2px -2px 1px #ffffff, -2px -2px 1px #ffffff,
+    2px 0px 1px #ffffff, 0px 2px 1px #ffffff, -2px 0px 1px #ffffff, 0px -2px 1px #ffffff;
+    height: 4em;
+    width: 6em;
+    font-size: 2em;
+}
