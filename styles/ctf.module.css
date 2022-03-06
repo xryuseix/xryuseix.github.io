@@ -1,0 +1,52 @@
+/* 全体 */
+
+.hiddenBox {
+  margin: 0.5em 0;
+  padding: 0;
+}
+
+/* ボタン装飾 */
+.hiddenBox label {
+  width: 100%;
+  padding: 15px;
+  font-weight: bold;
+  background: #efefef;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+/* ボタンホバー時 */
+.hiddenBox label:hover {
+  background: silver;
+}
+
+/* チェックは見えなくする */
+.hiddenBox > input {
+  display: none;
+}
+
+/* 中身を非表示にしておく */
+.hiddenBox .hiddenShow {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+}
+
+/* クリックで中身表示 */
+.hiddenBox input:checked ~ .hiddenShow {
+  padding: 10px 0;
+  height: auto;
+  opacity: 1;
+}
+
+.submitForm {
+  display: flex;
+}
+
+/* 入力ボックス */
+.submitColumn {
+  margin: 2px;
+}
