@@ -1,0 +1,44 @@
+/* アプリの画像と説明 */
+.table {
+  margin: 30px 0px;
+}
+.image_col {
+  width: 50%;
+  margin-left: auto;
+  text-align: center;
+}
+.image {
+  max-width: 100%;
+  max-height: 250px;
+}
+.title_desc {
+  margin: 0px 0px 0px 10px;
+  border-collapse: separate;
+  border-spacing: 0px 10px;
+}
+.title {
+  font-size: 2em;
+}
+.desc {
+  white-space: pre-wrap;
+}
+.desc_link_col {
+  width: 1em;
+  margin: 0px 0.3em 0px 0px;
+}
+.desc_link {
+  width: 50%;
+}
+
+/* 目次 */
+.details ul {
+  border: solid 2px skyblue;
+  border-radius: 5px;
+  padding: 0.5em 1em 0.5em 2.3em;
+  position: relative;
+}
+
+.details ul li {
+  line-height: 1.5;
+  padding: 0.5em 0;
+}

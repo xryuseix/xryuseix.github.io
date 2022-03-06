@@ -1,0 +1,44 @@
+/* アプリの画像と説明 */
+.apps_table {
+  margin: 30px 0px;
+}
+.apps_image_col {
+  width: 50%;
+  margin-left: auto;
+  text-align: center;
+}
+.apps_image {
+  max-width: 100%;
+  max-height: 250px;
+}
+.apps_title_desc {
+  margin: 0px 0px 0px 10px;
+  border-collapse: separate;
+  border-spacing: 0px 10px;
+}
+.apps_title {
+  font-size: 2em;
+}
+.apps_desc {
+  white-space: pre-wrap;
+}
+.apps_desc_link_col {
+  width: 1em;
+  margin: 0px 0.3em 0px 0px;
+}
+.apps_desc_link {
+  width: 50%;
+}
+
+/* 目次 */
+.apps_details ul {
+  border: solid 2px skyblue;
+  border-radius: 5px;
+  padding: 0.5em 1em 0.5em 2.3em;
+  position: relative;
+}
+
+.apps_details ul li {
+  line-height: 1.5;
+  padding: 0.5em 0;
+}

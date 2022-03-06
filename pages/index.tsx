@@ -1,6 +1,6 @@
 /** @format */
 
-import type { NextPage } from "next";
+import { NextPage } from "next";
 import Link from "next/link";
 import { Layout } from "../components/Layout";
 
@@ -15,7 +15,7 @@ const Profile: React.VFC = () => {
     <div className={styles.flexbox}>
       <div className={styles.icon}>
         <img
-          src="/images/icon-256x256.png"
+          src="/icons/icon-256x256.png"
           alt="Profile Icon"
           style={faviconStyle}
         />
