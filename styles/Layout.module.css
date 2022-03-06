@@ -34,6 +34,8 @@
   }
 }
 
-.headerPadding {
-  padding-top: 30px; /* TODO: これの数値話からん */
+.main {
+  padding-top: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
 }

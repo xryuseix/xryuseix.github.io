@@ -17,7 +17,7 @@ export const Layout: FC<{
       <Navigator />
     </div>
     <br />
-    <main className={styles.headerPadding}>{children}</main>
+    <main className={styles.main}>{children}</main>
     <div style={{ textAlign: "center" }}>
       <Footer />
     </div>
