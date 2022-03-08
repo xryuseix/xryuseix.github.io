@@ -3,17 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "prepare": "husky install",
+    "dev": "next dev",
+    "export": "next export",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,json,md}\"",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "12.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "lint": "next lint",
+    "prepare": "husky install",
+    "start": "next start",
+    "test": "jest",
+    "test:coverage": "jest --coverage --passWithNoTests -u",
+    "vuln": "python ./utils/IPAVulnerability/vuln.py"
   },
   "lint-staged": {
     "*.{css,less,sass,scss}": [
@@ -23,6 +22,11 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "next": "12.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
