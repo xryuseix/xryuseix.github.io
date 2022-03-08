@@ -10,8 +10,6 @@
     "lint": "next lint",
     "prepare": "husky install",
     "start": "next start",
-    "test": "jest",
-    "test:coverage": "jest --coverage --passWithNoTests -u",
     "vuln": "python ./utils/IPAVulnerability/vuln.py"
   },
   "lint-staged": {
