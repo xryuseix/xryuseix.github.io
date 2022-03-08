@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Layout } from "../../components/Layout";
 import { GetStaticProps } from "next";
-import { getSortedPostsData } from "../../lib/posts";
+import { getSortedPostsData } from "../../utils/posts";
 import styles from "../../styles/news.module.css";
 
 const BlogPageIndex = ({
@@ -22,7 +22,7 @@ const BlogPageIndex = ({
       </p>
       <ol>
         {allPostsData.map((post) => (
-          <Link href={`/news/${post.title}`} key={post.title}>
+          <Link href={`/news/${post.title}`} key={post.title} passHref>
             <li className={styles.blogCard}>
               <a className={styles.title}>
                 <h3>{post.title}</h3>

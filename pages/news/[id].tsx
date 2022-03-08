@@ -2,7 +2,7 @@
 
 import { GetStaticProps, GetStaticPaths } from "next";
 import { Layout } from "../../components/Layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import { getAllPostIds, getPostData } from "../../utils/posts";
 import MarkdownRender, { PostPropType } from "../../components/MarkdownRender";
 
 const Post = ({ postData }: PostPropType) => {
