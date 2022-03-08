@@ -54,6 +54,16 @@ const Navigator: React.VFC<NavigatorProps> = (props: NavigatorProps) => (
               <NavDropdown.Item href="/lt">Single-Page App</NavDropdown.Item>
             </NavDropdown>
             <Nav.Item as="li">
+              <Link href="/research">
+                <a className="nav-link">Research</a>
+              </Link>
+            </Nav.Item>
+            <Nav.Item as="li">
+              <Link href="/api">
+                <a className="nav-link disabled">API</a>
+              </Link>
+            </Nav.Item>
+            <Nav.Item as="li">
               <a
                 className="nav-link"
                 href="https://github.com/xryuseix/xryuseix.github.io"
