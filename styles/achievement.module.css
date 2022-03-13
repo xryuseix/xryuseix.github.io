@@ -1,0 +1,54 @@
+/* 表 */
+.table {
+  width: 100%;
+}
+.year,
+.url {
+  width: 20%;
+}
+.detail {
+  width: 60%;
+}
+.table th {
+  border-bottom: 1px solid #353a40;
+}
+.content:hover {
+  background-color: #dcdcdc;
+}
+.title {
+  font-size: 1.1em;
+}
+
+/* 表形式の詳細コンテンツ */
+
+.minTableTitle {
+  border-right: solid 3px skyblue;
+}
+
+.minTableContent {
+  width: 80%;
+  padding: 0.5em 1em 0.5em 1.5em;
+}
+
+.minTableContent ul li {
+  line-height: 1.2;
+  padding: 0.5em 0;
+}
+
+.minTable tr:hover {
+  background-color: #cccccc;
+}
+
+/* リスト形式の詳細コンテンツ */
+
+.details ul {
+  border: solid 2px skyblue;
+  border-radius: 5px;
+  padding: 0.5em 1em 0.5em 2.3em;
+  position: relative;
+}
+
+.details ul li {
+  line-height: 1.5;
+  padding: 0.5em 0;
+}

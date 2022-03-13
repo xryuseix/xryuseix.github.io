@@ -1,0 +1,55 @@
+/* アプリの説明 */
+.whats {
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+  border: solid 3px #000000;
+  border-radius: 8px;
+}
+.whats .boxTitle {
+  position: absolute;
+  display: inline-block;
+  top: -13px;
+  left: 10px;
+  padding: 0 9px;
+  line-height: 1;
+  font-size: 19px;
+  background: #fff;
+  color: #000000;
+  font-weight: bold;
+}
+.whats p {
+  margin: 0;
+  padding: 0;
+}
+
+/* 色々中央揃え */
+.center {
+  text-align: center;
+}
+
+/* タイトル */
+.titleLogo img {
+  width: 40%;
+  height: auto;
+}
+.title {
+  width: 70%;
+  height: auto;
+  text-align: left;
+}
+.titleFont {
+  font-size: 4em;
+}
+
+/* デモ画像 */
+.demo {
+  width: 100%;
+  height: auto;
+}
+
+/* SHロゴ画像 */
+.sh {
+  width: 40%;
+  height: auto;
+}
