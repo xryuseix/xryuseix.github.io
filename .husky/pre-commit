@@ -2,4 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 yarn vuln
+yarn run prettier --write components/data/vulnList.json
 yarn lint-staged
