@@ -7,10 +7,11 @@ description: Next.jsに移行しました
 # Next.jsに移行しました
 
 サイトので使用しているフレームワークをGatsby.jsからNext.jsに移行しました
-これが旧
-![top](./top.png)
-これが新
-![newtop](./newtop.png)
+
+* これが旧
+  * ![top](./top.png)
+* これが新
+  * ![newtop](./newtop.png)
 
 理由としては以下の通りです．
 
