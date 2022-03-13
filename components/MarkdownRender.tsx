@@ -19,7 +19,7 @@ const components = (markdownProps: MarkdownProps) => {
       const src =
         "https://" +
         path.join(
-          "raw.githubusercontent.com/xryuseix/xryuseix.github.io/tree/master/news/",
+          "raw.githubusercontent.com/xryuseix/xryuseix.github.io/master/news/",
           markdownProps.title ?? "",
           props.src as string
         );
