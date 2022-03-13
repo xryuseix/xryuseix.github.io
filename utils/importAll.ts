@@ -16,7 +16,6 @@ const importAll: Function = (
   reqContent
     .keys()
     .map((item: string) => (items[item.replace("./", "")] = reqContent(item)));
-  console.log(items);
   return items;
 };
 
