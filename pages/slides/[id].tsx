@@ -7,7 +7,7 @@ import { pdfjs, Document } from "react-pdf";
 import { MdClose, MdExpandMore } from "react-icons/md";
 import Slider, { Settings } from "react-slick";
 import { Layout } from "../../components/Layout";
-import SlideDisplay from "./Slide";
+import SlideDisplay from "../../components/Slide";
 import SlidesList, { PDFObject } from "../../components/data/pdfList";
 import styles from "../../styles/slides.module.css";
 import "react-hint/css/index.css";

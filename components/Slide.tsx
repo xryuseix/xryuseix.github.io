@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import { PDFObject } from "../../components/data/pdfList";
+import { PDFObject } from "./data/pdfList";
 import { Page } from "react-pdf";
 import { GrCircleQuestion } from "react-icons/gr";
 import {
@@ -11,7 +11,7 @@ import {
   FacebookIcon,
 } from "react-share";
 import ReactHintFactory from "react-hint";
-import styles from "../../styles/slides.module.css";
+import styles from "../styles/slides.module.css";
 const ReactHint = ReactHintFactory(React);
 
 /*
