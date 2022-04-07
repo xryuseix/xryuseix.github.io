@@ -77,7 +77,6 @@ class SlidesSwitching extends React.Component<SwitchProps | {}, SwitchState> {
   render() {
     return (
       <div className={styles.detail}>
-        {this.state.data?.title}
         <details
           className={styles.switch}
           style={{ display: this.state.switchButton ? "block" : "none" }}
