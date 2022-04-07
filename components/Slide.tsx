@@ -197,7 +197,7 @@ class SlideDisplay extends React.Component<SlideProps, SlideState> {
           <p>
             Shere :{" "}
             <TwitterShareButton
-              url={`https://xryuseix.github.io/slides/?slide=${encodeURI(
+              url={`https://xryuseix.github.io/slides/${encodeURI(
                 this.meta?.title
               )}`}
               title={`「${this.meta?.title}」`}
@@ -206,7 +206,7 @@ class SlideDisplay extends React.Component<SlideProps, SlideState> {
               <TwitterIcon size={25} round />
             </TwitterShareButton>{" "}
             <FacebookShareButton
-              url={`https://xryuseix.github.io/slides/?slide=${encodeURI(
+              url={`https://xryuseix.github.io/slides/${encodeURI(
                 this.meta?.title
               )}`}
             >

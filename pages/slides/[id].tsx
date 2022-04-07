@@ -142,6 +142,7 @@ const SlidePageIndex: NextPage = () => {
           return title[0];
         }
       })(router.query.id) as string;
+      console.log("TITLE", title);
       setTitle(title);
     }
   }, [router]);
