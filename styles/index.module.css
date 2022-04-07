@@ -46,6 +46,12 @@
   }
 }
 
+/* 全体 */
+.flexbox {
+  text-align: center;
+  justify-content: center;
+}
+
 /* 枠線 */
 .box {
   position: relative;
@@ -88,6 +94,7 @@
 }
 .footerColumn {
   width: 19%;
+  max-width: 200px;
   text-align: center;
   border: 2px solid #eee;
   box-sizing: border-box;
