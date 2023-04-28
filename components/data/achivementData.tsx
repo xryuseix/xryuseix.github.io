@@ -18,7 +18,7 @@ export const SchoolData: ContentProps = [
     url: "https://www.pen-kanagawa.ed.jp/hiratsuka-chuto-ss/",
   },
   {
-    year: "2019-",
+    year: "2019-2023",
     detail: (
       <>
         立命館大学 情報理工学部 セキュリティ・ネットワークコース
@@ -64,6 +64,12 @@ export const SchoolData: ContentProps = [
     ),
     url: "http://www.ritsumei.ac.jp/",
   },
+  {
+    year: "2023-",
+    detail:
+      "立命館大学大学院 情報理工学研究科 博士課程前期課程 計算機科学コ―ス",
+    url: "http://www.ritsumei.ac.jp/",
+  },
 ];
 
 const WorkData: ContentProps = [
@@ -73,7 +79,7 @@ const WorkData: ContentProps = [
     url: "https://www.soumu.go.jp/main_content/000605601.pdf",
   },
   {
-    year: "2020-",
+    year: "2020-2023",
     detail: "paiza株式会社 学習事業部 アルバイト",
     url: "https://www.paiza.co.jp/",
   },
@@ -158,6 +164,24 @@ const EventData: ContentProps = [
     year: "2021",
     detail: "ICPC アジア地区横浜大会",
     url: "https://icpc.iisf.or.jp/2020-yokohama/domestic",
+  },
+  {
+    year: 2023,
+    detail: (
+      <>
+        情報通信システムセキュリティ研究会（ICSS）
+        <details className="achievement_details">
+          <summary>研究テーマ</summary>
+          <ul>
+            <li>
+              「複数のWebサービスのパスワードリカバリ機能を用いた通知先情報復元攻撃の検証およびその対策」
+              ○石川琉聖・穐山空道（立命館大）・猪俣敦夫（立命館大/阪大）・上原哲太郎（立命館大）
+            </li>
+          </ul>
+        </details>
+      </>
+    ),
+    url: "https://ken.ieice.org/ken/program/index.php?tgs_regid=4dbca89c40ccf350de377acdbe8b34d0e98fdeb4007a8025dc545f315741fb1a&tgid=IEICE-ICSS",
   },
 ];
 

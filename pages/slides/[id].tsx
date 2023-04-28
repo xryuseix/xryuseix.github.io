@@ -132,19 +132,22 @@ const SlidePageIndex: NextPage = () => {
   const [title, setTitle] = useState<string>("");
   const router = useRouter();
   useEffect(() => {
-    if (router.asPath !== router.route) {
-      const title = ((title: string | string[] | undefined) => {
-        if (typeof title === "string") {
-          return title;
-        } else if (typeof title === "undefined") {
-          return "";
-        } else if (Object.prototype.toString.call(title) === "[object Array]") {
-          return title[0];
-        }
-      })(router.query.id) as string;
-      console.log("TITLE", title);
-      setTitle(title);
+    if (router.asPath === router.route) {
+      return;
     }
+    const title = ((title: string | string[] | undefined): string => {
+      if (typeof title === "string") {
+        return title;
+      } else if (typeof title === "undefined") {
+        return "";
+      } else if (Object.prototype.toString.call(title) === "[object Array]") {
+        return title[0];
+      } else {
+        return "";
+      }
+    })(router.query.id);
+    console.log("TITLE", title);
+    setTitle(title);
   }, [router]);
   const settings: Settings = {
     dots: true,
